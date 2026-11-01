@@ -1,0 +1,773 @@
+{
+  "last_node_id": 15,
+  "last_link_id": 17,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "MossPanelDatasetFlexible",
+      "pos": [
+        1020,
+        40
+      ],
+      "size": [
+        390,
+        455
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "人物設定",
+          "type": "MOSS_MANGA_CAST",
+          "link": 1
+        },
+        {
+          "name": "コマ1",
+          "type": "MOSS_MANGA_PANEL",
+          "link": 2
+        },
+        {
+          "name": "コマ2",
+          "type": "MOSS_MANGA_PANEL",
+          "link": 3
+        },
+        {
+          "name": "コマ3",
+          "type": "MOSS_MANGA_PANEL",
+          "link": 4
+        },
+        {
+          "name": "コマ4",
+          "type": "MOSS_MANGA_PANEL",
+          "link": 5
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MOSS用プロンプト",
+          "type": "STRING",
+          "links": [
+            6
+          ]
+        },
+        {
+          "name": "幅",
+          "type": "INT",
+          "links": [
+            9
+          ]
+        },
+        {
+          "name": "高さ",
+          "type": "INT",
+          "links": [
+            10
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MossPanelDatasetFlexible"
+      },
+      "widgets_values": [
+        "4コマ・直線01・1／1／1／1配置",
+        "漫画"
+      ],
+      "title": "画像からコマ割りを選ぶ（2〜6コマ）"
+    },
+    {
+      "id": 2,
+      "type": "CLIPLoader",
+      "pos": [
+        1020,
+        570
+      ],
+      "size": [
+        350,
+        300
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            7,
+            8
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPLoader"
+      },
+      "widgets_values": [
+        "qwen3.5_9b_int8_convrot.safetensors",
+        "moss_image",
+        "default"
+      ]
+    },
+    {
+      "id": 3,
+      "type": "UNETLoader",
+      "pos": [
+        1020,
+        910
+      ],
+      "size": [
+        350,
+        300
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            11
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "UNETLoader"
+      },
+      "widgets_values": [
+        "moss_image_sft_int8_convrot.safetensors",
+        "default"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "VAELoader",
+      "pos": [
+        1900,
+        680
+      ],
+      "size": [
+        350,
+        300
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            16
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAELoader"
+      },
+      "widgets_values": [
+        "flux2-vae.safetensors"
+      ]
+    },
+    {
+      "id": 5,
+      "type": "CLIPTextEncode",
+      "pos": [
+        1450,
+        40
+      ],
+      "size": [
+        350,
+        300
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 6,
+          "widget": {
+            "name": "text"
+          }
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            12
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 6,
+      "type": "CLIPTextEncode",
+      "pos": [
+        1450,
+        370
+      ],
+      "size": [
+        350,
+        300
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 8
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            13
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 7,
+      "type": "EmptyFlux2LatentImage",
+      "pos": [
+        1450,
+        720
+      ],
+      "size": [
+        350,
+        300
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "link": 9,
+          "widget": {
+            "name": "width"
+          }
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "link": 10,
+          "widget": {
+            "name": "height"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            14
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptyFlux2LatentImage"
+      },
+      "widgets_values": [
+        1024,
+        1536,
+        1
+      ]
+    },
+    {
+      "id": 8,
+      "type": "KSampler",
+      "pos": [
+        1900,
+        40
+      ],
+      "size": [
+        350,
+        300
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 11
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 12
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 13
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 14
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            15
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        261101,
+        "fixed",
+        25,
+        2.5,
+        "er_sde",
+        "simple",
+        1
+      ]
+    },
+    {
+      "id": 9,
+      "type": "VAEDecode",
+      "pos": [
+        2320,
+        40
+      ],
+      "size": [
+        350,
+        300
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 15
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 16
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            17
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 10,
+      "type": "SaveImage",
+      "pos": [
+        2720,
+        40
+      ],
+      "size": [
+        350,
+        300
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 17
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": [
+        "moss_panel_dataset/comic"
+      ]
+    },
+    {
+      "id": 11,
+      "type": "MossMangaCharacters",
+      "pos": [
+        30,
+        40
+      ],
+      "size": [
+        400,
+        400
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "共通の人物設定",
+          "type": "MOSS_MANGA_CAST",
+          "links": [
+            1
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MossMangaCharacters"
+      },
+      "widgets_values": [
+        "漫画家",
+        "An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt.",
+        "編集者",
+        "An adult man aged 35, short light hair, rectangular glasses, black business suit and tie."
+      ]
+    },
+    {
+      "id": 12,
+      "type": "MossMangaPanel",
+      "pos": [
+        500,
+        40
+      ],
+      "size": [
+        450,
+        460
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "このコマの内容",
+          "type": "MOSS_MANGA_PANEL",
+          "links": [
+            2
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MossMangaPanel"
+      },
+      "widgets_values": [
+        "An adult female manga artist draws at her desk. Medium shot in a bright studio.",
+        "人物1のみ",
+        "人物1",
+        "あと少し！",
+        "セリフなし",
+        ""
+      ],
+      "title": "1コマ目の場面・人物・セリフ"
+    },
+    {
+      "id": 13,
+      "type": "MossMangaPanel",
+      "pos": [
+        500,
+        560
+      ],
+      "size": [
+        450,
+        460
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "このコマの内容",
+          "type": "MOSS_MANGA_PANEL",
+          "links": [
+            3
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MossMangaPanel"
+      },
+      "widgets_values": [
+        "An adult male editor stands at the studio door holding a folder. Medium shot.",
+        "人物2のみ",
+        "人物2",
+        "原稿は？",
+        "セリフなし",
+        ""
+      ],
+      "title": "2コマ目の場面・人物・セリフ"
+    },
+    {
+      "id": 14,
+      "type": "MossMangaPanel",
+      "pos": [
+        500,
+        1080
+      ],
+      "size": [
+        450,
+        460
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "このコマの内容",
+          "type": "MOSS_MANGA_PANEL",
+          "links": [
+            4
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MossMangaPanel"
+      },
+      "widgets_values": [
+        "The manga artist holds up her manuscript proudly. Close-up.",
+        "人物1のみ",
+        "人物1",
+        "できました！",
+        "セリフなし",
+        ""
+      ],
+      "title": "3コマ目の場面・人物・セリフ"
+    },
+    {
+      "id": 15,
+      "type": "MossMangaPanel",
+      "pos": [
+        500,
+        1600
+      ],
+      "size": [
+        450,
+        460
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "このコマの内容",
+          "type": "MOSS_MANGA_PANEL",
+          "links": [
+            5
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MossMangaPanel"
+      },
+      "widgets_values": [
+        "The artist and editor smile beside the desk. Medium two-shot.",
+        "人物1と人物2",
+        "人物2",
+        "お疲れさま！",
+        "セリフなし",
+        ""
+      ],
+      "title": "4コマ目の場面・人物・セリフ"
+    }
+  ],
+  "links": [
+    [
+      1,
+      11,
+      0,
+      1,
+      0,
+      "MOSS_MANGA_CAST"
+    ],
+    [
+      2,
+      12,
+      0,
+      1,
+      1,
+      "MOSS_MANGA_PANEL"
+    ],
+    [
+      3,
+      13,
+      0,
+      1,
+      2,
+      "MOSS_MANGA_PANEL"
+    ],
+    [
+      4,
+      14,
+      0,
+      1,
+      3,
+      "MOSS_MANGA_PANEL"
+    ],
+    [
+      5,
+      15,
+      0,
+      1,
+      4,
+      "MOSS_MANGA_PANEL"
+    ],
+    [
+      6,
+      1,
+      0,
+      5,
+      0,
+      "STRING"
+    ],
+    [
+      7,
+      2,
+      0,
+      5,
+      1,
+      "CLIP"
+    ],
+    [
+      8,
+      2,
+      0,
+      6,
+      0,
+      "CLIP"
+    ],
+    [
+      9,
+      1,
+      1,
+      7,
+      0,
+      "INT"
+    ],
+    [
+      10,
+      1,
+      2,
+      7,
+      1,
+      "INT"
+    ],
+    [
+      11,
+      3,
+      0,
+      8,
+      0,
+      "MODEL"
+    ],
+    [
+      12,
+      5,
+      0,
+      8,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      13,
+      6,
+      0,
+      8,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      14,
+      7,
+      0,
+      8,
+      3,
+      "LATENT"
+    ],
+    [
+      15,
+      8,
+      0,
+      9,
+      0,
+      "LATENT"
+    ],
+    [
+      16,
+      4,
+      0,
+      9,
+      1,
+      "VAE"
+    ],
+    [
+      17,
+      9,
+      0,
+      10,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.65,
+      "offset": [
+        0,
+        80
+      ]
+    }
+  },
+  "version": 0.4
+}

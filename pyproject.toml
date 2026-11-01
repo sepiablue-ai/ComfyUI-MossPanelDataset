@@ -1,0 +1,11 @@
+[project]
+name = "comfyui-moss-panel-dataset"
+version = "0.1.0"
+description = "ComfyUI内で見本から漫画のコマ割りを選び、人物・場面・セリフをMOSSへ渡すカスタムノード"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+dependencies = []
+
+[tool.comfy]
+DisplayName = "MOSS漫画コマ割りデータセット"
