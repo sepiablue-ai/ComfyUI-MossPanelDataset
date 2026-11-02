@@ -6,6 +6,10 @@ ComfyUIの中で漫画のコマ割りを画像から選び、人物・場面・�
 
 ![ComfyUI内の選択画面](docs/picker.jpg)
 
+<!-- デモ動画の添付URLをこの行の下に置く -->
+
+[デモ動画（mp4・30秒）](docs/demo.mp4)：ComfyUIで四コマを選び、人物とセリフを入力して生成するまでの実際の操作を録画したものです。操作待ち・生成待ちを短縮し、上端に操作案内の字幕を入れています。漫画の画像には手を加えていません。
+
 ## できること
 
 - 見本の画像からコマ割りを選択。2〜6コマに対応します。
@@ -118,6 +122,10 @@ node tests/test_picker_state.mjs
 [日本語](#moss漫画コマ割りデータセット) | English
 
 A ComfyUI custom node for MOSS-Image. Pick a manga panel layout from preview images inside ComfyUI, then enter characters, scenes, and dialogue in dedicated fields. The node builds the MOSS prompt for you, so you do not need to download a workflow per layout or write JSON and coordinates by hand.
+
+<!-- Put the demo video attachment URL below this line -->
+
+[Demo video (mp4, 30 s)](docs/demo.mp4): a real screen recording of choosing a four-panel layout, entering characters and dialogue, and generating the page in ComfyUI. Waiting time is shortened and Japanese operation captions are shown at the top. The manga image itself is not edited.
 
 The node UI and its labels are in Japanese. The table in [Node labels](#node-labels) lists English translations of the main labels.
 
