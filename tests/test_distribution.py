@@ -118,6 +118,21 @@ class Distribution(unittest.TestCase):
                 with self.assertRaises(ValueError):
                     nodes.MossPanelDatasetFlexible().build(**args)
 
+    def test_prompt_editor_passes_or_replaces_prompt(self):
+        editor = self.package.nodes.MossPromptEditor()
+        prompt = self.core.compile_prompt(self.core.load_layout('normal_2_01'), '空のコマ枠')
+        kept = editor.build(**{'プロンプト': prompt, '使うプロンプト': '受け取ったまま', '編集用プロンプト': 'ignored'})
+        self.assertEqual(kept, {'ui': {'text': [prompt]}, 'result': (prompt,)})
+        unchanged = editor.build(**{'プロンプト': prompt, '使うプロンプト': '編集した文', '編集用プロンプト': prompt})
+        self.assertEqual(unchanged['result'], (prompt,))
+        edited = prompt.replace('Portrait white page', '手で直した summary')
+        result = editor.build(**{'プロンプト': prompt, '使うプロンプト': '編集した文', '編集用プロンプト': edited})
+        self.assertIn('手で直した summary', json.loads(result['result'][0])['summary']['caption'])
+        self.assertEqual(result['ui']['text'], [prompt])
+        for broken in ('', '  ', prompt[:-2]):
+            with self.assertRaises(ValueError):
+                editor.build(**{'プロンプト': prompt, '使うプロンプト': '編集した文', '編集用プロンプト': broken})
+
     def test_paths_reject_unknown_ids_and_escape(self):
         for ident in ('../README', 'a.b', 'normal_2_01/extra', 'x' * 101):
             with self.assertRaises(ValueError):
@@ -133,7 +148,12 @@ class Distribution(unittest.TestCase):
                 self.api.preview_path('normal_2_01')
 
     def test_example_custom_nodes_and_connections(self):
-        workflow = json.loads((self.root / 'example_workflows' / 'make_manga.json').read_text('utf-8'))
+        for name, order, prompt_source in (('make_manga.json', (11, 12, 13, 14, 15, 1), 1), ('make_manga_edit_prompt.json', (11, 12, 13, 14, 15, 1, 16), 16)):
+            with self.subTest(workflow=name):
+                self.check_example_workflow(name, order, prompt_source)
+
+    def check_example_workflow(self, name, order, prompt_source):
+        workflow = json.loads((self.root / 'example_workflows' / name).read_text('utf-8'))
         nodes = {n['id']: n for n in workflow['nodes']}
         links = {link[0]: link for link in workflow['links']}
         for node in nodes.values():
@@ -144,7 +164,7 @@ class Distribution(unittest.TestCase):
                     self.assertIn(link[1], nodes)
                     self.assertIn(link[0], nodes[link[1]]['outputs'][link[2]]['links'])
         output = {}
-        for ident in (11, 12, 13, 14, 15, 1):
+        for ident in order:
             node = nodes[ident]
             cls = self.package.NODE_CLASS_MAPPINGS[node['type']]
             fields = cls.INPUT_TYPES()
@@ -152,13 +172,16 @@ class Distribution(unittest.TestCase):
             widgets = iter(node['widgets_values'])
             inputs = {p['name']: p for p in node['inputs']}
             for name, definition in {**fields.get('required', {}), **fields.get('optional', {})}.items():
-                if isinstance(definition[0], list) or definition[0] in ('STRING', 'INT', 'FLOAT', 'BOOLEAN'):
-                    args[name] = next(widgets)
-                elif inputs.get(name, {}).get('link') is not None:
+                if inputs.get(name, {}).get('link') is not None:
                     link = links[inputs[name]['link']]
                     args[name] = output[link[1]][link[2]]
-            output[ident] = cls().build(**args)
+                elif isinstance(definition[0], list) or definition[0] in ('STRING', 'INT', 'FLOAT', 'BOOLEAN'):
+                    args[name] = next(widgets)
+            result = cls().build(**args)
+            output[ident] = result['result'] if isinstance(result, dict) else result
         self.assertEqual(output[1][1:], (1024, 1536))
+        self.assertEqual(links[nodes[5]['inputs'][0]['link']][1], prompt_source)
+        self.assertEqual(output[prompt_source][0], output[1][0])
         prompt = json.loads(output[1][0])
         self.assertEqual([p['text'] for p in prompt['items'] if p['label'] == 'text'], ['あと少し！', '原稿は？', 'できました！', 'お疲れさま！'])
         self.assertEqual(nodes[7]['widgets_values'][:2], [1024, 1536])
@@ -171,7 +194,7 @@ class Distribution(unittest.TestCase):
             module = import_package(self.root, '_moss_panel_distribution_test_entry')
             self.assertEqual(module.WEB_DIRECTORY, './web')
             self.assertEqual(len(server.PromptServer.instance.routes), 2)
-            self.assertEqual(set(module.NODE_CLASS_MAPPINGS), {'MossPanelDatasetFlexible', 'MossMangaCharacters', 'MossMangaPanel'})
+            self.assertEqual(set(module.NODE_CLASS_MAPPINGS), {'MossPanelDatasetFlexible', 'MossMangaCharacters', 'MossMangaPanel', 'MossPromptEditor'})
             with self.assertRaisesRegex(RuntimeError, '重複'):
                 import_package(self.root, '_moss_panel_distribution_test_duplicate')
 

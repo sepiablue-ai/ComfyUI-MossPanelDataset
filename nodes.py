@@ -1,4 +1,6 @@
 """専用欄の入力をMOSSプロンプトへ渡すComfyUIノード。"""
+import json
+
 from . import dataset as core
 
 SLOTS=['人物1','人物2']
@@ -91,5 +93,30 @@ class MossPanelDatasetFlexible:
             prompt=core.compile_prompt(layout,'漫画',{p['name']:p['appearance'] for p in cast.values()},panels)
         return prompt,layout['width'],layout['height']
 
-NODE_CLASS_MAPPINGS={'MossPanelDatasetFlexible':MossPanelDatasetFlexible,'MossMangaCharacters':MossMangaCharacters,'MossMangaPanel':MossMangaPanel}
-NODE_DISPLAY_NAME_MAPPINGS={'MossPanelDatasetFlexible':'コマ割りを選ぶ（2〜6コマ）','MossMangaCharacters':'共通の人物設定（普通の文章で入力）','MossMangaPanel':'コマの内容（場面・登場人物・セリフ）'}
+class MossPromptEditor:
+    @classmethod
+    def INPUT_TYPES(cls):
+        return {'required':{
+            'プロンプト':('STRING',{'forceInput':True}),
+            '使うプロンプト':(['受け取ったまま','編集した文'],{'tooltip':'「編集した文」にすると、下の編集欄の内容をMOSSへ渡します。'}),
+            '編集用プロンプト':('STRING',{'multiline':True,'default':'','tooltip':'空欄なら実行後に受け取ったプロンプトが入ります。JSONとして読める形で編集してください。'})}}
+    RETURN_TYPES=('STRING',)
+    RETURN_NAMES=('MOSS用プロンプト',)
+    FUNCTION='build'
+    CATEGORY='漫画／コマ割りデータセット'
+    def build(self,**kw):
+        received=kw['プロンプト']
+        if kw['使うプロンプト']=='受け取ったまま':
+            prompt=received
+        else:
+            edited=kw['編集用プロンプト']
+            if not edited.strip():
+                raise ValueError('編集用プロンプトが空です。一度「受け取ったまま」で実行すると受け取った内容が入ります。')
+            try:
+                prompt=core.dumps(json.loads(edited))
+            except json.JSONDecodeError as error:
+                raise ValueError(f'編集用プロンプトをJSONとして読めません（{error.lineno}行目{error.colno}文字目）。括弧・カンマ・引用符を確認してください。') from error
+        return {'ui':{'text':[received]},'result':(prompt,)}
+
+NODE_CLASS_MAPPINGS={'MossPanelDatasetFlexible':MossPanelDatasetFlexible,'MossMangaCharacters':MossMangaCharacters,'MossMangaPanel':MossMangaPanel,'MossPromptEditor':MossPromptEditor}
+NODE_DISPLAY_NAME_MAPPINGS={'MossPanelDatasetFlexible':'コマ割りを選ぶ（2〜6コマ）','MossMangaCharacters':'共通の人物設定（普通の文章で入力）','MossMangaPanel':'コマの内容（場面・登場人物・セリフ）','MossPromptEditor':'MOSSプロンプトを確認・編集'}

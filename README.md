@@ -61,6 +61,16 @@ Python 3.10以降と、MOSS-Imageのネイティブ対応を含むComfyUIが必�
 
 空枠だけを生成する場合は、選択ノードの「生成内容」を「空のコマ枠」に変えます。人物・場面・セリフをプロンプトから除き、枠だけをMOSSに描かせます。
 
+### プロンプトを確認・編集する（任意）
+
+実際にMOSSへ渡すプロンプトを見たいときは、「MOSSプロンプトを確認・編集」ノードを「コマ割りを選ぶ」の `MOSS用プロンプト` 出力と `CLIPTextEncode` の間に挟みます。標準の `make_manga.json` には入れていません。最初から挟んだ [make_manga_edit_prompt.json](example_workflows/make_manga_edit_prompt.json)（テンプレート画面では `make_manga_edit_prompt`）も同梱しているので、プロンプトを触りたいときはこちらを開いてください。
+
+1. 「使うプロンプト」を「受け取ったまま」にして実行すると、下の「受け取ったプロンプト」欄に実際のプロンプトを表示します。編集欄が空なら、同じ内容が編集欄にも入ります。
+2. 編集欄で文を直し、「使うプロンプト」を「編集した文」に変えて実行すると、直した内容をMOSSへ渡します。
+3. 人物やセリフを変えて作り直したいときは、「受け取ったまま」に戻すか、「受け取ったプロンプトを編集欄へコピー」で編集欄を最新の内容に置き換えます。手で直した編集欄は自動では上書きしません。
+
+編集欄はJSONとして読める形にしてください。括弧やカンマが壊れている場合は、実行時に行と文字の位置を示して止まります。
+
 人物やセリフなどの作業内容と、退避したコマの入力は、通常のComfyUIワークフローとして保存してください。お気に入りはブラウザーの保存領域に記録します。別のブラウザーには自動で移らず、サイトデータを削除すると消えます。同梱DBへの書き込みは行いません。
 
 ## 同梱するコマ割り
@@ -180,6 +190,16 @@ The original dataset was generated on Windows with an RTX 3060 12GB. The bundled
 
 To generate empty panel frames only, set 「生成内容」 (output) on the layout node to 「空のコマ枠」 (empty panel frames). Characters, scenes, and dialogue are then left out of the prompt, and MOSS draws only the frames.
 
+### Viewing and editing the prompt (optional)
+
+To see the exact prompt sent to MOSS, insert the 「MOSSプロンプトを確認・編集」 (View and edit MOSS prompt) node between the layout node's `MOSS用プロンプト` output and `CLIPTextEncode`. It is not part of `make_manga.json`. [make_manga_edit_prompt.json](example_workflows/make_manga_edit_prompt.json) (`make_manga_edit_prompt` in the Templates browser) already includes it, so open that one when you want to work with the prompt.
+
+1. With 「使うプロンプト」 (Prompt to use) set to 「受け取ったまま」 (as received), run the workflow. The 「受け取ったプロンプト」 (Received prompt) box shows the actual prompt. If the edit box is empty, the same text is copied into it.
+2. Edit the text in the edit box, switch to 「編集した文」 (edited text), and run again to send your edited prompt to MOSS.
+3. After changing characters or dialogue, switch back to 「受け取ったまま」, or press 「受け取ったプロンプトを編集欄へコピー」 (Copy received prompt to the edit box) to refresh it. A hand-edited box is never overwritten automatically.
+
+The edit box must stay valid JSON. Broken brackets or commas stop the run with the line and column of the error.
+
 Save your characters, dialogue, and stashed panel inputs as a normal ComfyUI workflow. Favorites are stored in the browser's local storage; they do not move to other browsers and are lost if you clear site data. The node never writes to the bundled database.
 
 ## Node labels
@@ -189,6 +209,7 @@ Save your characters, dialogue, and stashed panel inputs as a normal ComfyUI wor
 | コマ割りを選ぶ（2〜6コマ） | Choose a panel layout (2–6 panels) |
 | 共通の人物設定（普通の文章で入力） | Shared characters (plain text) |
 | コマの内容（場面・登場人物・セリフ） | Panel content (scene, characters, dialogue) |
+| MOSSプロンプトを確認・編集 | View and edit MOSS prompt |
 | コマ割り | Layout |
 | 生成内容: 漫画 / 空のコマ枠 | Output: manga / empty panel frames |
 | 人物1_名前 / 人物1_外見 | Character 1 name / appearance |
