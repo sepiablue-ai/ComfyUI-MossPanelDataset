@@ -11,4 +11,5 @@ dependencies = []
 Repository = "https://github.com/sepiablue-ai/ComfyUI-MossPanelDataset"
 
 [tool.comfy]
+PublisherId = "sepiablue-ai"
 DisplayName = "MOSS漫画コマ割りデータセット"
