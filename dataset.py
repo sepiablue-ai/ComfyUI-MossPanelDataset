@@ -2,12 +2,11 @@
 import json
 import math
 import re
-import sqlite3
-from contextlib import closing
+import copy
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-DB = ROOT / 'data' / 'layouts.sqlite3'
+CATALOG = ROOT / 'data' / 'layouts.json'
 DEFAULT_CAST = {
     '漫画家': 'An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt.',
     '編集者': 'An adult man aged 35, short light hair, rectangular glasses, black business suit and tie.'}
@@ -23,16 +22,21 @@ def dumps(obj):
 
 
 def list_layouts():
-    with closing(sqlite3.connect(f'{DB.as_uri()}?mode=ro', uri=True)) as conn:
-        return conn.execute('SELECT id,name FROM layouts ORDER BY id').fetchall()
+    return [(item['id'],item['name']) for item in load_catalog()]
+
+
+def load_catalog():
+    document=json.loads(CATALOG.read_text(encoding='utf-8'))
+    if document.get('schema_version')!=1:
+        raise ValueError('対応していないコマ割りデータ形式です。')
+    return sorted(document['layouts'],key=lambda item:item['id'])
 
 
 def load_layout(identifier):
-    with closing(sqlite3.connect(f'{DB.as_uri()}?mode=ro', uri=True)) as conn:
-        row = conn.execute('SELECT specification FROM layouts WHERE id=? OR name=?', (identifier,identifier)).fetchone()
-    if not row:
-        raise ValueError('指定されたコマ割りがありません。')
-    return json.loads(row[0])
+    for item in load_catalog():
+        if identifier in (item['id'],item['name']):
+            return copy.deepcopy(item['specification'])
+    raise ValueError('指定されたコマ割りがありません。')
 
 
 def validate_layout(layout):
@@ -137,10 +141,10 @@ def compile_prompt(layout, mode='漫画', cast=None, panels=None):
                 if not m or m[1] not in cast:
                     raise ValueError(f"{p['id']}コマ目のセリフは登録名「本文」の形式で指定してください。")
                 dialogue.append((m[1],m[2]))
-            if len(dialogue)>2:
-                raise ValueError('試作版のセリフは1コマにつき2つまでです。')
+            if len(dialogue)>3:
+                raise ValueError('セリフは1コマにつき3つまでです。')
             actors=s.get('actors',[name for name in cast if name in s['scene'] or any(a==name for a,_ in dialogue)])
-            if not isinstance(actors,list) or not 0<=len(actors)<=2 or len(set(actors))!=len(actors) or any(a not in cast for a in actors):
+            if not isinstance(actors,list) or not 0<=len(actors)<=3 or len(set(actors))!=len(actors) or any(a not in cast for a in actors):
                 raise ValueError(f"{p['id']}コマ目の登場人物が不正です。")
             if any(a not in actors for a,_ in dialogue):
                 raise ValueError(f"{p['id']}コマ目の話者が登場人物に含まれていません。")
@@ -150,15 +154,25 @@ def compile_prompt(layout, mode='漫画', cast=None, panels=None):
             items.append({'label':'object','caption':'One black-bordered '+shape+' manga panel in the '+p['position']+'. '+scene+f' Exactly {len(actors)} people, each drawn once.'+(' Silent panel, no balloons or text.' if not dialogue else ''),'bbox':native(p['bbox'])})
             actor_boxes={}
             # First speaking person is placed at the reading-order start (right).
-            ordered=list(dict.fromkeys([a for a,_ in dialogue]+actors))
+            boxes=s.get('composition_boxes')
+            if boxes is not None and (len(boxes)!=len(actors) or any(not isinstance(b,list) or len(b)!=4 or not all(isinstance(v,(int,float)) and math.isfinite(v) for v in b) or not (0<=b[0]<b[2]<=1 and 0<=b[1]<b[3]<=1) for b in boxes)):
+                raise ValueError('構図の人物領域が不正です。')
+            ordered=actors if boxes is not None else list(dict.fromkeys([a for a,_ in dialogue]+actors))
             for j,name in enumerate(ordered):
                 box=[.12,.32,.88,.96] if len(ordered)==1 else ([.54,.32,.96,.96] if j==0 else [.04,.32,.46,.96])
+                if len(ordered)==3:
+                    box=[[.69,.32,.98,.96],[.35,.32,.65,.96],[.02,.32,.31,.96]][j]
+                if boxes is not None:
+                    box=boxes[j]
                 actor_boxes[name]=box
                 items.append({'label':'character','caption':cast[name]+' One person, drawn once in this panel.','bbox':native(within(pb,box))})
             for j,(name,text) in enumerate(dialogue):
                 box=[.20,.04,.94,.29] if len(dialogue)==1 else ([.53,.04,.96,.29] if j==0 else [.04,.04,.47,.29])
+                if len(dialogue)==3:
+                    box=[[.68,.04,.98,.29],[.35,.04,.65,.29],[.02,.04,.32,.29]][j]
                 ab=actor_boxes[name]
-                mouth=within(pb,[(ab[0]+ab[2])/2,.47,(ab[0]+ab[2])/2,.47])
+                mouth_y=ab[1]+.23*(ab[3]-ab[1]) if boxes is not None else .47
+                mouth=within(pb,[(ab[0]+ab[2])/2,mouth_y,(ab[0]+ab[2])/2,mouth_y])
                 target=f'x={round(mouth[0]*w-w/2)}, y={round(mouth[1]*h-h/2)}'
                 items.append({'label':'text','caption':f'White speech balloon with legible black manga lettering. The speaker is the character whose mouth is near {target}; point the balloon tail to that mouth. Render only the supplied text exactly once, in its original language.','text':text,'bbox':native(within(pb,box))})
     result={'summary':{'caption':summary},'items':items,'bbox_coord_space':'abs_centralized','bbox_format':'yxyx'}

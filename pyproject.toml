@@ -1,7 +1,7 @@
 [project]
 name = "comfyui-moss-panel-dataset"
-version = "0.1.0"
-description = "ComfyUI内で見本から漫画のコマ割りを選び、人物・場面・セリフをMOSSへ渡すカスタムノード"
+version = "0.1.1"
+description = "A ComfyUI custom node for MOSS-Image: pick a manga panel layout from preview images, enter characters, scenes, and dialogue, and get the MOSS prompt built for you. (Node UI is in Japanese.) / 見本から漫画のコマ割りを選び、人物・場面・セリフをMOSSへ渡すカスタムノード"
 readme = "README.md"
 requires-python = ">=3.10"
 license = { file = "LICENSE" }
@@ -12,4 +12,4 @@ Repository = "https://github.com/sepiablue-ai/ComfyUI-MossPanelDataset"
 
 [tool.comfy]
 PublisherId = "sepiablue-ai"
-DisplayName = "MOSS漫画コマ割りデータセット"
+DisplayName = "MOSS Manga Panel Layout Dataset"

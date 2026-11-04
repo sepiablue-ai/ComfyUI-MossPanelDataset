@@ -2,9 +2,11 @@
 import json
 
 from . import dataset as core
+from . import composition
 
-SLOTS=['人物1','人物2']
-ACTORS={'人物1のみ':['人物1'],'人物2のみ':['人物2'],'人物1と人物2':['人物1','人物2'],'人物なし':[]}
+SLOTS=['人物1','人物2','人物3']
+ACTORS={'人物1のみ':['人物1'],'人物2のみ':['人物2'],'人物1と人物2':['人物1','人物2'],'人物なし':[],
+    '人物3のみ':['人物3'],'人物1と人物3':['人物1','人物3'],'人物2と人物3':['人物2','人物3'],'人物1と人物2と人物3':SLOTS.copy()}
 SCENES=['Drawing a manga manuscript with a pen at a desk. Medium shot of the studio.','Standing at the open studio door holding a folder.','Looking away nervously, holding a pen above a blank manuscript. Close-up.','Facing each other across a desk with blank manuscript sheets. Medium two-shot.']
 
 class MossMangaCharacters:
@@ -14,17 +16,22 @@ class MossMangaCharacters:
             '人物1_名前':('STRING',{'default':'漫画家'}),
             '人物1_外見':('STRING',{'multiline':True,'default':core.DEFAULT_CAST['漫画家'],'tooltip':'外見を英語で入力します。翻訳せず、そのまま描写指定へ渡します。'}),
             '人物2_名前':('STRING',{'default':'編集者'}),
-            '人物2_外見':('STRING',{'multiline':True,'default':core.DEFAULT_CAST['編集者'],'tooltip':'外見を英語で入力します。翻訳せず、そのまま描写指定へ渡します。'})}}
+            '人物2_外見':('STRING',{'multiline':True,'default':core.DEFAULT_CAST['編集者'],'tooltip':'外見を英語で入力します。翻訳せず、そのまま描写指定へ渡します。'})},
+            'optional':{'人物3_名前':('STRING',{'default':'','tooltip':'3人目を使うときだけ名前と外見を両方入力します。'}),
+            '人物3_外見':('STRING',{'multiline':True,'default':'','tooltip':'3人目の外見を英語で入力します。空欄なら従来の2人設定です。'})}}
     RETURN_TYPES=('MOSS_MANGA_CAST',)
     RETURN_NAMES=('共通の人物設定',)
     FUNCTION='build'
     CATEGORY='漫画／コマ割りデータセット'
     def build(self,**kw):
-        cast={s:{'name':kw[s+'_名前'].strip(),'appearance':kw[s+'_外見'].strip()} for s in SLOTS}
+        cast={s:{'name':kw[s+'_名前'].strip(),'appearance':kw[s+'_外見'].strip()} for s in SLOTS[:2]}
+        third={'name':kw.get('人物3_名前','').strip(),'appearance':kw.get('人物3_外見','').strip()}
+        if third['name'] or third['appearance']:
+            cast['人物3']=third
         if any(not p['name'] or not p['appearance'] for p in cast.values()):
             raise ValueError('人物の名前と外見を入力してください。')
-        if cast['人物1']['name']==cast['人物2']['name']:
-            raise ValueError('二人の名前は別々にしてください。')
+        if len({person['name'] for person in cast.values()})!=len(cast):
+            raise ValueError('人物の名前は別々にしてください。')
         return (cast,)
 
 class MossMangaPanel:
@@ -36,7 +43,10 @@ class MossMangaPanel:
             '話者1':(['セリフなし']+SLOTS,),
             'セリフ1':('STRING',{'multiline':True,'default':'','tooltip':'描きたい言語で本文だけ入力。日本語・英語とも翻訳せず、原文のまま渡します。'}),
             '話者2':(['セリフなし']+SLOTS,),
-            'セリフ2':('STRING',{'multiline':True,'default':'','tooltip':'描きたい言語で本文だけ入力。翻訳は行いません。'})}}
+            'セリフ2':('STRING',{'multiline':True,'default':'','tooltip':'描きたい言語で本文だけ入力。翻訳は行いません。'})},
+            'optional':{'構図':('MOSS_COMPOSITION',),
+                '話者3':(['セリフなし']+SLOTS,{'default':'セリフなし'}),
+                'セリフ3':('STRING',{'multiline':True,'default':'','tooltip':'3つ目の発言。原文のままMOSSへ渡します。'})}}
     RETURN_TYPES=('MOSS_MANGA_PANEL',)
     RETURN_NAMES=('このコマの内容',)
     FUNCTION='build'
@@ -47,8 +57,8 @@ class MossMangaPanel:
             raise ValueError('場面を入力してください。')
         actors=ACTORS[kw['登場人物']]
         lines=[]
-        for i in (1,2):
-            speaker,text=kw[f'話者{i}'],kw[f'セリフ{i}']
+        for i in (1,2,3):
+            speaker,text=kw.get(f'話者{i}','セリフなし'),kw.get(f'セリフ{i}','')
             if speaker=='セリフなし':
                 if text.strip():
                     raise ValueError(f'セリフ{i}の話者を選んでください。入力した本文は黙って捨てません。')
@@ -58,7 +68,17 @@ class MossMangaPanel:
             if not text.strip():
                 raise ValueError(f'セリフ{i}の本文を入力するか「セリフなし」を選んでください。')
             lines.append({'slot':speaker,'text':text})
-        return ({'scene':scene,'actors':list(actors),'dialogue':lines},)
+        panel={'scene':scene,'actors':list(actors),'dialogue':lines}
+        if kw.get('構図') is not None:
+            template=kw['構図']
+            boxes=template.get('boxes')
+            if not isinstance(template.get('prompt'),str) or not template['prompt'].strip() or not isinstance(boxes,list):
+                raise ValueError('構図データが不正です。構図選択ノードを接続してください。')
+            if len(actors)!=len(boxes):
+                raise ValueError('構図見本と登場人物の人数を合わせてください。')
+            panel['scene']=scene+' Composition: '+template['prompt']
+            panel['composition_boxes']=template['boxes']
+        return (panel,)
 
 class MossPanelDatasetFlexible:
     @classmethod
@@ -72,7 +92,7 @@ class MossPanelDatasetFlexible:
     CATEGORY='漫画／コマ割りデータセット'
     @classmethod
     def IS_CHANGED(cls,**kw):
-        return core.DB.stat().st_mtime_ns
+        return core.CATALOG.stat().st_mtime_ns
 
     def build(self,**kw):
         layout=core.load_layout(kw['コマ割り'])
@@ -88,8 +108,12 @@ class MossPanelDatasetFlexible:
             panels=[]
             for i in range(1,count+1):
                 p=kw[f'コマ{i}']
+                if any(slot not in cast for slot in p['actors']):
+                    raise ValueError(f'{i}コマ目で使う人物を共通の人物設定に登録してください。人物3は名前と外見を両方入力します。')
                 panels.append({'scene':p['scene'],'actors':[cast[s]['name'] for s in p['actors']],
                     'dialogue':[{'speaker':cast[line['slot']]['name'],'text':line['text']} for line in p['dialogue']]})
+                if 'composition_boxes' in p:
+                    panels[-1]['composition_boxes']=p['composition_boxes']
             prompt=core.compile_prompt(layout,'漫画',{p['name']:p['appearance'] for p in cast.values()},panels)
         return prompt,layout['width'],layout['height']
 
@@ -118,5 +142,22 @@ class MossPromptEditor:
                 raise ValueError(f'編集用プロンプトをJSONとして読めません（{error.lineno}行目{error.colno}文字目）。括弧・カンマ・引用符を確認してください。') from error
         return {'ui':{'text':[received]},'result':(prompt,)}
 
-NODE_CLASS_MAPPINGS={'MossPanelDatasetFlexible':MossPanelDatasetFlexible,'MossMangaCharacters':MossMangaCharacters,'MossMangaPanel':MossMangaPanel,'MossPromptEditor':MossPromptEditor}
+class MossCompositionTemplate:
+    @classmethod
+    def INPUT_TYPES(cls):
+        names=[item['name'] for item in composition.catalog()]
+        return {'required':{'構図テンプレート':(names or ['生成済みの構図がありません'],)}}
+    RETURN_TYPES=('MOSS_COMPOSITION','STRING')
+    RETURN_NAMES=('コマに接続する構図','構図の英語プロンプト')
+    FUNCTION='build'
+    CATEGORY='漫画／コマ割りデータセット'
+    @classmethod
+    def IS_CHANGED(cls,**kw):
+        return composition.CATALOG.stat().st_mtime_ns if composition.CATALOG.exists() else 0
+    def build(self,**kw):
+        item=composition.load(kw['構図テンプレート'])
+        return item,item['prompt']
+
+NODE_CLASS_MAPPINGS={'MossCompositionTemplate':MossCompositionTemplate,'MossPanelDatasetFlexible':MossPanelDatasetFlexible,'MossMangaCharacters':MossMangaCharacters,'MossMangaPanel':MossMangaPanel,'MossPromptEditor':MossPromptEditor}
 NODE_DISPLAY_NAME_MAPPINGS={'MossPanelDatasetFlexible':'コマ割りを選ぶ（2〜6コマ）','MossMangaCharacters':'共通の人物設定（普通の文章で入力）','MossMangaPanel':'コマの内容（場面・登場人物・セリフ）','MossPromptEditor':'MOSSプロンプトを確認・編集'}
+NODE_DISPLAY_NAME_MAPPINGS['MossCompositionTemplate']='構図を選ぶ（見本画像）'

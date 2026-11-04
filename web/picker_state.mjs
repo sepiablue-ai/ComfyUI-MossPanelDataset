@@ -3,13 +3,18 @@ const linkAt=(node,slot)=>node.getInputLink?.(slot)??node.graph?.links?.[node.in
 const slotAt=(node,i)=>node.inputs.findIndex(s=>s.name===`コマ${i}`);
 
 function snapshot(node){
-    return {nodeId:node.id,title:node.title,pos:Array.from(node.pos),size:Array.from(node.size),flags:clone(node.flags??{}),properties:clone(node.properties??{}),widgets:Object.fromEntries((node.widgets??[]).filter(w=>w.name&&w.value!==undefined).map(w=>[w.name,clone(w.value)]))};
+    const incoming=(node.inputs??[]).flatMap((input,slot)=>{const link=linkAt(node,slot);return link?[{name:input.name,origin:link.origin_id,slot:link.origin_slot}]:[];});
+    return {nodeId:node.id,title:node.title,pos:Array.from(node.pos),size:Array.from(node.size),flags:clone(node.flags??{}),properties:clone(node.properties??{}),incoming,widgets:Object.fromEntries((node.widgets??[]).filter(w=>w.name&&w.value!==undefined).map(w=>[w.name,clone(w.value)]))};
 }
 
 function restore(node,saved){
     if(!saved)return;
     for(const w of node.widgets??[])if(Object.hasOwn(saved.widgets,w.name))w.value=clone(saved.widgets[w.name]);
     node.title=saved.title;node.pos=[...saved.pos];node.size=[...saved.size];node.flags=clone(saved.flags);node.properties={...node.properties,...clone(saved.properties)};
+    for(const input of saved.incoming??[]){
+        const slot=(node.inputs??[]).findIndex(s=>s.name===input.name),source=node.graph?.getNodeById(input.origin);
+        if(slot>=0&&source&&!linkAt(node,slot))source.connect(input.slot,node,slot);
+    }
 }
 
 export function applyLayout(node,layout,createNode){

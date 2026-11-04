@@ -4,6 +4,28 @@
 
 ComfyUIの中で漫画のコマ割りを画像から選び、人物・場面・セリフを専用欄に入力してMOSSへ渡すカスタムノードです。配置ごとのワークフローのダウンロードや、JSON・座標の手書きは不要です。
 
+## 構図テンプレートの追加
+
+「構図を選ぶ（見本画像）」ノードを追加しました。「画像から構図を選ぶ」で一覧を開き、人数・カテゴリ・名前・英語プロンプトによる検索と、お気に入りによる絞り込みができます。お気に入りは使用中のブラウザーに保存されます。
+
+1. [構図つきサンプル](example_workflows/composition_duo.json) を開きます。
+2. 構図選択ノードで見本を選び、出力「コマに接続する構図」を各「コマの内容」ノードの任意入力「構図」へ接続します。
+3. 共通の人物設定、各コマの場面・セリフ、コマ割りを入力して生成します。場面と外見は英語、セリフは描かせたい言語で入力します。
+
+構図の英語プロンプトを場面へ追記し、見本の人物領域を各コマの内側領域へ比率に応じて割り当てます。選んだ登場人物を番号順に構図へ割り当て、話す順番を変えても人物位置は入れ替わりません。接続しなければ従来の処理になります。見本と登場人物の人数を合わせてください。
+
+構図見本は1人40種類・2人40種類・3人40種類の計120種類です。既存の2人20種類はID・名称・画像を維持して追加しました。正方形1024×1024のMOSS実出力PNGと、生成時の英語プロンプト・人物領域・シード・モデル・条件を `data/compositions.json` に収録します。肩越し・顔アップ・全身・俯瞰・あおりなどで分類します。見本の品質判定は一覧に表示します。不一致や人物増加を画像修復で補うことはしません。
+
+## 3人までの人物指定
+
+「共通の人物設定」の「人物3_名前」「人物3_外見」を両方入力すると3人目を使えます。両方空欄なら従来の2人設定です。各コマの「登場人物」で1〜3人の任意の組み合わせを選び、「話者1〜3」「セリフ1〜3」で最大3発言を指定できます。人物3を話者に選ぶ場合も、そのコマの登場人物に含めてください。
+
+[1〜3人の混在サンプル](example_workflows/composition_1to3.json) では人物設定・構図・セリフを接続済みです。吹き出し領域は1発言なら上部中央〜右、2発言なら右上・左上、3発言なら右上・中央上・左上に指定します。構図の空き領域を自動推論する機能ではありません。追加100種類と3人指定の検証は [追加検証記録](EXPANSION_VALIDATION.md) を参照してください。
+
+0.1.1ではコマ割り196種類も `data/layouts.json` から読み取ります。利用時のデータベース接続は不要です。実験用SQLiteと生成履歴は配布物に含めません。ID・名称・配置・構図・見本画像は維持しています。Registry向け配布では `.comfyignore` によりテストと開発用ファイルを除外します。テストはGitHubのソースには残します。
+
+同じ構図を縦長・横長のコマにも使用できます。画像そのものを参照入力に渡す方式ではなく、英語プロンプトと領域指定による誘導です。見本との完全一致、特殊形状への追従、文字や人物の正確性は保証しません。画像の合成・文字修復・枠線補修は行いません。詳細は [構図検証記録](COMPOSITION_VALIDATION.md) を参照してください。
+
 ![ComfyUI内の選択画面](docs/picker.jpg)
 
 https://github.com/user-attachments/assets/05a9d952-7a60-448c-94f5-e35ae3029449
@@ -26,9 +48,9 @@ https://github.com/user-attachments/assets/05a9d952-7a60-448c-94f5-e35ae3029449
 3. ComfyUIを再起動し、ブラウザーを再読み込みしてください。
 4. 最初の一度だけ [make_manga.json](example_workflows/make_manga.json) をComfyUIへドラッグ＆ドロップして開き、ComfyUI側へ保存してください。ComfyUIの「テンプレート」画面にも `ComfyUI-MossPanelDataset` の `make_manga` として表示されるので、そこから開くこともできます。以後はそのワークフローを開いて配置を選び直せます。
 
-旧試作版を導入済みの場合は、同じノードのフォルダやジャンクションを重複して置かないでください。配布版のDBは同梱196種類だけを収録しており、除外した配置や旧試作専用の配置を使うワークフローは選択し直す必要があります。
+旧試作版を導入済みの場合は、同じノードのフォルダやジャンクションを重複して置かないでください。配布版のコマ割りJSONは同梱196種類だけを収録しており、除外した配置や旧試作専用の配置を使うワークフローは選択し直す必要があります。
 
-Gitを使う場合は、`ComfyUI/custom_nodes` で次を実行します。現段階ではComfy Registryへの登録は行っていません。
+Gitを使う場合は、`ComfyUI/custom_nodes` で次を実行します。Registryの0.1.0はFlaggedで、0.1.1は未公開です。状態は [公開API](https://api.comfy.org/nodes/comfyui-moss-panel-dataset/versions?include_status_reason=true) で確認できます。
 
 ```text
 git clone https://github.com/sepiablue-ai/ComfyUI-MossPanelDataset.git
@@ -71,7 +93,7 @@ Python 3.10以降と、MOSS-Imageのネイティブ対応を含むComfyUIが必�
 
 編集欄はJSONとして読める形にしてください。括弧やカンマが壊れている場合は、実行時に行と文字の位置を示して止まります。
 
-人物やセリフなどの作業内容と、退避したコマの入力は、通常のComfyUIワークフローとして保存してください。お気に入りはブラウザーの保存領域に記録します。別のブラウザーには自動で移らず、サイトデータを削除すると消えます。同梱DBへの書き込みは行いません。
+人物やセリフなどの作業内容と、退避したコマの入力は、通常のComfyUIワークフローとして保存してください。お気に入りはブラウザーの保存領域に記録します。別のブラウザーには自動で移らず、サイトデータを削除すると消えます。同梱JSONへの書き込みは行いません。
 
 ## 同梱するコマ割り
 
@@ -94,7 +116,7 @@ Python 3.10以降と、MOSS-Imageのネイティブ対応を含むComfyUIが必�
 
 今後追加する予定の機能は [ROADMAP.md](ROADMAP.md) にまとめています。
 
-- 共通人物は2人、1コマにつき最大2人・2発言です。人物数を自動で増やす機能はありません。
+- 共通人物は最大3人、1コマにつき最大3人・3発言です。人物3は名前と外見の入力が必要です。4人以上には対応していません。
 - コマ入力の自動増減は、このノードと `MossMangaPanel` の組み合わせで動きます。別ノードへも接続されているコマ入力は削除しません。
 - 座標と説明でモデルに指示する方式です。見本画像を直接コピーする方式ではなく、生成のたびにコマの形・比率・数が変わることがあります。
 - 斜め線や特殊形状は説明文でも指示します。モデルに渡す領域情報は矩形であり、多角形の輪郭を強制するマスクではありません。
@@ -104,7 +126,7 @@ Python 3.10以降と、MOSS-Imageのネイティブ対応を含むComfyUIが必�
 
 ## 更新と検査
 
-フォルダを更新後、ComfyUIを再起動してブラウザーを再読み込みしてください。人物・セリフを同梱DBに保存しないため、ノードの更新と利用者のワークフロー保存は別です。お気に入りは配置IDを使い、ワークフローの選択値は配置名を使います。今後の更新では既存IDと配置名を維持します。
+フォルダを更新後、ComfyUIを再起動してブラウザーを再読み込みしてください。人物・セリフを同梱JSONに保存しないため、ノードの更新と利用者のワークフロー保存は別です。お気に入りは配置IDを使い、ワークフローの選択値は配置名を使います。今後の更新では既存IDと配置名を維持します。
 
 開発時は、このフォルダで次を実行できます。既存のComfyUI用Pythonなど、`aiohttp` を利用できる環境を使ってください。Node.jsは画面の増減処理の検査にだけ使用し、通常の利用には不要です。
 
@@ -157,7 +179,7 @@ The node UI and its labels are in Japanese. The table in [Node labels](#node-lab
 
 If you installed an earlier prototype, do not keep a second copy or junction of the same node. The bundled database contains only the 196 layouts listed below; workflows that used excluded or prototype-only layouts need a new selection.
 
-To install with Git, run the following in `ComfyUI/custom_nodes`. It is not registered on the Comfy Registry yet.
+To install with Git, run the following in `ComfyUI/custom_nodes`.
 
 ```text
 git clone https://github.com/sepiablue-ai/ComfyUI-MossPanelDataset.git
@@ -239,7 +261,7 @@ Panel counts were checked automatically by counting closed white regions. Near-d
 
 Planned features are listed in [ROADMAP.md](ROADMAP.md).
 
-- Two shared characters; up to two characters and two lines per panel. The number of characters cannot be increased.
+- Up to three shared characters and three lines per panel. The third character requires both a name and an appearance description.
 - Automatic panel adding and removing works with this node and `MossMangaPanel`. Panel inputs that are also connected to other nodes are not deleted.
 - The model is guided by coordinates and descriptions; previews are not copied into the image. Panel shapes, proportions, and count can change from run to run.
 - Diagonal and special shapes are also described in text. The regions passed to the model are rectangles, not masks that force a polygon outline.

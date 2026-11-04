@@ -1,0 +1,230 @@
+{
+  "2": {
+    "class_type": "CLIPLoader",
+    "inputs": {
+      "clip_name": "qwen3.5_9b_int8_convrot.safetensors",
+      "type": "moss_image",
+      "device": "default"
+    }
+  },
+  "3": {
+    "class_type": "UNETLoader",
+    "inputs": {
+      "unet_name": "moss_image_sft_int8_convrot.safetensors",
+      "weight_dtype": "default"
+    }
+  },
+  "4": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "flux2-vae.safetensors"
+    }
+  },
+  "5": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "clip": [
+        "2",
+        0
+      ],
+      "text": [
+        "1",
+        0
+      ]
+    }
+  },
+  "6": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "clip": [
+        "2",
+        0
+      ],
+      "text": ""
+    }
+  },
+  "7": {
+    "class_type": "EmptyFlux2LatentImage",
+    "inputs": {
+      "width": [
+        "1",
+        1
+      ],
+      "height": [
+        "1",
+        2
+      ],
+      "batch_size": 1
+    }
+  },
+  "8": {
+    "class_type": "KSampler",
+    "inputs": {
+      "model": [
+        "3",
+        0
+      ],
+      "positive": [
+        "5",
+        0
+      ],
+      "negative": [
+        "6",
+        0
+      ],
+      "latent_image": [
+        "7",
+        0
+      ],
+      "seed": 26110400,
+      "steps": 25,
+      "cfg": 2.5,
+      "sampler_name": "er_sde",
+      "scheduler": "simple",
+      "denoise": 1
+    }
+  },
+  "9": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "8",
+        0
+      ],
+      "vae": [
+        "4",
+        0
+      ]
+    }
+  },
+  "10": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "9",
+        0
+      ],
+      "filename_prefix": "moss_composition_validation/1"
+    }
+  },
+  "11": {
+    "class_type": "MossMangaCharacters",
+    "inputs": {
+      "人物1_名前": "漫画家",
+      "人物1_外見": "An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt.",
+      "人物2_名前": "編集者",
+      "人物2_外見": "An adult man aged 35, short light hair, rectangular glasses, black business suit and tie."
+    }
+  },
+  "20": {
+    "class_type": "MossCompositionTemplate",
+    "inputs": {
+      "構図テンプレート": "正面・胸上の掛け合い"
+    }
+  },
+  "30": {
+    "class_type": "MossMangaPanel",
+    "inputs": {
+      "場面": "Two adults have a conversation in a quiet manga studio.",
+      "登場人物": "人物1と人物2",
+      "話者1": "人物1",
+      "セリフ1": "どう思う？",
+      "話者2": "人物2",
+      "セリフ2": "いいと思う。",
+      "構図": [
+        "20",
+        0
+      ]
+    }
+  },
+  "21": {
+    "class_type": "MossCompositionTemplate",
+    "inputs": {
+      "構図テンプレート": "横並び・正面を向いて会話"
+    }
+  },
+  "31": {
+    "class_type": "MossMangaPanel",
+    "inputs": {
+      "場面": "Two adults have a conversation in a quiet manga studio.",
+      "登場人物": "人物1と人物2",
+      "話者1": "人物1",
+      "セリフ1": "どう思う？",
+      "話者2": "人物2",
+      "セリフ2": "いいと思う。",
+      "構図": [
+        "21",
+        0
+      ]
+    }
+  },
+  "22": {
+    "class_type": "MossCompositionTemplate",
+    "inputs": {
+      "構図テンプレート": "机越しの対話"
+    }
+  },
+  "32": {
+    "class_type": "MossMangaPanel",
+    "inputs": {
+      "場面": "Two adults have a conversation in a quiet manga studio.",
+      "登場人物": "人物1と人物2",
+      "話者1": "人物1",
+      "セリフ1": "どう思う？",
+      "話者2": "人物2",
+      "セリフ2": "いいと思う。",
+      "構図": [
+        "22",
+        0
+      ]
+    }
+  },
+  "23": {
+    "class_type": "MossCompositionTemplate",
+    "inputs": {
+      "構図テンプレート": "近距離で言い合う"
+    }
+  },
+  "33": {
+    "class_type": "MossMangaPanel",
+    "inputs": {
+      "場面": "Two adults have a conversation in a quiet manga studio.",
+      "登場人物": "人物1と人物2",
+      "話者1": "人物1",
+      "セリフ1": "どう思う？",
+      "話者2": "人物2",
+      "セリフ2": "いいと思う。",
+      "構図": [
+        "23",
+        0
+      ]
+    }
+  },
+  "1": {
+    "class_type": "MossPanelDatasetFlexible",
+    "inputs": {
+      "コマ割り": "4コマ・通常01・1／1／1／1段組",
+      "生成内容": "漫画",
+      "人物設定": [
+        "11",
+        0
+      ],
+      "コマ1": [
+        "30",
+        0
+      ],
+      "コマ2": [
+        "31",
+        0
+      ],
+      "コマ3": [
+        "32",
+        0
+      ],
+      "コマ4": [
+        "33",
+        0
+      ]
+    }
+  }
+}

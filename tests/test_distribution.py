@@ -6,12 +6,10 @@ import os
 from pathlib import Path
 import re
 import shutil
-import sqlite3
 import sys
 import tempfile
 import types
 import unittest
-from contextlib import closing
 from unittest.mock import patch
 
 from aiohttp import web
@@ -35,7 +33,7 @@ class Distribution(unittest.TestCase):
         cls.temp = tempfile.TemporaryDirectory(prefix='moss_panel_', dir=cls.temp_parent)
         cls.root = Path(cls.temp.name) / '独立した導入先 with spaces' / 'ComfyUI-MossPanelDataset'
         cls.root.mkdir(parents=True)
-        for name in ('__init__.py', 'nodes.py', 'dataset.py', 'picker_api.py'):
+        for name in ('__init__.py', 'nodes.py', 'dataset.py', 'picker_api.py', 'composition.py'):
             shutil.copyfile(SOURCE / name, cls.root / name)
         for name in ('data', 'images', 'web', 'example_workflows'):
             shutil.copytree(SOURCE / name, cls.root / name)
@@ -54,21 +52,19 @@ class Distribution(unittest.TestCase):
     def test_independent_import_and_clean_database(self):
         self.assertEqual(self.core.ROOT, self.root)
         self.assertEqual(self.api.ROOT, self.root)
-        with closing(self.api.connect()) as conn:
-            tables = {r[0] for r in conn.execute("SELECT name FROM sqlite_master WHERE type='table'")}
-            self.assertEqual(tables, {'layouts', 'previews'})
-            self.assertEqual(conn.execute('PRAGMA integrity_check').fetchone()[0], 'ok')
-            self.assertEqual(conn.execute('PRAGMA foreign_key_check').fetchall(), [])
-            self.assertEqual(conn.execute('SELECT COUNT(*) FROM previews').fetchone()[0], 196)
-            with self.assertRaises(sqlite3.OperationalError):
-                conn.execute('DELETE FROM layouts')
+        records=self.core.load_catalog()
+        self.assertEqual(len(records),196)
+        self.assertEqual(len({item['id'] for item in records}),196)
+        changed=self.core.load_layout(records[0]['id'])
+        changed['description']='changed in memory'
+        self.assertNotEqual(self.core.load_layout(records[0]['id'])['description'],changed['description'])
+        self.assertFalse(list((self.root/'data').glob('*.sqlite3')))
 
     def test_all_layouts_and_webp_hashes(self):
         counts = {n: 0 for n in range(2, 7)}
         normal_counts = counts.copy()
-        before = hashlib.sha256(self.core.DB.read_bytes()).hexdigest()
-        with closing(self.api.connect()) as conn:
-            rows = conn.execute('SELECT l.id,l.name,l.specification,p.image_path,p.sha256 FROM layouts l JOIN previews p ON p.layout_id=l.id').fetchall()
+        before = hashlib.sha256(self.core.CATALOG.read_bytes()).hexdigest()
+        rows=[(item['id'],item['name'],json.dumps(item['specification']),item['preview']['image_path'],item['preview']['sha256']) for item in self.core.load_catalog()]
         self.assertEqual(len(rows), 196)
         for ident, name, spec, path, sha in rows:
             with self.subTest(layout=ident):
@@ -88,7 +84,7 @@ class Distribution(unittest.TestCase):
                 self.assertTrue(all(p['label'] == 'object' and 'text' not in p for p in prompt['items']))
         self.assertEqual(counts, {2: 38, 3: 39, 4: 40, 5: 40, 6: 39})
         self.assertEqual(normal_counts, {n: 20 for n in range(2, 7)})
-        self.assertEqual(hashlib.sha256(self.core.DB.read_bytes()).hexdigest(), before)
+        self.assertEqual(hashlib.sha256(self.core.CATALOG.read_bytes()).hexdigest(), before)
 
     def test_every_layout_preserves_dialogue_through_nodes(self):
         nodes = self.package.nodes
@@ -139,11 +135,11 @@ class Distribution(unittest.TestCase):
                 self.api.preview_path(ident)
         with self.assertRaises(FileNotFoundError):
             self.api.preview_path('not_registered')
-        db = Path(self.temp.name) / 'path_test.sqlite3'
-        shutil.copyfile(self.core.DB, db)
-        with closing(sqlite3.connect(db)) as conn, conn:
-            conn.execute('UPDATE previews SET image_path=? WHERE layout_id=?', ('../outside.webp', 'normal_2_01'))
-        with patch.object(self.api, 'DB', db):
+        catalog = Path(self.temp.name) / 'path_test.json'
+        document=json.loads(self.core.CATALOG.read_text('utf-8'))
+        next(item for item in document['layouts'] if item['id']=='normal_2_01')['preview']['image_path']='../outside.webp'
+        catalog.write_text(json.dumps(document),encoding='utf-8')
+        with patch.object(self.core, 'CATALOG', catalog):
             with self.assertRaises(ValueError):
                 self.api.preview_path('normal_2_01')
 
@@ -176,7 +172,7 @@ class Distribution(unittest.TestCase):
                     link = links[inputs[name]['link']]
                     args[name] = output[link[1]][link[2]]
                 elif isinstance(definition[0], list) or definition[0] in ('STRING', 'INT', 'FLOAT', 'BOOLEAN'):
-                    args[name] = next(widgets)
+                    args[name] = next(widgets,definition[1].get('default','') if len(definition)>1 else '')
             result = cls().build(**args)
             output[ident] = result['result'] if isinstance(result, dict) else result
         self.assertEqual(output[1][1:], (1024, 1536))
@@ -193,8 +189,8 @@ class Distribution(unittest.TestCase):
         with patch.dict(sys.modules, {'server': server}):
             module = import_package(self.root, '_moss_panel_distribution_test_entry')
             self.assertEqual(module.WEB_DIRECTORY, './web')
-            self.assertEqual(len(server.PromptServer.instance.routes), 2)
-            self.assertEqual(set(module.NODE_CLASS_MAPPINGS), {'MossPanelDatasetFlexible', 'MossMangaCharacters', 'MossMangaPanel', 'MossPromptEditor'})
+            self.assertEqual(len(server.PromptServer.instance.routes), 4)
+            self.assertEqual(set(module.NODE_CLASS_MAPPINGS), {'MossPanelDatasetFlexible', 'MossMangaCharacters', 'MossMangaPanel', 'MossPromptEditor', 'MossCompositionTemplate'})
             with self.assertRaisesRegex(RuntimeError, '重複'):
                 import_package(self.root, '_moss_panel_distribution_test_duplicate')
 

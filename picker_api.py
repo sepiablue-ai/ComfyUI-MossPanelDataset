@@ -1,24 +1,13 @@
-"""同梱DBを読み取り専用で使い、見本のWebPをComfyUIへ配信する。"""
-import json
+"""同梱JSONを読み取り、見本のWebPをComfyUIへ配信する。"""
 import re
-import sqlite3
-from contextlib import closing
 from pathlib import Path
+from . import dataset as core
 
 ROOT = Path(__file__).resolve().parent
-DB = ROOT / 'data' / 'layouts.sqlite3'
-
-
-def connect():
-    return sqlite3.connect(f'{DB.as_uri()}?mode=ro', uri=True)
-
-
 def catalog_items():
-    with closing(connect()) as conn:
-        rows = conn.execute('SELECT l.id,l.name,l.specification FROM layouts l JOIN previews p ON p.layout_id=l.id').fetchall()
     items = []
-    for ident, name, spec in rows:
-        layout = json.loads(spec)
+    for record in core.load_catalog():
+        ident,name,layout=record['id'],record['name'],record['specification']
         category = {'斜め線': '斜め', '特殊配置': '特殊'}.get(layout.get('category'), layout.get('category', '直線'))
         items.append({
             'id': ident, 'name': name, 'count': len(layout['panels']), 'category': category,
@@ -33,11 +22,10 @@ def catalog_items():
 def preview_path(ident):
     if not re.fullmatch(r'[A-Za-z0-9_]{1,100}', ident):
         raise ValueError('配置IDが不正です。')
-    with closing(connect()) as conn:
-        row = conn.execute('SELECT image_path FROM previews WHERE layout_id=?', (ident,)).fetchone()
-    if not row:
+    record=next((item for item in core.load_catalog() if item['id']==ident),None)
+    if not record:
         raise FileNotFoundError('見本画像がありません。')
-    path = (ROOT / row[0]).resolve()
+    path = (ROOT / record['preview']['image_path']).resolve()
     if not path.is_relative_to((ROOT / 'images').resolve()) or path.suffix.lower() != '.webp':
         raise ValueError('見本画像フォルダの外は参照できません。')
     if not path.is_file():

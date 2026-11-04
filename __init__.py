@@ -14,4 +14,6 @@ else:
     if getattr(PromptServer.instance, '_moss_panel_picker_registered', False):
         raise RuntimeError('MOSSコマ割りノードが重複しています。旧版のフォルダまたはジャンクションを外し、ComfyUIを再起動してください。')
     register_routes(PromptServer.instance.routes)
+    from .composition import register_routes as register_composition_routes
+    register_composition_routes(PromptServer.instance.routes)
     PromptServer.instance._moss_panel_picker_registered = True

@@ -18,8 +18,8 @@
 
 ### 表現の幅
 
-- [ ] **共通の人物を3人以上に**：今は2人までの人物設定を増やせるようにします。
-- [ ] **1コマのセリフを3つ以上に**：今は1コマ2発言までの上限を広げます。
+- [x] **共通の人物を3人に**：0.1.1の公開準備版で人物3を任意入力として追加。4人以上は未対応です。
+- [x] **1コマのセリフを3つに**：0.1.1の公開準備版で話者3・セリフ3を追加。4発言以上は未対応です。
 - [ ] **人物と吹き出しの位置指定**：今はコマ内の固定配置です。左右・上下などを選べるようにします。
 
 ### 使いやすさ
@@ -52,8 +52,8 @@ Features planned after the initial release. Each item will be checked off with i
 
 ### More expression
 
-- [ ] **Three or more shared characters**: raise the current limit of two characters.
-- [ ] **Three or more lines per panel**: raise the current limit of two lines per panel.
+- [x] **Three shared characters**: implemented in the unpublished 0.1.1 candidate; four or more are not supported.
+- [x] **Three lines per panel**: implemented in the unpublished 0.1.1 candidate; four or more are not supported.
 - [ ] **Character and balloon placement**: choose left/right or top/bottom instead of the current fixed positions.
 
 ### Usability
