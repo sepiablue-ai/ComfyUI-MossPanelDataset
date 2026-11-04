@@ -33,7 +33,7 @@ class Distribution(unittest.TestCase):
         cls.temp = tempfile.TemporaryDirectory(prefix='moss_panel_', dir=cls.temp_parent)
         cls.root = Path(cls.temp.name) / '独立した導入先 with spaces' / 'ComfyUI-MossPanelDataset'
         cls.root.mkdir(parents=True)
-        for name in ('__init__.py', 'nodes.py', 'dataset.py', 'picker_api.py', 'composition.py'):
+        for name in ('__init__.py', 'nodes.py', 'dataset.py', 'picker_api.py', 'composition.py', 'appearance.py'):
             shutil.copyfile(SOURCE / name, cls.root / name)
         for name in ('data', 'images', 'web', 'example_workflows'):
             shutil.copytree(SOURCE / name, cls.root / name)
@@ -190,7 +190,7 @@ class Distribution(unittest.TestCase):
             module = import_package(self.root, '_moss_panel_distribution_test_entry')
             self.assertEqual(module.WEB_DIRECTORY, './web')
             self.assertEqual(len(server.PromptServer.instance.routes), 4)
-            self.assertEqual(set(module.NODE_CLASS_MAPPINGS), {'MossPanelDatasetFlexible', 'MossMangaCharacters', 'MossMangaPanel', 'MossPromptEditor', 'MossCompositionTemplate'})
+            self.assertEqual(set(module.NODE_CLASS_MAPPINGS), {'MossPanelDatasetFlexible', 'MossMangaCharacters', 'MossMangaPanel', 'MossPromptEditor', 'MossCompositionTemplate','MossCharacterAppearance'})
             with self.assertRaisesRegex(RuntimeError, '重複'):
                 import_package(self.root, '_moss_panel_distribution_test_duplicate')
 

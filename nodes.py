@@ -3,6 +3,7 @@ import json
 
 from . import dataset as core
 from . import composition
+from .appearance import MossCharacterAppearance
 
 SLOTS=['人物1','人物2','人物3']
 ACTORS={'人物1のみ':['人物1'],'人物2のみ':['人物2'],'人物1と人物2':['人物1','人物2'],'人物なし':[],
@@ -14,11 +15,11 @@ class MossMangaCharacters:
     def INPUT_TYPES(cls):
         return {'required':{
             '人物1_名前':('STRING',{'default':'漫画家'}),
-            '人物1_外見':('STRING',{'multiline':True,'default':core.DEFAULT_CAST['漫画家'],'tooltip':'外見を英語で入力します。翻訳せず、そのまま描写指定へ渡します。'}),
+            '人物1_外見':('STRING',{'multiline':True,'default':core.DEFAULT_CAST['漫画家'],'tooltip':'外見を英語で入力するか「人物の外見（画像／文章）」の出力を接続します。'}),
             '人物2_名前':('STRING',{'default':'編集者'}),
-            '人物2_外見':('STRING',{'multiline':True,'default':core.DEFAULT_CAST['編集者'],'tooltip':'外見を英語で入力します。翻訳せず、そのまま描写指定へ渡します。'})},
+            '人物2_外見':('STRING',{'multiline':True,'default':core.DEFAULT_CAST['編集者'],'tooltip':'外見を英語で入力するか「人物の外見（画像／文章）」の出力を接続します。'})},
             'optional':{'人物3_名前':('STRING',{'default':'','tooltip':'3人目を使うときだけ名前と外見を両方入力します。'}),
-            '人物3_外見':('STRING',{'multiline':True,'default':'','tooltip':'3人目の外見を英語で入力します。空欄なら従来の2人設定です。'})}}
+            '人物3_外見':('STRING',{'multiline':True,'default':'','tooltip':'英語の外見文、または画像抽出ノードの出力を指定します。名前と外見が両方空欄なら従来の2人設定です。'})}}
     RETURN_TYPES=('MOSS_MANGA_CAST',)
     RETURN_NAMES=('共通の人物設定',)
     FUNCTION='build'
@@ -161,3 +162,5 @@ class MossCompositionTemplate:
 NODE_CLASS_MAPPINGS={'MossCompositionTemplate':MossCompositionTemplate,'MossPanelDatasetFlexible':MossPanelDatasetFlexible,'MossMangaCharacters':MossMangaCharacters,'MossMangaPanel':MossMangaPanel,'MossPromptEditor':MossPromptEditor}
 NODE_DISPLAY_NAME_MAPPINGS={'MossPanelDatasetFlexible':'コマ割りを選ぶ（2〜6コマ）','MossMangaCharacters':'共通の人物設定（普通の文章で入力）','MossMangaPanel':'コマの内容（場面・登場人物・セリフ）','MossPromptEditor':'MOSSプロンプトを確認・編集'}
 NODE_DISPLAY_NAME_MAPPINGS['MossCompositionTemplate']='構図を選ぶ（見本画像）'
+NODE_CLASS_MAPPINGS['MossCharacterAppearance']=MossCharacterAppearance
+NODE_DISPLAY_NAME_MAPPINGS['MossCharacterAppearance']='人物の外見（画像／文章）'
