@@ -39,7 +39,6 @@ async function open(node){
             const star=el('button',favorites.has(item.id)?'★':'☆');star.setAttribute('aria-label',`${item.name}のお気に入り`);star.setAttribute('aria-pressed',String(favorites.has(item.id)));
             star.onclick=()=>{favorites.has(item.id)?favorites.delete(item.id):favorites.add(item.id);try{localStorage.setItem(KEY,JSON.stringify([...favorites]));}catch{}render();};
             card.append(pick,el('span',`${item.boxes.length}人・${item.category} `),star);
-            if(item.review&&item.review!=='未確認')card.append(el('p',item.review));
             grid.append(card);
         }
     }
