@@ -118,6 +118,8 @@ API形式以外の5ファイルは、ComfyUIへドラッグ＆ドロップして
 
 ## 人物画像から外見を入力する
 
+https://github.com/user-attachments/assets/be8c36de-7fbd-4c9c-9487-b3eec56cc5ca
+
 [デモ動画（mp4・30秒）](docs/demo_character_images.mp4)：人物画像を2枚読み込み、各コマの構図とコマ割りを一覧から選んで生成するまでの実際の操作を録画したものです。操作と生成待ちを早送りし、実行ボタンの場面だけ拡大しています。字幕は入れていません。最後に入力画像・コマ割り・構図・生成結果を並べて表示します。漫画の画像には手を加えていません。
 
 [画像から外見を抽出するサンプル](example_workflows/composition_character_images.json) を開き、2つの「画像を読み込む」で自分の人物画像を選んでください。サンプル内のファイル名は検証用のもので、参考画像は同梱していません。
@@ -321,6 +323,8 @@ Enter both 「人物3_名前」 (character 3 name) and 「人物3_外見」 (cha
 The [one-to-three character sample](example_workflows/composition_1to3.json) has the characters, compositions, and dialogue connected. Speech balloon regions are top center to right for one line, top right and top left for two, and top right, top center, and top left for three. The node does not infer empty space in the composition.
 
 ## Appearance from character images
+
+https://github.com/user-attachments/assets/be8c36de-7fbd-4c9c-9487-b3eec56cc5ca
 
 [Demo video (mp4, 30 s)](docs/demo_character_images.mp4): a real screen recording of loading two character images, choosing a composition for each panel and a layout from the lists, and generating the page. Operations and generation are sped up, and only the run button scene is zoomed in. No captions are added. At the end, the input images, layout, compositions, and result are shown side by side. The manga image itself is not edited.
 
