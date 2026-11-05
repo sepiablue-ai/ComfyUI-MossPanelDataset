@@ -54,7 +54,7 @@ Python 3.10以降と、MOSS-Imageのネイティブ対応を含むComfyUIが必�
 
 モデル選択欄で各ファイルを確認してください。別名やサブフォルダへ置いた場合は、ローダーの選択を変更します。`CLIPLoader` の種類は `moss_image` です。重みを自動でダウンロードする機能はありません。
 
-元のデータセット生成はWindows・RTX 3060 12GBで実施しました。同梱ワークフローは1024×1536、25ステップ、CFG 2.5、`er_sde` / `simple`、DMD LoRAなしです。配布版の独立配置での検査は `VALIDATION.md` を参照してください。他のGPU・OSでの実生成は未確認です。
+元のデータセット生成はWindows・RTX 3060 12GBで実施しました。同梱ワークフローは1024×1536、25ステップ、CFG 2.5、`er_sde` / `simple`、DMD LoRAなしです。他のGPU・OSでの実生成は未確認です。
 
 ## 使い方
 
@@ -256,7 +256,7 @@ The bundled workflow uses these three files:
 
 Check each file in the loader dropdowns. If you saved them under another name or subfolder, change the loader selection. The `CLIPLoader` type is `moss_image`. Weights are not downloaded automatically.
 
-The original dataset was generated on Windows with an RTX 3060 12GB. The bundled workflow uses 1024×1536, 25 steps, CFG 2.5, `er_sde` / `simple`, and no DMD LoRA. See `VALIDATION.md` (Japanese) for the checks run on this distribution. Generation on other GPUs and operating systems has not been tested.
+The original dataset was generated on Windows with an RTX 3060 12GB. The bundled workflow uses 1024×1536, 25 steps, CFG 2.5, `er_sde` / `simple`, and no DMD LoRA. Generation on other GPUs and operating systems has not been tested.
 
 ## Usage
 
