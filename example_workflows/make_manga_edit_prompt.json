@@ -6,12 +6,12 @@
       "id": 1,
       "type": "MossPanelDatasetFlexible",
       "pos": [
-        1020,
-        40
+        1080,
+        0
       ],
       "size": [
-        390,
-        455
+        400,
+        560
       ],
       "flags": {},
       "order": 0,
@@ -79,12 +79,12 @@
       "id": 2,
       "type": "CLIPLoader",
       "pos": [
-        1020,
-        570
+        1660,
+        0
       ],
       "size": [
-        350,
-        300
+        320,
+        110
       ],
       "flags": {},
       "order": 1,
@@ -113,12 +113,12 @@
       "id": 3,
       "type": "UNETLoader",
       "pos": [
-        1020,
-        910
+        1660,
+        180
       ],
       "size": [
-        350,
-        300
+        320,
+        90
       ],
       "flags": {},
       "order": 2,
@@ -145,12 +145,12 @@
       "id": 4,
       "type": "VAELoader",
       "pos": [
-        2420,
-        680
+        1660,
+        340
       ],
       "size": [
-        350,
-        300
+        320,
+        66
       ],
       "flags": {},
       "order": 3,
@@ -176,12 +176,12 @@
       "id": 5,
       "type": "CLIPTextEncode",
       "pos": [
-        1970,
-        40
+        2040,
+        0
       ],
       "size": [
-        350,
-        300
+        320,
+        100
       ],
       "flags": {},
       "order": 4,
@@ -221,12 +221,12 @@
       "id": 6,
       "type": "CLIPTextEncode",
       "pos": [
-        1970,
-        370
+        2040,
+        170
       ],
       "size": [
-        350,
-        300
+        320,
+        100
       ],
       "flags": {},
       "order": 5,
@@ -258,12 +258,12 @@
       "id": 7,
       "type": "EmptyFlux2LatentImage",
       "pos": [
-        1970,
-        720
+        2040,
+        340
       ],
       "size": [
-        350,
-        300
+        320,
+        110
       ],
       "flags": {},
       "order": 6,
@@ -309,11 +309,11 @@
       "type": "KSampler",
       "pos": [
         2420,
-        40
+        0
       ],
       "size": [
-        350,
-        300
+        320,
+        270
       ],
       "flags": {},
       "order": 7,
@@ -366,12 +366,12 @@
       "id": 9,
       "type": "VAEDecode",
       "pos": [
-        2840,
-        40
+        2420,
+        340
       ],
       "size": [
-        350,
-        300
+        320,
+        50
       ],
       "flags": {},
       "order": 8,
@@ -406,12 +406,12 @@
       "id": 10,
       "type": "SaveImage",
       "pos": [
-        3240,
-        40
+        2800,
+        0
       ],
       "size": [
-        350,
-        300
+        560,
+        760
       ],
       "flags": {},
       "order": 9,
@@ -441,12 +441,12 @@
       "id": 11,
       "type": "MossMangaCharacters",
       "pos": [
-        30,
-        40
+        0,
+        0
       ],
       "size": [
-        400,
-        400
+        420,
+        460
       ],
       "flags": {},
       "order": 10,
@@ -475,11 +475,11 @@
       "id": 12,
       "type": "MossMangaPanel",
       "pos": [
-        500,
-        40
+        540,
+        0
       ],
       "size": [
-        450,
+        420,
         460
       ],
       "flags": {},
@@ -512,11 +512,11 @@
       "id": 13,
       "type": "MossMangaPanel",
       "pos": [
-        500,
-        560
+        540,
+        530
       ],
       "size": [
-        450,
+        420,
         460
       ],
       "flags": {},
@@ -549,11 +549,11 @@
       "id": 14,
       "type": "MossMangaPanel",
       "pos": [
-        500,
-        1080
+        540,
+        1060
       ],
       "size": [
-        450,
+        420,
         460
       ],
       "flags": {},
@@ -586,11 +586,11 @@
       "id": 15,
       "type": "MossMangaPanel",
       "pos": [
-        500,
-        1600
+        540,
+        1590
       ],
       "size": [
-        450,
+        420,
         460
       ],
       "flags": {},
@@ -623,8 +623,8 @@
       "id": 16,
       "type": "MossPromptEditor",
       "pos": [
-        1450,
-        40
+        1080,
+        630
       ],
       "size": [
         460,
@@ -805,14 +805,67 @@
       "STRING"
     ]
   ],
-  "groups": [],
+  "groups": [
+    {
+      "id": 1,
+      "title": "① 人物 / Characters",
+      "bounding": [
+        -30,
+        -100,
+        480,
+        590
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 2,
+      "title": "③ コマの内容 / Panels",
+      "bounding": [
+        510,
+        -100,
+        480,
+        2180
+      ],
+      "color": "#8A8",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 3,
+      "title": "④ コマ割り / Layout",
+      "bounding": [
+        1050,
+        -100,
+        520,
+        1320
+      ],
+      "color": "#b58b2a",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 4,
+      "title": "⑤ MOSSで生成 / Generate with MOSS",
+      "bounding": [
+        1630,
+        -100,
+        1760,
+        890
+      ],
+      "color": "#444",
+      "font_size": 24,
+      "flags": {}
+    }
+  ],
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.65,
+      "scale": 0.55,
       "offset": [
-        0,
-        80
+        60,
+        120
       ]
     }
   },

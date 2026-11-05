@@ -6,12 +6,12 @@
       "id": 2,
       "type": "CLIPLoader",
       "pos": [
-        3240,
+        3000,
         0
       ],
       "size": [
-        360,
-        400
+        320,
+        110
       ],
       "flags": {},
       "order": 0,
@@ -43,12 +43,12 @@
       "id": 3,
       "type": "UNETLoader",
       "pos": [
-        2400,
-        520
+        3000,
+        180
       ],
       "size": [
-        360,
-        400
+        320,
+        90
       ],
       "flags": {},
       "order": 1,
@@ -75,12 +75,12 @@
       "id": 4,
       "type": "VAELoader",
       "pos": [
-        2820,
-        520
+        3000,
+        340
       ],
       "size": [
-        360,
-        400
+        320,
+        66
       ],
       "flags": {},
       "order": 2,
@@ -106,12 +106,12 @@
       "id": 5,
       "type": "CLIPTextEncode",
       "pos": [
-        3240,
-        520
+        3380,
+        0
       ],
       "size": [
-        360,
-        400
+        320,
+        100
       ],
       "flags": {},
       "order": 3,
@@ -151,12 +151,12 @@
       "id": 6,
       "type": "CLIPTextEncode",
       "pos": [
-        2400,
-        1040
+        3380,
+        170
       ],
       "size": [
-        360,
-        400
+        320,
+        100
       ],
       "flags": {},
       "order": 4,
@@ -188,12 +188,12 @@
       "id": 7,
       "type": "EmptyFlux2LatentImage",
       "pos": [
-        2820,
-        1040
+        3380,
+        340
       ],
       "size": [
-        360,
-        400
+        320,
+        110
       ],
       "flags": {},
       "order": 5,
@@ -238,12 +238,12 @@
       "id": 8,
       "type": "KSampler",
       "pos": [
-        3240,
-        1040
+        3760,
+        0
       ],
       "size": [
-        360,
-        400
+        320,
+        270
       ],
       "flags": {},
       "order": 6,
@@ -296,12 +296,12 @@
       "id": 9,
       "type": "VAEDecode",
       "pos": [
-        2400,
-        1560
+        3760,
+        340
       ],
       "size": [
-        360,
-        400
+        320,
+        50
       ],
       "flags": {},
       "order": 7,
@@ -336,12 +336,12 @@
       "id": 10,
       "type": "SaveImage",
       "pos": [
-        2820,
-        1560
+        4140,
+        0
       ],
       "size": [
-        360,
-        400
+        560,
+        760
       ],
       "flags": {},
       "order": 8,
@@ -371,12 +371,12 @@
       "id": 31,
       "type": "LoadImage",
       "pos": [
-        20,
+        0,
         0
       ],
       "size": [
-        360,
-        520
+        320,
+        420
       ],
       "flags": {},
       "order": 9,
@@ -407,12 +407,12 @@
       "id": 32,
       "type": "LoadImage",
       "pos": [
-        20,
-        800
+        0,
+        570
       ],
       "size": [
-        360,
-        520
+        320,
+        420
       ],
       "flags": {},
       "order": 10,
@@ -443,12 +443,12 @@
       "id": 40,
       "type": "MossCharacterAppearance",
       "pos": [
-        430,
+        380,
         0
       ],
       "size": [
-        460,
-        670
+        420,
+        500
       ],
       "flags": {},
       "order": 11,
@@ -487,12 +487,12 @@
       "id": 41,
       "type": "MossCharacterAppearance",
       "pos": [
-        430,
-        800
+        380,
+        570
       ],
       "size": [
-        460,
-        670
+        420,
+        500
       ],
       "flags": {},
       "order": 12,
@@ -531,12 +531,12 @@
       "id": 42,
       "type": "MossCharacterAppearance",
       "pos": [
-        430,
-        1600
+        380,
+        1140
       ],
       "size": [
-        460,
-        670
+        420,
+        500
       ],
       "flags": {},
       "order": 13,
@@ -570,12 +570,12 @@
       "id": 11,
       "type": "MossMangaCharacters",
       "pos": [
-        960,
+        920,
         0
       ],
       "size": [
-        430,
-        620
+        420,
+        460
       ],
       "flags": {},
       "order": 14,
@@ -631,12 +631,12 @@
       "id": 20,
       "type": "MossCompositionTemplate",
       "pos": [
-        960,
-        800
+        1460,
+        0
       ],
       "size": [
-        380,
-        380
+        360,
+        460
       ],
       "flags": {},
       "order": 15,
@@ -667,12 +667,12 @@
       "id": 12,
       "type": "MossMangaPanel",
       "pos": [
-        1420,
+        1940,
         0
       ],
       "size": [
-        430,
-        700
+        420,
+        460
       ],
       "flags": {},
       "order": 16,
@@ -709,12 +709,12 @@
       "id": 21,
       "type": "MossCompositionTemplate",
       "pos": [
-        960,
-        1400
+        1460,
+        530
       ],
       "size": [
-        380,
-        380
+        360,
+        460
       ],
       "flags": {},
       "order": 17,
@@ -745,12 +745,12 @@
       "id": 13,
       "type": "MossMangaPanel",
       "pos": [
-        1420,
-        800
+        1940,
+        530
       ],
       "size": [
-        430,
-        700
+        420,
+        460
       ],
       "flags": {},
       "order": 18,
@@ -787,12 +787,12 @@
       "id": 22,
       "type": "MossCompositionTemplate",
       "pos": [
-        960,
-        2000
+        1460,
+        1060
       ],
       "size": [
-        380,
-        380
+        360,
+        460
       ],
       "flags": {},
       "order": 19,
@@ -823,12 +823,12 @@
       "id": 14,
       "type": "MossMangaPanel",
       "pos": [
-        1420,
-        1600
+        1940,
+        1060
       ],
       "size": [
-        430,
-        700
+        420,
+        460
       ],
       "flags": {},
       "order": 20,
@@ -865,12 +865,12 @@
       "id": 1,
       "type": "MossPanelDatasetFlexible",
       "pos": [
-        1910,
+        2480,
         0
       ],
       "size": [
-        430,
-        600
+        400,
+        560
       ],
       "flags": {},
       "order": 21,
@@ -1147,8 +1147,95 @@
       "MOSS_MANGA_PANEL"
     ]
   ],
-  "groups": [],
+  "groups": [
+    {
+      "id": 1,
+      "title": "① 人物の画像と外見 / Character images",
+      "bounding": [
+        -30,
+        -100,
+        860,
+        1770
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 2,
+      "title": "① 人物 / Characters",
+      "bounding": [
+        890,
+        -100,
+        480,
+        590
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 3,
+      "title": "② 構図 / Compositions",
+      "bounding": [
+        1430,
+        -100,
+        420,
+        1650
+      ],
+      "color": "#a1309b",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 4,
+      "title": "③ コマの内容 / Panels",
+      "bounding": [
+        1910,
+        -100,
+        480,
+        1650
+      ],
+      "color": "#8A8",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 5,
+      "title": "④ コマ割り / Layout",
+      "bounding": [
+        2450,
+        -100,
+        460,
+        690
+      ],
+      "color": "#b58b2a",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 6,
+      "title": "⑤ MOSSで生成 / Generate with MOSS",
+      "bounding": [
+        2970,
+        -100,
+        1760,
+        890
+      ],
+      "color": "#444",
+      "font_size": 24,
+      "flags": {}
+    }
+  ],
   "config": {},
-  "extra": {},
+  "extra": {
+    "ds": {
+      "scale": 0.55,
+      "offset": [
+        60,
+        120
+      ]
+    }
+  },
   "version": 0.4
 }
