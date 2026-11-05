@@ -170,7 +170,7 @@
       "name": "女性の肩越しに男性を見る",
       "name_en": "Man seen over the woman's shoulder",
       "category": "肩越し",
-      "prompt": "Over-the-shoulder shot from behind person 1. Person 1 back of head and right shoulder large in the right foreground. Person 2 face clearly visible in the left middle distance, talking to person 1.",
+      "prompt": "Over-the-shoulder shot from behind person 1. Person 1 back of head and right shoulder large in the right foreground. Person 2 face clearly visible in the left middle distance, facing person 1.",
       "boxes": [
         [
           0.6,
@@ -186,9 +186,9 @@
         ]
       ],
       "image_path": "images/compositions/duo_05.webp",
-      "sha256": "40ae497f275b2278d23e9c91c3667edf9b764b6bf2e914cf8ea145a198a41b1a",
-      "source_png_sha256": "eb8483f01b4878c622d11fe856c07b83bd47eeb74a05f85040eba1d3b16c5129",
-      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly two adults, each drawn once, in a quiet simple studio. No panel subdivisions, speech balloons, text, lettering, labels or numbers. Over-the-shoulder shot from behind person 1. Person 1 back of head and right shoulder large in the right foreground. Person 2 face clearly visible in the left middle distance, talking to person 1.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. Person 1.\",\n      \"bbox\": [\n        -410,\n        102,\n        512,\n        512\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult man aged 35, short light hair, rectangular glasses, black business suit and tie. Person 2.\",\n      \"bbox\": [\n        -307,\n        -430,\n        410,\n        31\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
+      "sha256": "6cefb71da0710d5ff47f47606b824a35a9ec14385f6004ee03cd2805c93772a3",
+      "source_png_sha256": "a580645303a53bcf27cc474f7620c8c173d62577f8cf81f3c872e476ff607c9d",
+      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly two adults, each drawn once, in a quiet simple studio. No panel subdivisions, speech balloons, text, lettering, labels or numbers. Over-the-shoulder shot from behind person 1. Person 1 back of head and right shoulder large in the right foreground. Person 2 face clearly visible in the left middle distance, facing person 1.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. Person 1.\",\n      \"bbox\": [\n        -410,\n        102,\n        512,\n        512\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult man aged 35, short light hair, rectangular glasses, black business suit and tie. Person 2.\",\n      \"bbox\": [\n        -307,\n        -430,\n        410,\n        31\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
       "conditions": {
         "physical_gpu": 0,
         "width": 1024,
@@ -211,7 +211,7 @@
       "name": "男性の肩越しに女性を見る",
       "name_en": "Woman seen over the man's shoulder",
       "category": "肩越し",
-      "prompt": "Reverse over-the-shoulder shot from behind person 2. Person 2 back of head and left shoulder large in the left foreground. Person 1 face clearly visible in the right middle distance, talking to person 2.",
+      "prompt": "Reverse over-the-shoulder shot from behind person 2. Person 2 back of head and left shoulder large in the left foreground. Person 1 face clearly visible in the right middle distance, facing person 2.",
       "boxes": [
         [
           0.47,
@@ -227,9 +227,9 @@
         ]
       ],
       "image_path": "images/compositions/duo_06.webp",
-      "sha256": "f3447077457bcf0d489912b7ce43789da54d9c5b0228f942714fea1d3413f068",
-      "source_png_sha256": "c58e92b757114d248f4286933af884f6bd76c65581656bcf4ec07fd14ca94c86",
-      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly two adults, each drawn once, in a quiet simple studio. No panel subdivisions, speech balloons, text, lettering, labels or numbers. Reverse over-the-shoulder shot from behind person 2. Person 2 back of head and left shoulder large in the left foreground. Person 1 face clearly visible in the right middle distance, talking to person 2.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. Person 1.\",\n      \"bbox\": [\n        -307,\n        -31,\n        410,\n        430\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult man aged 35, short light hair, rectangular glasses, black business suit and tie. Person 2.\",\n      \"bbox\": [\n        -410,\n        -512,\n        512,\n        -102\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
+      "sha256": "ad097f55db3d98b90a45eb9cbaf1a74ef7095d972fbbb8abc3368116cb8a1e75",
+      "source_png_sha256": "b76a3201b9e40027fbfaea4f03cfe4add02245e949f574b88c9c599a533afd60",
+      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly two adults, each drawn once, in a quiet simple studio. No panel subdivisions, speech balloons, text, lettering, labels or numbers. Reverse over-the-shoulder shot from behind person 2. Person 2 back of head and left shoulder large in the left foreground. Person 1 face clearly visible in the right middle distance, facing person 2.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. Person 1.\",\n      \"bbox\": [\n        -307,\n        -31,\n        410,\n        430\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult man aged 35, short light hair, rectangular glasses, black business suit and tie. Person 2.\",\n      \"bbox\": [\n        -410,\n        -512,\n        512,\n        -102\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
       "conditions": {
         "physical_gpu": 0,
         "width": 1024,
@@ -252,7 +252,7 @@
       "name": "女性の反応・男性は手前の横顔",
       "name_en": "Woman reacts, man in foreground profile",
       "category": "顔アップ",
-      "prompt": "Reaction close-up with exactly two people total. The only person on the right is Person 1: a large three-quarter face reacting with surprise, filling the right half of the frame. The only person on the left is Person 2: a cropped side profile at the far left edge, facing right toward Person 1. No third person, no extra face, no person in the background.",
+      "prompt": "Close-up with exactly two people total. The only person on the right is Person 1: a large three-quarter face filling the right half of the frame. The only person on the left is Person 2: a cropped side profile at the far left edge, facing right toward Person 1. No third person, no extra face, no person in the background.",
       "boxes": [
         [
           0.35,
@@ -268,50 +268,9 @@
         ]
       ],
       "image_path": "images/compositions/duo_07.webp",
-      "sha256": "04404f48b8a5439822b52b1e7951bdb1e8b716c538dc2538930b2ccb8aa6ee9f",
-      "source_png_sha256": "9b66899effc689dd2582b7ebe0f5b205494a65c3b45419aedd0f7e9365c940d8",
-      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly two adults, each drawn once, in a quiet simple studio. No panel subdivisions, speech balloons, text, lettering, labels or numbers. Reaction close-up with exactly two people total. The only person on the right is Person 1: a large three-quarter face reacting with surprise, filling the right half of the frame. The only person on the left is Person 2: a cropped side profile at the far left edge, facing right toward Person 1. No third person, no extra face, no person in the background.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. Person 1.\",\n      \"bbox\": [\n        -430,\n        -154,\n        492,\n        471\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult man aged 35, short light hair, rectangular glasses, black business suit and tie. Person 2.\",\n      \"bbox\": [\n        -358,\n        -512,\n        512,\n        -225\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
-      "conditions": {
-        "physical_gpu": 0,
-        "width": 1024,
-        "height": 1024,
-        "seed": 26110307,
-        "steps": 25,
-        "cfg": 2.5,
-        "sampler": "er_sde",
-        "scheduler": "simple",
-        "unet": "moss_image_sft_int8_convrot.safetensors",
-        "clip": "qwen3.5_9b_int8_convrot.safetensors",
-        "vae": "flux2-vae.safetensors",
-        "dmd_lora": false,
-        "image_processing": "none"
-      },
-      "review": "品質NG：人物が3人に増加（再生成後も残存）"
-    },
-    {
-      "id": "duo_08",
-      "name": "男性の反応・女性は手前の横顔",
-      "name_en": "Man reacts, woman in foreground profile",
-      "category": "顔アップ",
-      "prompt": "Reaction close-up with exactly two people total. The only person on the left is Person 2: a large three-quarter face reacting with surprise, filling the left half of the frame. The only person on the right is Person 1: a cropped side profile at the far right edge, facing left toward Person 2. No third person, no extra face, no person in the background.",
-      "boxes": [
-        [
-          0.72,
-          0.15,
-          1.0,
-          1.0
-        ],
-        [
-          0.04,
-          0.08,
-          0.65,
-          0.98
-        ]
-      ],
-      "image_path": "images/compositions/duo_08.webp",
-      "sha256": "e45db31da5f15b0eb652b8a844da332ae9742bd4eed66093b9ffb30d58515f9c",
-      "source_png_sha256": "6af651a4dac7ea050cfc4dceef7ba932e873677237512bca6ae9e1a738e494a2",
-      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly two adults, each drawn once, in a quiet simple studio. No panel subdivisions, speech balloons, text, lettering, labels or numbers. Reaction close-up with exactly two people total. The only person on the left is Person 2: a large three-quarter face reacting with surprise, filling the left half of the frame. The only person on the right is Person 1: a cropped side profile at the far right edge, facing left toward Person 2. No third person, no extra face, no person in the background.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. Person 1.\",\n      \"bbox\": [\n        -358,\n        225,\n        512,\n        512\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult man aged 35, short light hair, rectangular glasses, black business suit and tie. Person 2.\",\n      \"bbox\": [\n        -430,\n        -471,\n        492,\n        154\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
+      "sha256": "c948210d62f7b9f8046af50f660e0bcaf3a2488faf18f669c859adb8050d742b",
+      "source_png_sha256": "d3e5ab87c15539f54c552f57115a5b9ed8b461aec3137b9eb6dd0431c73f3d2d",
+      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly two adults, each drawn once, against a plain white empty background. No panel subdivisions, speech balloons, text, lettering, labels or numbers. Close-up with exactly two people total. The only person on the right is Person 1: a large three-quarter face filling the right half of the frame. The only person on the left is Person 2: a cropped side profile at the far left edge, facing right toward Person 1. No third person, no extra face, no person in the background.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"One large three-quarter face and shoulders of one woman. An adult woman aged 22, long straight black hair, white blouse. Person 1, a single individual in this scene.\",\n      \"bbox\": [\n        -430,\n        -154,\n        492,\n        471\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"One cropped side profile of the head and one shoulder of one man, cut off by the left edge. An adult man aged 35, short light hair, rectangular glasses, black suit. Person 2, a single individual in this scene.\",\n      \"bbox\": [\n        -358,\n        -512,\n        512,\n        -225\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
       "conditions": {
         "physical_gpu": 0,
         "width": 1024,
@@ -327,7 +286,48 @@
         "dmd_lora": false,
         "image_processing": "none"
       },
-      "review": "品質NG：人物が3人に増加（再生成後も残存）"
+      "review": "概ね一致：人物説明を画角に合わせ背景を無地にした生成文で2人に改善（試行8回目）"
+    },
+    {
+      "id": "duo_08",
+      "name": "男性の反応・女性は手前の横顔",
+      "name_en": "Man reacts, woman in foreground profile",
+      "category": "顔アップ",
+      "prompt": "Close-up with exactly two people total. The only person on the left is Person 2: a large three-quarter face filling the left half of the frame. The only person on the right is Person 1: a cropped side profile at the far right edge, facing left toward Person 2. No third person, no extra face, no person in the background.",
+      "boxes": [
+        [
+          0.72,
+          0.15,
+          1.0,
+          1.0
+        ],
+        [
+          0.04,
+          0.08,
+          0.65,
+          0.98
+        ]
+      ],
+      "image_path": "images/compositions/duo_08.webp",
+      "sha256": "524495dbccb67d5f14e2b84866f9d180bf27327c3dbc0d57af929ae7f0c86a0b",
+      "source_png_sha256": "a9e67f70fc0ec1c4c91649eed3abd877ccc72d0a63e7bbcfc82246c237b411e7",
+      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly two adults, each drawn once, in a quiet simple studio. No panel subdivisions, speech balloons, text, lettering, labels or numbers. Close-up with exactly two people total. The only person on the left is Person 2: a large three-quarter face filling the left half of the frame. The only person on the right is Person 1: a cropped side profile at the far right edge, facing left toward Person 2. No third person, no extra face, no person in the background.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. Person 1.\",\n      \"bbox\": [\n        -358,\n        225,\n        512,\n        512\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult man aged 35, short light hair, rectangular glasses, black business suit and tie. Person 2.\",\n      \"bbox\": [\n        -430,\n        -471,\n        492,\n        154\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
+      "conditions": {
+        "physical_gpu": 0,
+        "width": 1024,
+        "height": 1024,
+        "seed": 26110308,
+        "steps": 25,
+        "cfg": 2.5,
+        "sampler": "er_sde",
+        "scheduler": "simple",
+        "unet": "moss_image_sft_int8_convrot.safetensors",
+        "clip": "qwen3.5_9b_int8_convrot.safetensors",
+        "vae": "flux2-vae.safetensors",
+        "dmd_lora": false,
+        "image_processing": "none"
+      },
+      "review": "一部不一致：2人になったが、手前の女性が横顔より斜め向き"
     },
     {
       "id": "duo_09",
@@ -744,7 +744,7 @@
       "name": "女性が身を乗り出す掛け合い",
       "name_en": "Woman leans in during the exchange",
       "category": "2人の会話",
-      "prompt": "Dynamic medium two-shot. Person 1 on the right leans her upper body forward and gestures with an open hand toward person 2 on the left, who leans back in surprise. Both faces clearly visible.",
+      "prompt": "Dynamic medium two-shot. Person 1 on the right leans her upper body forward toward person 2 on the left, who leans back away from her. Both faces clearly visible.",
       "boxes": [
         [
           0.46,
@@ -760,9 +760,9 @@
         ]
       ],
       "image_path": "images/compositions/duo_19.webp",
-      "sha256": "53e2ac051ef762cf5283f7910ba4a35f3f768a9686d721259cdd8d33842b0e93",
-      "source_png_sha256": "18000d22fab54d630f29e264e2de6fb5c0a2ef77c82d3ff8d337eea535651743",
-      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly two adults, each drawn once, in a quiet simple studio. No panel subdivisions, speech balloons, text, lettering, labels or numbers. Dynamic medium two-shot. Person 1 on the right leans her upper body forward and gestures with an open hand toward person 2 on the left, who leans back in surprise. Both faces clearly visible.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. Person 1.\",\n      \"bbox\": [\n        -328,\n        -41,\n        471,\n        471\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult man aged 35, short light hair, rectangular glasses, black business suit and tie. Person 2.\",\n      \"bbox\": [\n        -328,\n        -481,\n        471,\n        -72\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
+      "sha256": "47d4f16ae9838fbe852ded1f0108581f1e0d85f8573c2d693a0ac069485536cf",
+      "source_png_sha256": "aa0384810e0c45d6250b862cf91f95033d981ffb4e6bd508393f1c75ef98c901",
+      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly two adults, each drawn once, in a quiet simple studio. No panel subdivisions, speech balloons, text, lettering, labels or numbers. Dynamic medium two-shot. Person 1 on the right leans her upper body forward toward person 2 on the left, who leans back away from her. Both faces clearly visible.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. Person 1.\",\n      \"bbox\": [\n        -328,\n        -41,\n        471,\n        471\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult man aged 35, short light hair, rectangular glasses, black business suit and tie. Person 2.\",\n      \"bbox\": [\n        -328,\n        -481,\n        471,\n        -72\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
       "conditions": {
         "physical_gpu": 0,
         "width": 1024,
@@ -785,7 +785,7 @@
       "name": "窓際のシルエット対話",
       "name_en": "Silhouettes by the window",
       "category": "全身",
-      "prompt": "Wide side-profile full-body two-shot silhouetted against a bright large window. Person 1 stands on the right and person 2 on the left facing each other. Both complete bodies and feet visible, strong backlighting.",
+      "prompt": "Wide side-profile full-body two-shot in front of a large window. Person 1 stands on the right and person 2 on the left facing each other. Both complete bodies and feet visible.",
       "boxes": [
         [
           0.58,
@@ -801,9 +801,9 @@
         ]
       ],
       "image_path": "images/compositions/duo_20.webp",
-      "sha256": "1aabe08facdb64b69bb5045eebcb01938dea21bc9c6a99279b3c4c827a13d8a2",
-      "source_png_sha256": "bb84fcc9f9256b58e23a3ee6bf6edf3e0f61e5908a2e3358b87a9f01a556b37f",
-      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly two adults, each drawn once, in a quiet simple studio. No panel subdivisions, speech balloons, text, lettering, labels or numbers. Wide side-profile full-body two-shot silhouetted against a bright large window. Person 1 stands on the right and person 2 on the left facing each other. Both complete bodies and feet visible, strong backlighting.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. Person 1.\",\n      \"bbox\": [\n        -369,\n        82,\n        440,\n        358\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult man aged 35, short light hair, rectangular glasses, black business suit and tie. Person 2.\",\n      \"bbox\": [\n        -369,\n        -358,\n        440,\n        -82\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
+      "sha256": "d45af02e6920bf070340d98dfb967cfb1f22175182495be8bc161ca36a33e8c2",
+      "source_png_sha256": "0f8b44f6fc565d0a530b2bf0d9754d6a70e1a1f58933c8fbd7c156cf9a287d8c",
+      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly two adults, each drawn once, in a quiet simple studio. No panel subdivisions, speech balloons, text, lettering, labels or numbers. Wide side-profile full-body two-shot in front of a large window. Person 1 stands on the right and person 2 on the left facing each other. Both complete bodies and feet visible.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. Person 1.\",\n      \"bbox\": [\n        -369,\n        82,\n        440,\n        358\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult man aged 35, short light hair, rectangular glasses, black business suit and tie. Person 2.\",\n      \"bbox\": [\n        -369,\n        -358,\n        440,\n        -82\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
       "conditions": {
         "physical_gpu": 0,
         "width": 1024,
@@ -819,7 +819,7 @@
         "dmd_lora": false,
         "image_processing": "none"
       },
-      "review": "一部不一致：シルエット化が弱い"
+      "review": "概ね一致"
     },
     {
       "id": "duo_21",
@@ -867,7 +867,7 @@
       "name": "二人が同じ机を覗く",
       "name_en": "Both look down at the same desk",
       "category": "2人の会話",
-      "prompt": "Medium frontal two-shot. Person 1 right and person 2 left lean over the same desk, both looking downward at one sheet of paper between them.",
+      "prompt": "Medium frontal two-shot. Person 1 right and person 2 left lean over the same desk, both looking downward at the tabletop between them.",
       "boxes": [
         [
           0.52,
@@ -883,9 +883,9 @@
         ]
       ],
       "image_path": "images/compositions/duo_22.webp",
-      "sha256": "5ec1f33e901c6a382e1c598482aa65e9b113eee3a4a10d0f82032e77aea3d837",
-      "source_png_sha256": "efe6fb4c99ff1d4e2fea6c851ca605a8465f07bc83c2f96a1d4301988063bf36",
-      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 2 adult people, each drawn once, in a quiet simple studio. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. Medium frontal two-shot. Person 1 right and person 2 left lean over the same desk, both looking downward at one sheet of paper between them.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. Person 1, a single individual in this scene.\",\n      \"bbox\": [\n        -389,\n        20,\n        451,\n        451\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult man aged 35, short light hair, rectangular glasses, black business suit and tie. Person 2, a single individual in this scene.\",\n      \"bbox\": [\n        -389,\n        -451,\n        451,\n        -20\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
+      "sha256": "ce814466ee76cc2b7de9a1591d8b7783a41b22f754879272946b6d084080bb6f",
+      "source_png_sha256": "dddb6bd37761b8caf8ba8777bae18aa216f0c691c3b6efe7cc0c030439a6ce44",
+      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 2 adult people, each drawn once, in a quiet simple studio. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. Medium frontal two-shot. Person 1 right and person 2 left lean over the same desk, both looking downward at the tabletop between them.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. Person 1, a single individual in this scene.\",\n      \"bbox\": [\n        -389,\n        20,\n        451,\n        451\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult man aged 35, short light hair, rectangular glasses, black business suit and tie. Person 2, a single individual in this scene.\",\n      \"bbox\": [\n        -389,\n        -451,\n        451,\n        -20\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
       "conditions": {
         "physical_gpu": 0,
         "width": 1024,
@@ -901,14 +901,14 @@
         "dmd_lora": false,
         "image_processing": "none"
       },
-      "review": "一部不一致：紙面に文字状の線が出た"
+      "review": "概ね一致：机上に指定外の書類が出た"
     },
     {
       "id": "duo_23",
       "name": "女性が説明・男性が聞く",
       "name_en": "Woman explains, man listens",
       "category": "2人の会話",
-      "prompt": "Medium two-shot. Person 1 stands right holding a sheet at chest height and explaining; person 2 stands left listening with arms folded. Both faces clear.",
+      "prompt": "Medium two-shot. Person 1 stands right turned toward person 2; person 2 stands left facing person 1. Both faces clear.",
       "boxes": [
         [
           0.54,
@@ -924,9 +924,9 @@
         ]
       ],
       "image_path": "images/compositions/duo_23.webp",
-      "sha256": "c77443dfbc90526192734ce8e9c302c8985a3db9349aef829834147c33283a90",
-      "source_png_sha256": "bfe5e297157c5c1725875432778984d1fadf811994fa2a880fd67f702e2bea92",
-      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 2 adult people, each drawn once, in a quiet simple studio. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. Medium two-shot. Person 1 stands right holding a sheet at chest height and explaining; person 2 stands left listening with arms folded. Both faces clear.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. Person 1, a single individual in this scene.\",\n      \"bbox\": [\n        -389,\n        41,\n        471,\n        471\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult man aged 35, short light hair, rectangular glasses, black business suit and tie. Person 2, a single individual in this scene.\",\n      \"bbox\": [\n        -389,\n        -471,\n        471,\n        -41\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
+      "sha256": "9e656c8078ae64b47adcdc85d2bd6d7331f96a95e4bd5c8100d209b4f5a52ed9",
+      "source_png_sha256": "1415ab2b161ce3deefbbe3f3f0514ea96920e3b066936366168b3271cec6a486",
+      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 2 adult people, each drawn once, in a quiet simple studio. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. Medium two-shot. Person 1 stands right turned toward person 2; person 2 stands left facing person 1. Both faces clear.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. Person 1, a single individual in this scene.\",\n      \"bbox\": [\n        -389,\n        41,\n        471,\n        471\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult man aged 35, short light hair, rectangular glasses, black business suit and tie. Person 2, a single individual in this scene.\",\n      \"bbox\": [\n        -389,\n        -471,\n        471,\n        -41\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
       "conditions": {
         "physical_gpu": 0,
         "width": 1024,
@@ -949,7 +949,7 @@
       "name": "男性が説明・女性が聞く",
       "name_en": "Man explains, woman listens",
       "category": "2人の会話",
-      "prompt": "Medium two-shot. Person 2 stands left holding an open notebook and explaining; person 1 stands right listening with hands loosely clasped. Both faces clear.",
+      "prompt": "Medium two-shot. Person 2 stands left turned toward person 1; person 1 stands right facing person 2. Both faces clear.",
       "boxes": [
         [
           0.54,
@@ -965,9 +965,9 @@
         ]
       ],
       "image_path": "images/compositions/duo_24.webp",
-      "sha256": "49921116aa6a7bdb5718baae42a585440ef68537f1983383bce26f7510b0aa4b",
-      "source_png_sha256": "f78e595d3e3242366f03254bb87ab8f983a1a3c7d3e7700d5521d91b41eb1020",
-      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 2 adult people, each drawn once, in a quiet simple studio. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. Medium two-shot. Person 2 stands left holding an open notebook and explaining; person 1 stands right listening with hands loosely clasped. Both faces clear.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. Person 1, a single individual in this scene.\",\n      \"bbox\": [\n        -389,\n        41,\n        471,\n        471\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult man aged 35, short light hair, rectangular glasses, black business suit and tie. Person 2, a single individual in this scene.\",\n      \"bbox\": [\n        -389,\n        -471,\n        471,\n        -41\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
+      "sha256": "958ee837378df3888a3848b49cd87146b41176e9a2b93941f3524a5cb5f8b039",
+      "source_png_sha256": "214816e4b6d6860330988b1eff6184c2002a77d308b482ecba35b2907dbe4931",
+      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 2 adult people, each drawn once, in a quiet simple studio. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. Medium two-shot. Person 2 stands left turned toward person 1; person 1 stands right facing person 2. Both faces clear.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. Person 1, a single individual in this scene.\",\n      \"bbox\": [\n        -389,\n        41,\n        471,\n        471\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult man aged 35, short light hair, rectangular glasses, black business suit and tie. Person 2, a single individual in this scene.\",\n      \"bbox\": [\n        -389,\n        -471,\n        471,\n        -41\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
       "conditions": {
         "physical_gpu": 0,
         "width": 1024,
@@ -1195,7 +1195,7 @@
       "name": "二人の手元と上半身",
       "name_en": "Hands and upper bodies of two people",
       "category": "2人の会話",
-      "prompt": "Medium close two-shot cropped from shoulders to waist, the faces are outside the top of frame. Person 1 right and person 2 left exchange a paper sheet in the center; both sets of hands visible.",
+      "prompt": "Medium close two-shot cropped from shoulders to waist, the faces are outside the top of frame. Person 1 right and person 2 left stand close together; both sets of hands visible near the center.",
       "boxes": [
         [
           0.53,
@@ -1211,9 +1211,9 @@
         ]
       ],
       "image_path": "images/compositions/duo_30.webp",
-      "sha256": "08ad29a6b1401c699a22fb59152b6edb437a30230e6443de543576c34225e8d9",
-      "source_png_sha256": "8a44403f7c2142983b2ec7360acb45edbc6ec34d8ea62ef28c11e62e797c29be",
-      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 2 adult people, each drawn once, in a quiet simple studio. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. Medium close two-shot cropped from shoulders to waist, the faces are outside the top of frame. Person 1 right and person 2 left exchange a paper sheet in the center; both sets of hands visible.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. Person 1, a single individual in this scene.\",\n      \"bbox\": [\n        -512,\n        31,\n        512,\n        492\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult man aged 35, short light hair, rectangular glasses, black business suit and tie. Person 2, a single individual in this scene.\",\n      \"bbox\": [\n        -512,\n        -492,\n        512,\n        -31\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
+      "sha256": "4f29f635940498b073ef0a52a51950430925d09b8d6eaea2afe0a5f3775f103c",
+      "source_png_sha256": "dc3c3d1baa374f280c76d01001e9abc8204d5d7984256e09061b30301ff57577",
+      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 2 adult people, each drawn once, in a quiet simple studio. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. Medium close two-shot cropped from shoulders to waist, the faces are outside the top of frame. Person 1 right and person 2 left stand close together; both sets of hands visible near the center.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. Person 1, a single individual in this scene.\",\n      \"bbox\": [\n        -512,\n        31,\n        512,\n        492\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult man aged 35, short light hair, rectangular glasses, black business suit and tie. Person 2, a single individual in this scene.\",\n      \"bbox\": [\n        -512,\n        -492,\n        512,\n        -31\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
       "conditions": {
         "physical_gpu": 0,
         "width": 1024,
@@ -1605,7 +1605,7 @@
       "name": "中央の紙を指す二人",
       "name_en": "Both point at the paper in the center",
       "category": "2人の会話",
-      "prompt": "Frontal medium two-shot behind a table. Person 1 right points down at a paper at center; person 2 left bends forward to look at that same paper. Faces, both torsos and pointing hand visible.",
+      "prompt": "Frontal medium two-shot behind a table. Person 1 right points down at the center of the table; person 2 left bends forward to look at that same spot. Faces, both torsos and pointing hand visible.",
       "boxes": [
         [
           0.53,
@@ -1621,9 +1621,9 @@
         ]
       ],
       "image_path": "images/compositions/duo_40.webp",
-      "sha256": "7d8b6c3531df5dd168afa788f66558225bd33b3561ed1d128958eb4ec9702052",
-      "source_png_sha256": "8f4c77a56cbf8e8e5c9b53ab3a0caa68c56ffeffb388a7c0f5fdcc8a1e006449",
-      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 2 adult people, each drawn once, in a quiet simple studio. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. Frontal medium two-shot behind a table. Person 1 right points down at a paper at center; person 2 left bends forward to look at that same paper. Faces, both torsos and pointing hand visible.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. Person 1, a single individual in this scene.\",\n      \"bbox\": [\n        -410,\n        31,\n        461,\n        471\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult man aged 35, short light hair, rectangular glasses, black business suit and tie. Person 2, a single individual in this scene.\",\n      \"bbox\": [\n        -410,\n        -471,\n        461,\n        -31\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
+      "sha256": "850ddaf0dc78d11a03885bdfffe2e4fe8b1054ffcc4662e6a90432d723d9a700",
+      "source_png_sha256": "e571e6b18a43110eba7515f209ce468c8cafc6fc4a48ece1fd8b672c81a0d975",
+      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 2 adult people, each drawn once, in a quiet simple studio. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. Frontal medium two-shot behind a table. Person 1 right points down at the center of the table; person 2 left bends forward to look at that same spot. Faces, both torsos and pointing hand visible.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. Person 1, a single individual in this scene.\",\n      \"bbox\": [\n        -410,\n        31,\n        461,\n        471\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult man aged 35, short light hair, rectangular glasses, black business suit and tie. Person 2, a single individual in this scene.\",\n      \"bbox\": [\n        -410,\n        -471,\n        461,\n        -31\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
       "conditions": {
         "physical_gpu": 0,
         "width": 1024,
@@ -1646,7 +1646,7 @@
       "name": "1人・胸上・話す・正面",
       "name_en": "1 person · chest-up · talking · front",
       "category": "1人の会話",
-      "prompt": "A single person shown from chest up, lips slightly parted, one hand raised near the chest. Straight-on eye-level frontal camera, clear symmetrical framing.",
+      "prompt": "A single person shown from chest up. Straight-on eye-level frontal camera, clear symmetrical framing.",
       "boxes": [
         [
           0.18,
@@ -1656,9 +1656,9 @@
         ]
       ],
       "image_path": "images/compositions/solo_01.webp",
-      "sha256": "21ce1dafd8966d2ccd939d62bbd7412453635ff55e1b5082fd8b669cb4001511",
-      "source_png_sha256": "3257cc36c9c6d0c534c433ca4c43ab4eab28bfb8b71bd15b0bbb3013e8cc2e76",
-      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 1 adult person, each drawn once, against a plain white empty background. Only the furniture explicitly requested below may be present. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. A single person shown from chest up, lips slightly parted, one hand raised near the chest. Straight-on eye-level frontal camera, clear symmetrical framing.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"One chest-up portrait of one woman. An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. A single depiction of the same individual.\",\n      \"bbox\": [\n        -358,\n        -328,\n        492,\n        328\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
+      "sha256": "c19e251518f3e5d9e58d7f4bc6bf36b1b66eadec97e4eaf0f4b4c049f8638695",
+      "source_png_sha256": "818a9eb7deccb286e54695d9f5f9c7e42b725fc7265a72e27cf86a405ba1f4f7",
+      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 1 adult person, each drawn once, against a plain white empty background. Only the furniture explicitly requested below may be present. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. A single person shown from chest up. Straight-on eye-level frontal camera, clear symmetrical framing.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"One chest-up portrait of one woman. An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. A single depiction of the same individual.\",\n      \"bbox\": [\n        -358,\n        -328,\n        492,\n        328\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
       "conditions": {
         "physical_gpu": 0,
         "width": 1024,
@@ -1674,14 +1674,14 @@
         "dmd_lora": false,
         "image_processing": "none"
       },
-      "review": "概ね一致：初回に不要な吹き出し、再生成で解消"
+      "review": "概ね一致"
     },
     {
       "id": "solo_02",
       "name": "1人・胸上・話す・斜め前",
       "name_en": "1 person · chest-up · talking · three-quarter front",
       "category": "1人の会話",
-      "prompt": "A single person shown from chest up, lips slightly parted, one hand raised near the chest. Eye-level three-quarter view from the front, both eyes visible.",
+      "prompt": "A single person shown from chest up. Eye-level three-quarter view from the front, both eyes visible.",
       "boxes": [
         [
           0.18,
@@ -1691,9 +1691,9 @@
         ]
       ],
       "image_path": "images/compositions/solo_02.webp",
-      "sha256": "8d6279ebbbe8d9bda1a202734d4cd5a6de633d3279de1edf15576d93c508b97c",
-      "source_png_sha256": "99d51d109e4dfc8a3ac36a4295195377ed0aefab6eb97a5a01c504aee291091c",
-      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 1 adult person, each drawn once, against a plain white empty background. Only the furniture explicitly requested below may be present. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. A single person shown from chest up, lips slightly parted, one hand raised near the chest. Eye-level three-quarter view from the front, both eyes visible.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"One chest-up portrait of one woman. An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. A single depiction of the same individual.\",\n      \"bbox\": [\n        -358,\n        -328,\n        492,\n        328\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
+      "sha256": "af850931191fadfe53352a234b927d60715d7427ef19220583181616fcd4c0f7",
+      "source_png_sha256": "48dba7a1c73351badbc20bbb2385f7c3184f95cd6c27a25c4fd7c32a040d1cd6",
+      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 1 adult person, each drawn once, against a plain white empty background. Only the furniture explicitly requested below may be present. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. A single person shown from chest up. Eye-level three-quarter view from the front, both eyes visible.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"One chest-up portrait of one woman. An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. A single depiction of the same individual.\",\n      \"bbox\": [\n        -358,\n        -328,\n        492,\n        328\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
       "conditions": {
         "physical_gpu": 0,
         "width": 1024,
@@ -1709,14 +1709,14 @@
         "dmd_lora": false,
         "image_processing": "none"
       },
-      "review": "一部不一致：不要な吹き出しは再生成で解消、斜め前より正面寄り"
+      "review": "一部不一致：斜め前より正面寄り"
     },
     {
       "id": "solo_03",
       "name": "1人・胸上・話す・横顔",
       "name_en": "1 person · chest-up · talking · profile",
       "category": "1人の会話",
-      "prompt": "A single person shown from chest up, talking with one hand raised near the chest. Eye-level strict side-profile view, nose silhouette clearly visible.",
+      "prompt": "A single person shown from chest up. Eye-level strict side-profile view, nose silhouette clearly visible.",
       "boxes": [
         [
           0.18,
@@ -1726,9 +1726,9 @@
         ]
       ],
       "image_path": "images/compositions/solo_03.webp",
-      "sha256": "3de6db170901167ca8d00004be3aeae70068e6b8b785ea615eeb62eb4fd635b8",
-      "source_png_sha256": "e5ed8017f64cd82cdfb9140a941bcccdaf9c94034d13f04b6db504be3dfb23ce",
-      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 1 adult person, each drawn once, in a quiet simple studio. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. A single person shown from chest up, talking with one hand raised near the chest. Eye-level strict side-profile view, nose silhouette clearly visible.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. Person 1, a single individual in this scene.\",\n      \"bbox\": [\n        -358,\n        -328,\n        492,\n        328\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
+      "sha256": "bfa3c3f9090a6b2c03b2fbab5150afee925c16598e33e4f9d7e219046b1d778a",
+      "source_png_sha256": "71b77fc8974bf8042468ab842af5973f21e88ac3d6ef8f409d843151bcf7494a",
+      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 1 adult person, each drawn once, in a quiet simple studio. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. A single person shown from chest up. Eye-level strict side-profile view, nose silhouette clearly visible.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. Person 1, a single individual in this scene.\",\n      \"bbox\": [\n        -358,\n        -328,\n        492,\n        328\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
       "conditions": {
         "physical_gpu": 0,
         "width": 1024,
@@ -1751,7 +1751,7 @@
       "name": "1人・胸上・話す・俯瞰",
       "name_en": "1 person · chest-up · talking · high angle",
       "category": "俯瞰",
-      "prompt": "A single person shown from chest up, talking with one hand raised near the chest. High-angle camera looking down from above the head, floor visible.",
+      "prompt": "A single person shown from chest up. High-angle camera looking down from above the head, floor visible.",
       "boxes": [
         [
           0.18,
@@ -1761,9 +1761,9 @@
         ]
       ],
       "image_path": "images/compositions/solo_04.webp",
-      "sha256": "0c8c70242752de2515d69a8c777cb9e9c6791d1aedb1d3b238cc92a4659f3750",
-      "source_png_sha256": "9dead91406d607c754d3c0e7e9cd7a433ab7ea61074096c22e8f1e931f26ba1d",
-      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 1 adult person, each drawn once, in a quiet simple studio. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. A single person shown from chest up, talking with one hand raised near the chest. High-angle camera looking down from above the head, floor visible.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. Person 1, a single individual in this scene.\",\n      \"bbox\": [\n        -358,\n        -328,\n        492,\n        328\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
+      "sha256": "c5f8486aa8b82a797dd1fa7af32cd698b35a605e3d7df2573b4b6257f37e4a02",
+      "source_png_sha256": "de600df9d538b6bf14490e5820efe67975909fe87febb6d2277c31451f34b27e",
+      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 1 adult person, each drawn once, in a quiet simple studio. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. A single person shown from chest up. High-angle camera looking down from above the head, floor visible.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. Person 1, a single individual in this scene.\",\n      \"bbox\": [\n        -358,\n        -328,\n        492,\n        328\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
       "conditions": {
         "physical_gpu": 0,
         "width": 1024,
@@ -1786,7 +1786,7 @@
       "name": "1人・胸上・話す・あおり",
       "name_en": "1 person · chest-up · talking · low angle",
       "category": "あおり",
-      "prompt": "A single person shown from chest up, lips slightly parted, one hand raised near the chest. Low-angle camera looking upward, ceiling visible behind the head.",
+      "prompt": "A single person shown from chest up. Low-angle camera looking upward, ceiling visible behind the head.",
       "boxes": [
         [
           0.18,
@@ -1796,9 +1796,9 @@
         ]
       ],
       "image_path": "images/compositions/solo_05.webp",
-      "sha256": "988efc8a0494815d1f5a57e77e9ccd86ee97c0659a8871bee5f4b703bc203007",
-      "source_png_sha256": "e2281885955a252d259799c8bc22dd46a1f7dca6d7d511c251db4013d98b34a0",
-      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 1 adult person, each drawn once, against a plain white empty background. Only the furniture explicitly requested below may be present. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. A single person shown from chest up, lips slightly parted, one hand raised near the chest. Low-angle camera looking upward, ceiling visible behind the head.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"One chest-up portrait of one woman. An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. A single depiction of the same individual.\",\n      \"bbox\": [\n        -358,\n        -328,\n        492,\n        328\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
+      "sha256": "49bb005c2fa0167923da2c6b2ed00a144eaa1b096dd5dd72dd9c522cd8d8d769",
+      "source_png_sha256": "5762ca7ecd0b26776b5ae2f75db59236a17d7b0169b7356b02d87256220905d8",
+      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 1 adult person, each drawn once, against a plain white empty background. Only the furniture explicitly requested below may be present. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. A single person shown from chest up. Low-angle camera looking upward, ceiling visible behind the head.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"One chest-up portrait of one woman. An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. A single depiction of the same individual.\",\n      \"bbox\": [\n        -358,\n        -328,\n        492,\n        328\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
       "conditions": {
         "physical_gpu": 0,
         "width": 1024,
@@ -1814,14 +1814,14 @@
         "dmd_lora": false,
         "image_processing": "none"
       },
-      "review": "概ね一致：初回に不要な吹き出し、再生成で解消"
+      "review": "概ね一致"
     },
     {
       "id": "solo_06",
       "name": "1人・顔アップ・聞く・正面",
       "name_en": "1 person · face close-up · listening · front",
       "category": "顔アップ",
-      "prompt": "A single large face fills most of the frame, an attentive neutral expression; crop below the neck. Only one head is depicted. Straight-on eye-level frontal camera, clear symmetrical framing.",
+      "prompt": "A single large face fills most of the frame; crop below the neck. Only one head is depicted. Straight-on eye-level frontal camera, clear symmetrical framing.",
       "boxes": [
         [
           0.1,
@@ -1831,9 +1831,9 @@
         ]
       ],
       "image_path": "images/compositions/solo_06.webp",
-      "sha256": "4dc8949e3b0b30a2c268448d21e7a7d730aa98fe0e1b4a950cfc6c21334720c9",
-      "source_png_sha256": "0bdd14b1b83921ceae0e3e705a9c10eca8a9c74cadb651d8c3108a6348f20f87",
-      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 1 adult person, each drawn once, against a plain white empty background. Only the furniture explicitly requested below may be present. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. A single large face fills most of the frame, an attentive neutral expression; crop below the neck. Only one head is depicted. Straight-on eye-level frontal camera, clear symmetrical framing.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"One close-up head of one woman, neck and body outside frame. An adult woman aged 22, long straight black hair. A single depiction of the same individual.\",\n      \"bbox\": [\n        -440,\n        -410,\n        492,\n        410\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
+      "sha256": "b53b5c1dada2113b1f527b2dfa38f22210236b6323a814d435a3a718427381cf",
+      "source_png_sha256": "a18526de6d3545b44b1967f1ce666c1b606e1f57acf403aedde1d0a96a3ab7f8",
+      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 1 adult person, each drawn once, against a plain white empty background. Only the furniture explicitly requested below may be present. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. A single large face fills most of the frame; crop below the neck. Only one head is depicted. Straight-on eye-level frontal camera, clear symmetrical framing.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"One close-up head of one woman, neck and body outside frame. An adult woman aged 22, long straight black hair. A single depiction of the same individual.\",\n      \"bbox\": [\n        -440,\n        -410,\n        492,\n        410\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
       "conditions": {
         "physical_gpu": 0,
         "width": 1024,
@@ -1849,14 +1849,14 @@
         "dmd_lora": false,
         "image_processing": "none"
       },
-      "review": "概ね一致：初回は背景に別人、再生成後は1人"
+      "review": "概ね一致"
     },
     {
       "id": "solo_07",
       "name": "1人・顔アップ・聞く・斜め前",
       "name_en": "1 person · face close-up · listening · three-quarter front",
       "category": "顔アップ",
-      "prompt": "A single large face fills most of the frame, an attentive neutral expression; crop below the neck. Only one head is depicted. Eye-level three-quarter view from the front, both eyes visible.",
+      "prompt": "A single large face fills most of the frame; crop below the neck. Only one head is depicted. Eye-level three-quarter view from the front, both eyes visible.",
       "boxes": [
         [
           0.1,
@@ -1866,9 +1866,9 @@
         ]
       ],
       "image_path": "images/compositions/solo_07.webp",
-      "sha256": "07f19d21c2f44e2e34c80e1748fd4c890fe6d943f5b834d2170b74f8aa420e7b",
-      "source_png_sha256": "4c162365005c31a94cd79e82628e86ec740f33215869f58529b72f7ef81d4d27",
-      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 1 adult person, each drawn once, against a plain white empty background. Only the furniture explicitly requested below may be present. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. A single large face fills most of the frame, an attentive neutral expression; crop below the neck. Only one head is depicted. Eye-level three-quarter view from the front, both eyes visible.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"One close-up head of one woman, neck and body outside frame. An adult woman aged 22, long straight black hair. A single depiction of the same individual.\",\n      \"bbox\": [\n        -440,\n        -410,\n        492,\n        410\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
+      "sha256": "1984e218d8c8d06acbdba71ac4631b5270e3e8435311b5f4d816d214c7c128ec",
+      "source_png_sha256": "2bf1b29afe6288eb1aa701a65a9040e52470263193193111ec412234d42dea9f",
+      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 1 adult person, each drawn once, against a plain white empty background. Only the furniture explicitly requested below may be present. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. A single large face fills most of the frame; crop below the neck. Only one head is depicted. Eye-level three-quarter view from the front, both eyes visible.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"One close-up head of one woman, neck and body outside frame. An adult woman aged 22, long straight black hair. A single depiction of the same individual.\",\n      \"bbox\": [\n        -440,\n        -410,\n        492,\n        410\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
       "conditions": {
         "physical_gpu": 0,
         "width": 1024,
@@ -1884,14 +1884,14 @@
         "dmd_lora": false,
         "image_processing": "none"
       },
-      "review": "概ね一致：初回は背景に別人、再生成後は1人"
+      "review": "概ね一致"
     },
     {
       "id": "solo_08",
       "name": "1人・顔アップ・聞く・横顔",
       "name_en": "1 person · face close-up · listening · profile",
       "category": "顔アップ",
-      "prompt": "A single large face fills most of the frame, an attentive neutral expression; crop below the neck. Only one head is depicted. Eye-level strict side-profile view, nose silhouette clearly visible.",
+      "prompt": "A single large face fills most of the frame; crop below the neck. Only one head is depicted. Eye-level strict side-profile view, nose silhouette clearly visible.",
       "boxes": [
         [
           0.1,
@@ -1901,9 +1901,9 @@
         ]
       ],
       "image_path": "images/compositions/solo_08.webp",
-      "sha256": "5f7c8b756e41f8f614a6711c389f1ffaeb4427541b2374f9aeb0972f78b21c84",
-      "source_png_sha256": "8c708c2aa6bf85a8e7e44514b8b8aeae54fbd3849d0bd3e1e25229f085d75cb4",
-      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 1 adult person, each drawn once, against a plain white empty background. Only the furniture explicitly requested below may be present. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. A single large face fills most of the frame, an attentive neutral expression; crop below the neck. Only one head is depicted. Eye-level strict side-profile view, nose silhouette clearly visible.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"One close-up head of one woman, neck and body outside frame. An adult woman aged 22, long straight black hair. A single depiction of the same individual.\",\n      \"bbox\": [\n        -440,\n        -410,\n        492,\n        410\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
+      "sha256": "c9db4d072baed2a2078659329a538fead110caba0ec02e339811aa7720ab73c3",
+      "source_png_sha256": "5234cc9416d00a7861d8e2e6c083961ab4fbe173e62f39fbefaec49a1a7b0a36",
+      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 1 adult person, each drawn once, against a plain white empty background. Only the furniture explicitly requested below may be present. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. A single large face fills most of the frame; crop below the neck. Only one head is depicted. Eye-level strict side-profile view, nose silhouette clearly visible.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"One close-up head of one woman, neck and body outside frame. An adult woman aged 22, long straight black hair. A single depiction of the same individual.\",\n      \"bbox\": [\n        -440,\n        -410,\n        492,\n        410\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
       "conditions": {
         "physical_gpu": 0,
         "width": 1024,
@@ -1919,14 +1919,14 @@
         "dmd_lora": false,
         "image_processing": "none"
       },
-      "review": "概ね一致：初回は背景に別人、再生成後は1人"
+      "review": "概ね一致"
     },
     {
       "id": "solo_09",
       "name": "1人・顔アップ・聞く・俯瞰",
       "name_en": "1 person · face close-up · listening · high angle",
       "category": "俯瞰",
-      "prompt": "A single large face fills most of the frame, attentive listening expression; crop below the neck. High-angle camera looking down from above the head, floor visible.",
+      "prompt": "A single large face fills most of the frame; crop below the neck. High-angle camera looking down from above the head, floor visible.",
       "boxes": [
         [
           0.1,
@@ -1936,9 +1936,9 @@
         ]
       ],
       "image_path": "images/compositions/solo_09.webp",
-      "sha256": "fbc623f091cfafacb729d811bd715f6deb326a5cea1bc01657cc27dcb5011879",
-      "source_png_sha256": "003bdc893622522c6b2c77777b03d0c62874ef090a05c2dc471c7df5be31b18f",
-      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 1 adult person, each drawn once, in a quiet simple studio. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. A single large face fills most of the frame, attentive listening expression; crop below the neck. High-angle camera looking down from above the head, floor visible.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. Person 1, a single individual in this scene.\",\n      \"bbox\": [\n        -440,\n        -410,\n        492,\n        410\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
+      "sha256": "0361bdfad386811f03d39535434a6b56addab89a2f9e8e0f414c62c9132d2671",
+      "source_png_sha256": "c982fce1178c767e71d2a7a5759990ddb4d0bb721f8730a12b60406fb869c76d",
+      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 1 adult person, each drawn once, in a quiet simple studio. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. A single large face fills most of the frame; crop below the neck. High-angle camera looking down from above the head, floor visible.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. Person 1, a single individual in this scene.\",\n      \"bbox\": [\n        -440,\n        -410,\n        492,\n        410\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
       "conditions": {
         "physical_gpu": 0,
         "width": 1024,
@@ -1961,7 +1961,7 @@
       "name": "1人・顔アップ・聞く・あおり",
       "name_en": "1 person · face close-up · listening · low angle",
       "category": "あおり",
-      "prompt": "A single large face fills most of the frame, attentive listening expression; crop below the neck. Low-angle camera looking upward, ceiling visible behind the head.",
+      "prompt": "A single large face fills most of the frame; crop below the neck. Only one head is depicted. Low-angle camera looking upward, ceiling visible behind the head.",
       "boxes": [
         [
           0.1,
@@ -1971,14 +1971,14 @@
         ]
       ],
       "image_path": "images/compositions/solo_10.webp",
-      "sha256": "a98741f76758f9b98b558fe3113b8ed55993a8a3891f1da7ddc8e6840f952d72",
-      "source_png_sha256": "2a330bf78aaf9bbe68631b9d4bd21651b3ba4f87b5ff9a9a3eb7af570c414d21",
-      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 1 adult person, each drawn once, in a quiet simple studio. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. A single large face fills most of the frame, attentive listening expression; crop below the neck. Low-angle camera looking upward, ceiling visible behind the head.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. Person 1, a single individual in this scene.\",\n      \"bbox\": [\n        -440,\n        -410,\n        492,\n        410\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
+      "sha256": "8b08c7a3892901a34936c721ffdf2a96c65840139d10fef221dc245cfb2e743c",
+      "source_png_sha256": "86b843c35b035066942634d162249aa3043b4161a8c0864c7f1d50a5570c475c",
+      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 1 adult person, each drawn once, in a quiet simple studio. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. A single large face fills most of the frame; crop below the neck. Only one head is depicted. Low-angle camera looking upward, ceiling visible behind the head.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. Person 1, a single individual in this scene.\",\n      \"bbox\": [\n        -440,\n        -410,\n        492,\n        410\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
       "conditions": {
         "physical_gpu": 0,
         "width": 1024,
         "height": 1024,
-        "seed": 26111030,
+        "seed": 26111034,
         "steps": 25,
         "cfg": 2.5,
         "sampler": "er_sde",
@@ -1989,7 +1989,7 @@
         "dmd_lora": false,
         "image_processing": "none"
       },
-      "review": "概ね一致"
+      "review": "概ね一致：シード変更で背景の別人が解消（試行5回目）"
     },
     {
       "id": "solo_11",
@@ -2346,7 +2346,7 @@
       "name": "1人・机で作業する・正面",
       "name_en": "1 person · working at a desk · front",
       "category": "1人の会話",
-      "prompt": "A single person seated at a desk writing with a pen, head, torso, hands and desktop clearly visible. Straight-on eye-level frontal camera, clear symmetrical framing.",
+      "prompt": "A single person seated at a desk with both hands on the desktop, head, torso, hands and desktop clearly visible. Straight-on eye-level frontal camera, clear symmetrical framing.",
       "boxes": [
         [
           0.18,
@@ -2356,9 +2356,9 @@
         ]
       ],
       "image_path": "images/compositions/solo_21.webp",
-      "sha256": "2e9ab85225666f901b4cd269320c3fff991d50d06b295ea6c7c22e11000f60da",
-      "source_png_sha256": "308e54b1ae3f1d00dcef9c30132a909f11e5d7a5512bf29aadb2f196bb1b62ba",
-      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 1 adult person, each drawn once, in a quiet simple studio. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. A single person seated at a desk writing with a pen, head, torso, hands and desktop clearly visible. Straight-on eye-level frontal camera, clear symmetrical framing.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. Person 1, a single individual in this scene.\",\n      \"bbox\": [\n        -369,\n        -328,\n        430,\n        328\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
+      "sha256": "119aabdf5862827ae3b89fdf64059f9f0e16ce56ac4e41b02f7393021466a3ce",
+      "source_png_sha256": "27d238832d43ace1f4e21318dc30aa6a7d5ee2cce8645f7cabd96723c2873f22",
+      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 1 adult person, each drawn once, in a quiet simple studio. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. A single person seated at a desk with both hands on the desktop, head, torso, hands and desktop clearly visible. Straight-on eye-level frontal camera, clear symmetrical framing.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. Person 1, a single individual in this scene.\",\n      \"bbox\": [\n        -369,\n        -328,\n        430,\n        328\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
       "conditions": {
         "physical_gpu": 0,
         "width": 1024,
@@ -2381,7 +2381,7 @@
       "name": "1人・机で作業する・斜め前",
       "name_en": "1 person · working at a desk · three-quarter front",
       "category": "1人の会話",
-      "prompt": "A single person seated at a desk writing with a pen, head, torso, hands and desktop clearly visible. Eye-level three-quarter view from the front, both eyes visible.",
+      "prompt": "A single person seated at a desk with both hands on the desktop, head, torso, hands and desktop clearly visible. Eye-level three-quarter view from the front, both eyes visible.",
       "boxes": [
         [
           0.18,
@@ -2391,9 +2391,9 @@
         ]
       ],
       "image_path": "images/compositions/solo_22.webp",
-      "sha256": "fb8834c675826e4ceec43cf12596023464a64ce3e6116be3f66179e500640752",
-      "source_png_sha256": "509f60b586f46b19016c8038e6365153ad8b83e878196e513dc7044a7a7fc38e",
-      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 1 adult person, each drawn once, against a plain white empty background. Only the furniture explicitly requested below may be present. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. A single person seated at a desk writing with a pen, head, torso, hands and desktop clearly visible. Eye-level three-quarter view from the front, both eyes visible.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"One seated woman shown waist-up with both hands at the desk. An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. A single depiction of the same individual.\",\n      \"bbox\": [\n        -369,\n        -328,\n        430,\n        328\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
+      "sha256": "c757a762eea5272b4097c3b8d37d35697a71ca68f1d3a3ffc1944f97cceec393",
+      "source_png_sha256": "ccc4e5f3416758460fc4d1f71972ac0e45c54b8f9cc9cfab82d39999e676e60c",
+      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 1 adult person, each drawn once, against a plain white empty background. Only the furniture explicitly requested below may be present. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. A single person seated at a desk with both hands on the desktop, head, torso, hands and desktop clearly visible. Eye-level three-quarter view from the front, both eyes visible.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"One seated woman shown waist-up with both hands at the desk. An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. A single depiction of the same individual.\",\n      \"bbox\": [\n        -369,\n        -328,\n        430,\n        328\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
       "conditions": {
         "physical_gpu": 0,
         "width": 1024,
@@ -2409,14 +2409,14 @@
         "dmd_lora": false,
         "image_processing": "none"
       },
-      "review": "概ね一致"
+      "review": "一部不一致：斜め前より正面寄り"
     },
     {
       "id": "solo_23",
       "name": "1人・机で作業する・横顔",
       "name_en": "1 person · working at a desk · profile",
       "category": "1人の会話",
-      "prompt": "A single person seated at a desk writing with a pen, head, torso, hands and desktop clearly visible. Eye-level strict side-profile view, nose silhouette clearly visible.",
+      "prompt": "A single person seated at a desk with both hands on the desktop, head, torso, hands and desktop clearly visible. Eye-level strict side-profile view, nose silhouette clearly visible.",
       "boxes": [
         [
           0.18,
@@ -2426,9 +2426,9 @@
         ]
       ],
       "image_path": "images/compositions/solo_23.webp",
-      "sha256": "ee5d81ef3b794a3667e6a85e0e20c356104e1d2e17f5dbf6d73b9b786845f93d",
-      "source_png_sha256": "f8610226f20ab71f48100ccbddeaaa8aebe76d7ff2a6abf1184120a629d4e6c8",
-      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 1 adult person, each drawn once, against a plain white empty background. Only the furniture explicitly requested below may be present. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. A single person seated at a desk writing with a pen, head, torso, hands and desktop clearly visible. Eye-level strict side-profile view, nose silhouette clearly visible.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"One seated woman shown waist-up with both hands at the desk. An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. A single depiction of the same individual.\",\n      \"bbox\": [\n        -369,\n        -328,\n        430,\n        328\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
+      "sha256": "3fd404130f1907233ac7c2de136fcd9331d32bf7785d77a1ad1973f12efbc4d0",
+      "source_png_sha256": "9266bd9d625f9a42a681d891850a0891802f88e3e89b83e918027187aebf0acd",
+      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 1 adult person, each drawn once, against a plain white empty background. Only the furniture explicitly requested below may be present. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. A single person seated at a desk with both hands on the desktop, head, torso, hands and desktop clearly visible. Eye-level strict side-profile view, nose silhouette clearly visible.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"One seated woman shown waist-up with both hands at the desk. An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. A single depiction of the same individual.\",\n      \"bbox\": [\n        -369,\n        -328,\n        430,\n        328\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
       "conditions": {
         "physical_gpu": 0,
         "width": 1024,
@@ -2451,7 +2451,7 @@
       "name": "1人・机で作業する・俯瞰",
       "name_en": "1 person · working at a desk · high angle",
       "category": "俯瞰",
-      "prompt": "A single person seated at a desk writing with a pen, head, torso, hands and desktop clearly visible. High-angle camera looking down from above the head, floor visible.",
+      "prompt": "A single person seated at a desk with both hands on the desktop, head, torso, hands and desktop clearly visible. High-angle camera looking down from above the head, floor visible.",
       "boxes": [
         [
           0.18,
@@ -2461,9 +2461,9 @@
         ]
       ],
       "image_path": "images/compositions/solo_24.webp",
-      "sha256": "02a64c5d0ba09fce6e957e568d8083554095f9c18aa6ee2b1855f00790b23e61",
-      "source_png_sha256": "6dc359c66aa775cb7463b45bf3600d4e157b73d4b43ba097e57a15237f3c1059",
-      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 1 adult person, each drawn once, against a plain white empty background. Only the furniture explicitly requested below may be present. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. A single person seated at a desk writing with a pen, head, torso, hands and desktop clearly visible. High-angle camera looking down from above the head, floor visible.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"One seated woman shown waist-up with both hands at the desk. An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. A single depiction of the same individual.\",\n      \"bbox\": [\n        -369,\n        -328,\n        430,\n        328\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
+      "sha256": "339496cd2f98aba870e49f2a309700342e9cb8e75cbbc62a7d5df57e0c8c5f9c",
+      "source_png_sha256": "faa4e0db3344a52fe85f17e94ca85e3ff67e0baffb888dcc9910578cf9e2f269",
+      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 1 adult person, each drawn once, against a plain white empty background. Only the furniture explicitly requested below may be present. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. A single person seated at a desk with both hands on the desktop, head, torso, hands and desktop clearly visible. High-angle camera looking down from above the head, floor visible.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"One seated woman shown waist-up with both hands at the desk. An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. A single depiction of the same individual.\",\n      \"bbox\": [\n        -369,\n        -328,\n        430,\n        328\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
       "conditions": {
         "physical_gpu": 0,
         "width": 1024,
@@ -2486,7 +2486,7 @@
       "name": "1人・机で作業する・あおり",
       "name_en": "1 person · working at a desk · low angle",
       "category": "あおり",
-      "prompt": "A single person seated at a desk writing with a pen, head, torso, hands and desktop clearly visible. Low-angle camera looking upward, ceiling visible behind the head.",
+      "prompt": "A single person seated at a desk with both hands on the desktop, head, torso, hands and desktop clearly visible. Low-angle camera looking upward, ceiling visible behind the head.",
       "boxes": [
         [
           0.18,
@@ -2496,9 +2496,9 @@
         ]
       ],
       "image_path": "images/compositions/solo_25.webp",
-      "sha256": "0f7372bec62586fe93bcaf2fb3f26ed2d9570663160f62b18c180f9dac5c2e73",
-      "source_png_sha256": "0f6d93e06fe4cf2f52cb389d6edfb2a81f95862ff6ba7357b70b80d8d126db43",
-      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 1 adult person, each drawn once, against a plain white empty background. Only the furniture explicitly requested below may be present. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. A single person seated at a desk writing with a pen, head, torso, hands and desktop clearly visible. Low-angle camera looking upward, ceiling visible behind the head.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"One seated woman shown waist-up with both hands at the desk. An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. A single depiction of the same individual.\",\n      \"bbox\": [\n        -369,\n        -328,\n        430,\n        328\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
+      "sha256": "c83b277ad95bedd3e2d567367eae20d4c39ca7cfe6a7921a62ab760d62f6e42d",
+      "source_png_sha256": "e8e8753678716a25e8c60c18cf19bc29920b7bbe16a24ccf496b829bec65037e",
+      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 1 adult person, each drawn once, against a plain white empty background. Only the furniture explicitly requested below may be present. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. A single person seated at a desk with both hands on the desktop, head, torso, hands and desktop clearly visible. Low-angle camera looking upward, ceiling visible behind the head.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"One seated woman shown waist-up with both hands at the desk. An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. A single depiction of the same individual.\",\n      \"bbox\": [\n        -369,\n        -328,\n        430,\n        328\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
       "conditions": {
         "physical_gpu": 0,
         "width": 1024,
@@ -2514,7 +2514,7 @@
         "dmd_lora": false,
         "image_processing": "none"
       },
-      "review": "一部不一致：作業姿勢は一致するがあおりが弱い"
+      "review": "概ね一致"
     },
     {
       "id": "solo_26",
@@ -2696,7 +2696,7 @@
       "name": "1人・床にしゃがむ・正面",
       "name_en": "1 person · crouching on the floor · front",
       "category": "全身",
-      "prompt": "A single person crouching on the floor to pick up a sheet of paper, compact full-body pose with both feet visible. Straight-on eye-level frontal camera, clear symmetrical framing.",
+      "prompt": "A single person crouching low on the floor, compact full-body pose with both feet visible. Straight-on eye-level frontal camera, clear symmetrical framing.",
       "boxes": [
         [
           0.16,
@@ -2706,9 +2706,9 @@
         ]
       ],
       "image_path": "images/compositions/solo_31.webp",
-      "sha256": "60ff3fb75b793975ae5852120b921d5cd2545fc934b18966e092f3b2927f1135",
-      "source_png_sha256": "121ce276ad90fbe1785c6d35176ddc1b665b399cf329cab8acb14c9beb08add5",
-      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 1 adult person, each drawn once, against a plain white empty background. Only the furniture explicitly requested below may be present. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. A single person crouching on the floor to pick up a sheet of paper, compact full-body pose with both feet visible. Straight-on eye-level frontal camera, clear symmetrical framing.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"One complete crouching woman, both feet visible. An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. A single depiction of the same individual.\",\n      \"bbox\": [\n        -205,\n        -348,\n        440,\n        348\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
+      "sha256": "5e05d21561fc8a29639d2acd8980f5cb0b6f4b7ffd309f8ca9960a93b80e2022",
+      "source_png_sha256": "706dce098424bf06411d11ba1b3768a7b4ce91e4f2c55763131e11b40298aad6",
+      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 1 adult person, each drawn once, against a plain white empty background. Only the furniture explicitly requested below may be present. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. A single person crouching low on the floor, compact full-body pose with both feet visible. Straight-on eye-level frontal camera, clear symmetrical framing.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"One complete crouching woman, both feet visible. An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. A single depiction of the same individual.\",\n      \"bbox\": [\n        -205,\n        -348,\n        440,\n        348\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
       "conditions": {
         "physical_gpu": 0,
         "width": 1024,
@@ -2724,14 +2724,14 @@
         "dmd_lora": false,
         "image_processing": "none"
       },
-      "review": "一部不一致：紙面に文字状の描写が出た"
+      "review": "概ね一致"
     },
     {
       "id": "solo_32",
       "name": "1人・床にしゃがむ・斜め前",
       "name_en": "1 person · crouching on the floor · three-quarter front",
       "category": "全身",
-      "prompt": "A single person crouching on the floor to pick up a sheet of paper, compact full-body pose with both feet visible. Eye-level three-quarter view from the front, both eyes visible.",
+      "prompt": "A single person crouching low on the floor, compact full-body pose with both feet visible. Eye-level three-quarter view from the front, both eyes visible.",
       "boxes": [
         [
           0.16,
@@ -2741,9 +2741,9 @@
         ]
       ],
       "image_path": "images/compositions/solo_32.webp",
-      "sha256": "84e26cbaf4eb62ef6f5212649dfcb986a493e005e3336efac2c1b8a4a51e5107",
-      "source_png_sha256": "8514354bae99bd2605ab47aa2f554dd96ef5a50da52f2cb389c97502a62fdc65",
-      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 1 adult person, each drawn once, against a plain white empty background. Only the furniture explicitly requested below may be present. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. A single person crouching on the floor to pick up a sheet of paper, compact full-body pose with both feet visible. Eye-level three-quarter view from the front, both eyes visible.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"One complete crouching woman, both feet visible. An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. A single depiction of the same individual.\",\n      \"bbox\": [\n        -205,\n        -348,\n        440,\n        348\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
+      "sha256": "c7265b445fbfe2ecdd17c5192b547554c960dedcd83b600b8f9dd15c52f4d6e3",
+      "source_png_sha256": "1c522b4770ec4f7ada56467978a7e311ed7990fed66fc2f2e21f1ff7c8344b32",
+      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 1 adult person, each drawn once, against a plain white empty background. Only the furniture explicitly requested below may be present. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. A single person crouching low on the floor, compact full-body pose with both feet visible. Eye-level three-quarter view from the front, both eyes visible.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"One complete crouching woman, both feet visible. An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. A single depiction of the same individual.\",\n      \"bbox\": [\n        -205,\n        -348,\n        440,\n        348\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
       "conditions": {
         "physical_gpu": 0,
         "width": 1024,
@@ -2766,7 +2766,7 @@
       "name": "1人・床にしゃがむ・横顔",
       "name_en": "1 person · crouching on the floor · profile",
       "category": "全身",
-      "prompt": "A single person crouching on the floor to pick up a sheet of paper, compact full-body pose with both feet visible. Eye-level strict side-profile view, nose silhouette clearly visible.",
+      "prompt": "A single person crouching low on the floor, compact full-body pose with both feet visible. Eye-level strict side-profile view, nose silhouette clearly visible.",
       "boxes": [
         [
           0.16,
@@ -2776,9 +2776,9 @@
         ]
       ],
       "image_path": "images/compositions/solo_33.webp",
-      "sha256": "b9d9cfea93f0e69fdcfb785761bd9c44174562c74a5ac4df6bcc5f2ca66842ed",
-      "source_png_sha256": "c0f0b41e5af06e6a8748663e15d1dddcdb6f207e6baf1538295b21ce9d698165",
-      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 1 adult person, each drawn once, against a plain white empty background. Only the furniture explicitly requested below may be present. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. A single person crouching on the floor to pick up a sheet of paper, compact full-body pose with both feet visible. Eye-level strict side-profile view, nose silhouette clearly visible.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"One complete crouching woman, both feet visible. An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. A single depiction of the same individual.\",\n      \"bbox\": [\n        -205,\n        -348,\n        440,\n        348\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
+      "sha256": "3dc618d4c1b1fc8466c32d73610f36da9089ae7c3d1c37ac5d3d568c1451f5be",
+      "source_png_sha256": "2402dbcf86b41a139ffd8edba3da78803237e37bff013b4e5973fca23e1ab51a",
+      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 1 adult person, each drawn once, against a plain white empty background. Only the furniture explicitly requested below may be present. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. A single person crouching low on the floor, compact full-body pose with both feet visible. Eye-level strict side-profile view, nose silhouette clearly visible.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"One complete crouching woman, both feet visible. An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. A single depiction of the same individual.\",\n      \"bbox\": [\n        -205,\n        -348,\n        440,\n        348\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
       "conditions": {
         "physical_gpu": 0,
         "width": 1024,
@@ -2801,7 +2801,7 @@
       "name": "1人・床にしゃがむ・俯瞰",
       "name_en": "1 person · crouching on the floor · high angle",
       "category": "俯瞰",
-      "prompt": "A single person crouching on the floor to pick up a sheet of paper, compact full-body pose with both feet visible. High-angle camera looking down from above the head, floor visible.",
+      "prompt": "A single person crouching low on the floor, compact full-body pose with both feet visible. High-angle camera looking down from above the head, floor visible.",
       "boxes": [
         [
           0.16,
@@ -2811,9 +2811,9 @@
         ]
       ],
       "image_path": "images/compositions/solo_34.webp",
-      "sha256": "2ac353da2debfd8b17f0aa60b8749369a9bc26351955648526dae4209c20c2d7",
-      "source_png_sha256": "211327d99350906960a2267e46f168a60bf1922297b40566e82f523c42c650dc",
-      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 1 adult person, each drawn once, against a plain white empty background. Only the furniture explicitly requested below may be present. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. A single person crouching on the floor to pick up a sheet of paper, compact full-body pose with both feet visible. High-angle camera looking down from above the head, floor visible.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"One complete crouching woman, both feet visible. An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. A single depiction of the same individual.\",\n      \"bbox\": [\n        -205,\n        -348,\n        440,\n        348\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
+      "sha256": "e8b0411056ec95143e285b2795671ed447c7b40298774a9e1eac06a7d00da998",
+      "source_png_sha256": "e399ca9571cbc5df1db059d6fcf973c2514049ae1c1f380e957ac26cc226cd9e",
+      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 1 adult person, each drawn once, against a plain white empty background. Only the furniture explicitly requested below may be present. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. A single person crouching low on the floor, compact full-body pose with both feet visible. High-angle camera looking down from above the head, floor visible.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"One complete crouching woman, both feet visible. An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. A single depiction of the same individual.\",\n      \"bbox\": [\n        -205,\n        -348,\n        440,\n        348\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
       "conditions": {
         "physical_gpu": 0,
         "width": 1024,
@@ -2836,7 +2836,7 @@
       "name": "1人・床にしゃがむ・あおり",
       "name_en": "1 person · crouching on the floor · low angle",
       "category": "あおり",
-      "prompt": "A single person crouching on the floor to pick up a sheet of paper, compact full-body pose with both feet visible. Low-angle camera looking upward, ceiling visible behind the head.",
+      "prompt": "A single person crouching low on the floor, compact full-body pose with both feet visible. Low-angle camera looking upward, ceiling visible behind the head.",
       "boxes": [
         [
           0.16,
@@ -2846,9 +2846,9 @@
         ]
       ],
       "image_path": "images/compositions/solo_35.webp",
-      "sha256": "92a1dbbd3f97fd4e5fbafd6093885455f6aca564a9b3751901c86c63a189271a",
-      "source_png_sha256": "c52dc2d9e73f6813a8a450b8790e6d0b8e01faced3ed0b0cacba57d46da6b954",
-      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 1 adult person, each drawn once, against a plain white empty background. Only the furniture explicitly requested below may be present. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. A single person crouching on the floor to pick up a sheet of paper, compact full-body pose with both feet visible. Low-angle camera looking upward, ceiling visible behind the head.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"One complete crouching woman, both feet visible. An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. A single depiction of the same individual.\",\n      \"bbox\": [\n        -205,\n        -348,\n        440,\n        348\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
+      "sha256": "e9871b31b3431c80a0fe1134115d4018ee884be251fd054537fe685a3b068efe",
+      "source_png_sha256": "20f1d4fbabdebfe08b752b33eebdadb095b7d4fb384155da2ecc17e0824c7e0c",
+      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 1 adult person, each drawn once, against a plain white empty background. Only the furniture explicitly requested below may be present. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. A single person crouching low on the floor, compact full-body pose with both feet visible. Low-angle camera looking upward, ceiling visible behind the head.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"One complete crouching woman, both feet visible. An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. A single depiction of the same individual.\",\n      \"bbox\": [\n        -205,\n        -348,\n        440,\n        348\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
       "conditions": {
         "physical_gpu": 0,
         "width": 1024,
@@ -3046,7 +3046,7 @@
       "name": "3人・横一列・正面",
       "name_en": "3 people · in a row · front",
       "category": "3人の会話",
-      "prompt": "Three people stand in one row, person 1 on the right, person 2 in the center, person 3 on the left. Show each from head to waist, heads turned inward in a group conversation. Eye-level camera facing the group.",
+      "prompt": "Three people stand in one row, person 1 on the right, person 2 in the center, person 3 on the left. Show each from head to waist, heads turned inward toward each other. Eye-level camera facing the group.",
       "boxes": [
         [
           0.69,
@@ -3068,9 +3068,9 @@
         ]
       ],
       "image_path": "images/compositions/trio_01.webp",
-      "sha256": "d19b2411696116514d63098b73f5d0629b466dc114b6b2725c62e8fa76ea84e0",
-      "source_png_sha256": "6ec715411340bfda188576e8bd6c2625bd57cb0807b4cc770468dff33235d1b4",
-      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 3 adult people, each drawn once, in a quiet simple studio. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. Three people stand in one row, person 1 on the right, person 2 in the center, person 3 on the left. Show each from head to waist, heads turned inward in a group conversation. Eye-level camera facing the group.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. Person 1, a single individual in this scene.\",\n      \"bbox\": [\n        -348,\n        195,\n        481,\n        492\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult man aged 35, short light hair, rectangular glasses, black business suit and tie. Person 2, a single individual in this scene.\",\n      \"bbox\": [\n        -348,\n        -154,\n        481,\n        154\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 28, short wavy bob hair, round earrings, dark cardigan over a light shirt, straight light trousers. Person 3, a single individual in this scene.\",\n      \"bbox\": [\n        -348,\n        -492,\n        481,\n        -195\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
+      "sha256": "10016987f84096d30d32e3ddbf78de6b59587e9a08190d0e7ab3954806cdbf15",
+      "source_png_sha256": "0aba06a826a6c7b32b35b3301a52dd3b87a73138ba18a7535e48d7c28c5ce32b",
+      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 3 adult people, each drawn once, in a quiet simple studio. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. Three people stand in one row, person 1 on the right, person 2 in the center, person 3 on the left. Show each from head to waist, heads turned inward toward each other. Eye-level camera facing the group.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. Person 1, a single individual in this scene.\",\n      \"bbox\": [\n        -348,\n        195,\n        481,\n        492\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult man aged 35, short light hair, rectangular glasses, black business suit and tie. Person 2, a single individual in this scene.\",\n      \"bbox\": [\n        -348,\n        -154,\n        481,\n        154\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 28, short wavy bob hair, round earrings, dark cardigan over a light shirt, straight light trousers. Person 3, a single individual in this scene.\",\n      \"bbox\": [\n        -348,\n        -492,\n        481,\n        -195\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
       "conditions": {
         "physical_gpu": 0,
         "width": 1024,
@@ -3093,7 +3093,7 @@
       "name": "3人・横一列・斜め前",
       "name_en": "3 people · in a row · three-quarter front",
       "category": "3人の会話",
-      "prompt": "Three people stand in one row, person 1 on the right, person 2 in the center, person 3 on the left. Show each from head to waist, heads turned inward in a group conversation. Oblique three-quarter view of the group from the front right, clear depth perspective.",
+      "prompt": "Three people stand in one row, person 1 on the right, person 2 in the center, person 3 on the left. Show each from head to waist, heads turned inward toward each other. Oblique three-quarter view of the group from the front right, clear depth perspective.",
       "boxes": [
         [
           0.69,
@@ -3115,9 +3115,9 @@
         ]
       ],
       "image_path": "images/compositions/trio_02.webp",
-      "sha256": "e5751424f38234b325142edf95e157c39dfefe8172ce50d909df8632a9b5382c",
-      "source_png_sha256": "c9e1ee2775f0cf4d80d3ba77ca184d20155c06104567c60447f173b87f07053e",
-      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 3 adult people, each drawn once, in a quiet simple studio. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. Three people stand in one row, person 1 on the right, person 2 in the center, person 3 on the left. Show each from head to waist, heads turned inward in a group conversation. Oblique three-quarter view of the group from the front right, clear depth perspective.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. Person 1, a single individual in this scene.\",\n      \"bbox\": [\n        -348,\n        195,\n        481,\n        492\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult man aged 35, short light hair, rectangular glasses, black business suit and tie. Person 2, a single individual in this scene.\",\n      \"bbox\": [\n        -348,\n        -154,\n        481,\n        154\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 28, short wavy bob hair, round earrings, dark cardigan over a light shirt, straight light trousers. Person 3, a single individual in this scene.\",\n      \"bbox\": [\n        -348,\n        -492,\n        481,\n        -195\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
+      "sha256": "9638fb222ca6163fd65574bc5d700504af04e1aefde83c4409f9919df81d1366",
+      "source_png_sha256": "e045fbd2c855c8fc57de7285819e70dcdb3006b0b8d0acf0fedad29001939d4a",
+      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 3 adult people, each drawn once, in a quiet simple studio. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. Three people stand in one row, person 1 on the right, person 2 in the center, person 3 on the left. Show each from head to waist, heads turned inward toward each other. Oblique three-quarter view of the group from the front right, clear depth perspective.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. Person 1, a single individual in this scene.\",\n      \"bbox\": [\n        -348,\n        195,\n        481,\n        492\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult man aged 35, short light hair, rectangular glasses, black business suit and tie. Person 2, a single individual in this scene.\",\n      \"bbox\": [\n        -348,\n        -154,\n        481,\n        154\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 28, short wavy bob hair, round earrings, dark cardigan over a light shirt, straight light trousers. Person 3, a single individual in this scene.\",\n      \"bbox\": [\n        -348,\n        -492,\n        481,\n        -195\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
       "conditions": {
         "physical_gpu": 0,
         "width": 1024,
@@ -3133,14 +3133,14 @@
         "dmd_lora": false,
         "image_processing": "none"
       },
-      "review": "概ね一致"
+      "review": "一部不一致：斜め前の奥行きが弱く正面寄り"
     },
     {
       "id": "trio_03",
       "name": "3人・横一列・俯瞰",
       "name_en": "3 people · in a row · high angle",
       "category": "俯瞰",
-      "prompt": "Three people stand in one row, person 1 on the right, person 2 in the center, person 3 on the left. Show each from head to waist, heads turned inward in a group conversation. High-angle camera looking down on the entire group, floor and tops of heads visible.",
+      "prompt": "Three people stand in one row, person 1 on the right, person 2 in the center, person 3 on the left. Show each from head to waist, heads turned inward toward each other. High-angle camera looking down on the entire group, floor and tops of heads visible.",
       "boxes": [
         [
           0.69,
@@ -3162,9 +3162,9 @@
         ]
       ],
       "image_path": "images/compositions/trio_03.webp",
-      "sha256": "140385b9b1278a52720fdd900e9a1248948d476bbaf99f604416191d0c63c671",
-      "source_png_sha256": "ab6addca82be06369847fdb879f17d06b59f534cc9ac69e4844bae268cf0c1d7",
-      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 3 adult people, each drawn once, in a quiet simple studio. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. Three people stand in one row, person 1 on the right, person 2 in the center, person 3 on the left. Show each from head to waist, heads turned inward in a group conversation. High-angle camera looking down on the entire group, floor and tops of heads visible.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. Person 1, a single individual in this scene.\",\n      \"bbox\": [\n        -348,\n        195,\n        481,\n        492\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult man aged 35, short light hair, rectangular glasses, black business suit and tie. Person 2, a single individual in this scene.\",\n      \"bbox\": [\n        -348,\n        -154,\n        481,\n        154\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 28, short wavy bob hair, round earrings, dark cardigan over a light shirt, straight light trousers. Person 3, a single individual in this scene.\",\n      \"bbox\": [\n        -348,\n        -492,\n        481,\n        -195\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
+      "sha256": "c64aa95951cd15c97bbf51790840e60041b14f0dc4b100e5b9ad0ca22d7f98e2",
+      "source_png_sha256": "6a5f6156d30fb78194bb9bc61ed73775f658156aec57c98339a0382b1eaa0b20",
+      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 3 adult people, each drawn once, in a quiet simple studio. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. Three people stand in one row, person 1 on the right, person 2 in the center, person 3 on the left. Show each from head to waist, heads turned inward toward each other. High-angle camera looking down on the entire group, floor and tops of heads visible.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. Person 1, a single individual in this scene.\",\n      \"bbox\": [\n        -348,\n        195,\n        481,\n        492\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult man aged 35, short light hair, rectangular glasses, black business suit and tie. Person 2, a single individual in this scene.\",\n      \"bbox\": [\n        -348,\n        -154,\n        481,\n        154\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 28, short wavy bob hair, round earrings, dark cardigan over a light shirt, straight light trousers. Person 3, a single individual in this scene.\",\n      \"bbox\": [\n        -348,\n        -492,\n        481,\n        -195\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
       "conditions": {
         "physical_gpu": 0,
         "width": 1024,
@@ -3187,7 +3187,7 @@
       "name": "3人・横一列・あおり",
       "name_en": "3 people · in a row · low angle",
       "category": "あおり",
-      "prompt": "Three people stand in one row, person 1 on the right, person 2 in the center, person 3 on the left. Show each from head to waist, heads turned inward in a group conversation. Low-angle camera looking upward at the entire group, upward perspective and ceiling visible.",
+      "prompt": "Three people stand in one row, person 1 on the right, person 2 in the center, person 3 on the left. Show each from head to waist, heads turned inward toward each other. Low-angle camera looking upward at the entire group, upward perspective and ceiling visible.",
       "boxes": [
         [
           0.69,
@@ -3209,9 +3209,9 @@
         ]
       ],
       "image_path": "images/compositions/trio_04.webp",
-      "sha256": "25fe1746d8f8d68ec7dc39d93a18c2d2ce3efce230e4541287cab45bb635bb56",
-      "source_png_sha256": "6a250cfb939aaffd53b8dd49ec39a62f508731248f06a50f744a8768de404ba8",
-      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 3 adult people, each drawn once, in a quiet simple studio. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. Three people stand in one row, person 1 on the right, person 2 in the center, person 3 on the left. Show each from head to waist, heads turned inward in a group conversation. Low-angle camera looking upward at the entire group, upward perspective and ceiling visible.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. Person 1, a single individual in this scene.\",\n      \"bbox\": [\n        -348,\n        195,\n        481,\n        492\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult man aged 35, short light hair, rectangular glasses, black business suit and tie. Person 2, a single individual in this scene.\",\n      \"bbox\": [\n        -348,\n        -154,\n        481,\n        154\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 28, short wavy bob hair, round earrings, dark cardigan over a light shirt, straight light trousers. Person 3, a single individual in this scene.\",\n      \"bbox\": [\n        -348,\n        -492,\n        481,\n        -195\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
+      "sha256": "177b4f8beb9444b6aabae94a0199a243d727f4e51243d3708105a0c2ded6ef0a",
+      "source_png_sha256": "a61cf4221ad896494d88813a7a69cdd7908debac1179b34a475ab48ceb58909a",
+      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 3 adult people, each drawn once, in a quiet simple studio. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. Three people stand in one row, person 1 on the right, person 2 in the center, person 3 on the left. Show each from head to waist, heads turned inward toward each other. Low-angle camera looking upward at the entire group, upward perspective and ceiling visible.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. Person 1, a single individual in this scene.\",\n      \"bbox\": [\n        -348,\n        195,\n        481,\n        492\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult man aged 35, short light hair, rectangular glasses, black business suit and tie. Person 2, a single individual in this scene.\",\n      \"bbox\": [\n        -348,\n        -154,\n        481,\n        154\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 28, short wavy bob hair, round earrings, dark cardigan over a light shirt, straight light trousers. Person 3, a single individual in this scene.\",\n      \"bbox\": [\n        -348,\n        -492,\n        481,\n        -195\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
       "conditions": {
         "physical_gpu": 0,
         "width": 1024,
@@ -3227,14 +3227,14 @@
         "dmd_lora": false,
         "image_processing": "none"
       },
-      "review": "一部不一致：横一列は一致するがあおりが弱い"
+      "review": "概ね一致"
     },
     {
       "id": "trio_05",
       "name": "3人・横一列・引き",
       "name_en": "3 people · in a row · wide shot",
       "category": "3人の会話",
-      "prompt": "Three people stand in one row, person 1 on the right, person 2 in the center, person 3 on the left. Show each from head to waist, heads turned inward in a group conversation. Wider camera view with a large amount of empty room around the group; keep all three people distinct and separated.",
+      "prompt": "Three people stand in one row, person 1 on the right, person 2 in the center, person 3 on the left. Show each from head to waist, heads turned inward toward each other. Wider camera view with a large amount of empty room around the group; keep all three people distinct and separated.",
       "boxes": [
         [
           0.69,
@@ -3256,9 +3256,9 @@
         ]
       ],
       "image_path": "images/compositions/trio_05.webp",
-      "sha256": "122f3590da9122c4207f21d95fe78dfbeb4644f1f083b88f3aa3d25b1152f062",
-      "source_png_sha256": "a29047d9db4ed7f5b59c7dae5f60c09ca2bb9f76f004e32354e4af41fbaf6157",
-      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 3 adult people, each drawn once, in a quiet simple studio. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. Three people stand in one row, person 1 on the right, person 2 in the center, person 3 on the left. Show each from head to waist, heads turned inward in a group conversation. Wider camera view with a large amount of empty room around the group; keep all three people distinct and separated.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. Person 1, a single individual in this scene.\",\n      \"bbox\": [\n        -348,\n        195,\n        481,\n        492\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult man aged 35, short light hair, rectangular glasses, black business suit and tie. Person 2, a single individual in this scene.\",\n      \"bbox\": [\n        -348,\n        -154,\n        481,\n        154\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 28, short wavy bob hair, round earrings, dark cardigan over a light shirt, straight light trousers. Person 3, a single individual in this scene.\",\n      \"bbox\": [\n        -348,\n        -492,\n        481,\n        -195\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
+      "sha256": "c87265d3ae755fa48395dfb46fdbfa238cc15d78c36404267857d31eda788946",
+      "source_png_sha256": "a6e0519df9cf882595e262512ba4dbfedbf63e6b2926e2892a680172ecfc666a",
+      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 3 adult people, each drawn once, in a quiet simple studio. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. Three people stand in one row, person 1 on the right, person 2 in the center, person 3 on the left. Show each from head to waist, heads turned inward toward each other. Wider camera view with a large amount of empty room around the group; keep all three people distinct and separated.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. Person 1, a single individual in this scene.\",\n      \"bbox\": [\n        -348,\n        195,\n        481,\n        492\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult man aged 35, short light hair, rectangular glasses, black business suit and tie. Person 2, a single individual in this scene.\",\n      \"bbox\": [\n        -348,\n        -154,\n        481,\n        154\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 28, short wavy bob hair, round earrings, dark cardigan over a light shirt, straight light trousers. Person 3, a single individual in this scene.\",\n      \"bbox\": [\n        -348,\n        -492,\n        481,\n        -195\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
       "conditions": {
         "physical_gpu": 0,
         "width": 1024,
@@ -4456,7 +4456,7 @@
       "name": "3人・一人が背中・二人が正面・正面",
       "name_en": "3 people · one seen from behind · two facing the camera · front",
       "category": "肩越し",
-      "prompt": "Over-the-shoulder group conversation. Person 2 back of head and shoulders large in the bottom center foreground. Person 1 face visible at upper right and person 3 face visible at upper left, facing person 2. Eye-level camera facing the group.",
+      "prompt": "Over-the-shoulder group shot. Person 2 back of head and shoulders large in the bottom center foreground. Person 1 face visible at upper right and person 3 face visible at upper left, facing person 2. Eye-level camera facing the group.",
       "boxes": [
         [
           0.65,
@@ -4478,9 +4478,9 @@
         ]
       ],
       "image_path": "images/compositions/trio_31.webp",
-      "sha256": "4837dc9f010b0a4261fd3754da416dff480e371530c35017db79ec634d5d7ae6",
-      "source_png_sha256": "dcfe2e9bec7865bf2f39c8243720b6e7f0e58e125272ccdeedc6e2bc3cab6958",
-      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 3 adult people, each drawn once, in a quiet simple studio. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. Over-the-shoulder group conversation. Person 2 back of head and shoulders large in the bottom center foreground. Person 1 face visible at upper right and person 3 face visible at upper left, facing person 2. Eye-level camera facing the group.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. Person 1, a single individual in this scene.\",\n      \"bbox\": [\n        -389,\n        154,\n        276,\n        492\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult man aged 35, short light hair, rectangular glasses, black business suit and tie. Person 2, a single individual in this scene.\",\n      \"bbox\": [\n        -20,\n        -236,\n        512,\n        236\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 28, short wavy bob hair, round earrings, dark cardigan over a light shirt, straight light trousers. Person 3, a single individual in this scene.\",\n      \"bbox\": [\n        -389,\n        -492,\n        276,\n        -154\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
+      "sha256": "b0134ef7ef9a6018beb4651457428f6dedd298efcbef4254f2135e595da16261",
+      "source_png_sha256": "878a10e16b00cae1845815ccac562b947ab0e9ef02a2c7906c48a7a92f236691",
+      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 3 adult people, each drawn once, in a quiet simple studio. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. Over-the-shoulder group shot. Person 2 back of head and shoulders large in the bottom center foreground. Person 1 face visible at upper right and person 3 face visible at upper left, facing person 2. Eye-level camera facing the group.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. Person 1, a single individual in this scene.\",\n      \"bbox\": [\n        -389,\n        154,\n        276,\n        492\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult man aged 35, short light hair, rectangular glasses, black business suit and tie. Person 2, a single individual in this scene.\",\n      \"bbox\": [\n        -20,\n        -236,\n        512,\n        236\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 28, short wavy bob hair, round earrings, dark cardigan over a light shirt, straight light trousers. Person 3, a single individual in this scene.\",\n      \"bbox\": [\n        -389,\n        -492,\n        276,\n        -154\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
       "conditions": {
         "physical_gpu": 0,
         "width": 1024,
@@ -4503,7 +4503,7 @@
       "name": "3人・一人が背中・二人が正面・斜め前",
       "name_en": "3 people · one seen from behind · two facing the camera · three-quarter front",
       "category": "肩越し",
-      "prompt": "Over-the-shoulder group conversation. Person 2 back of head and shoulders large in the bottom center foreground. Person 1 face visible at upper right and person 3 face visible at upper left, facing person 2. Oblique three-quarter view of the group from the front right, clear depth perspective.",
+      "prompt": "Over-the-shoulder group shot. Person 2 back of head and shoulders large in the bottom center foreground. Person 1 face visible at upper right and person 3 face visible at upper left, facing person 2. Oblique three-quarter view of the group from the front right, clear depth perspective.",
       "boxes": [
         [
           0.65,
@@ -4525,9 +4525,9 @@
         ]
       ],
       "image_path": "images/compositions/trio_32.webp",
-      "sha256": "4c958133070a567c984b8dd72fde2692e01de0ecb212eb23e8bbaaa22b271bb6",
-      "source_png_sha256": "849a899e835b517f9b1fe6ffe0a8812143db7bb874d56d0743a1513c5a2c436f",
-      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 3 adult people, each drawn once, against a plain empty white background. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. Over-the-shoulder group conversation. Person 2 back of head and shoulders large in the bottom center foreground. Person 1 face visible at upper right and person 3 face visible at upper left, facing person 2. Oblique three-quarter view of the group from the front right, clear depth perspective.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. Person 1, a single individual in this scene.\",\n      \"bbox\": [\n        -389,\n        154,\n        276,\n        492\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"Back view of one adult man aged 35, short light hair, black business suit. Person 2 is seen only from behind, the back of his head and shoulders fill the lower center foreground.\",\n      \"bbox\": [\n        -20,\n        -236,\n        512,\n        236\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 28, short wavy bob hair, round earrings, dark cardigan over a light shirt, straight light trousers. Person 3, a single individual in this scene.\",\n      \"bbox\": [\n        -389,\n        -492,\n        276,\n        -154\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
+      "sha256": "bc611805515e0c383e3f03230b508faed0d724589199b82ae7e4d9f2e3b1a786",
+      "source_png_sha256": "47e7747b39b207e3c292c03a1785080ad51095d53c7d28e0207adec563b79a99",
+      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 3 adult people, each drawn once, against a plain empty white background. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. Over-the-shoulder group shot. Person 2 back of head and shoulders large in the bottom center foreground. Person 1 face visible at upper right and person 3 face visible at upper left, facing person 2. Oblique three-quarter view of the group from the front right, clear depth perspective.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. Person 1, a single individual in this scene.\",\n      \"bbox\": [\n        -389,\n        154,\n        276,\n        492\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"Back view of one adult man aged 35, short light hair, black business suit. Person 2 is seen only from behind, the back of his head and shoulders fill the lower center foreground.\",\n      \"bbox\": [\n        -20,\n        -236,\n        512,\n        236\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 28, short wavy bob hair, round earrings, dark cardigan over a light shirt, straight light trousers. Person 3, a single individual in this scene.\",\n      \"bbox\": [\n        -389,\n        -492,\n        276,\n        -154\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
       "conditions": {
         "physical_gpu": 0,
         "width": 1024,
@@ -4543,14 +4543,14 @@
         "dmd_lora": false,
         "image_processing": "none"
       },
-      "review": "概ね一致：初回は4人に増加、背面指定を明確にした再生成で3人"
+      "review": "概ね一致"
     },
     {
       "id": "trio_33",
       "name": "3人・一人が背中・二人が正面・俯瞰",
       "name_en": "3 people · one seen from behind · two facing the camera · high angle",
       "category": "俯瞰",
-      "prompt": "Over-the-shoulder group conversation. Person 2 back of head and shoulders large in the bottom center foreground. Person 1 face visible at upper right and person 3 face visible at upper left, facing person 2. High-angle camera looking down on the entire group, floor and tops of heads visible.",
+      "prompt": "Over-the-shoulder group shot. Person 2 back of head and shoulders large in the bottom center foreground. Person 1 face visible at upper right and person 3 face visible at upper left, facing person 2. High-angle camera looking down on the entire group, floor and tops of heads visible.",
       "boxes": [
         [
           0.65,
@@ -4572,9 +4572,9 @@
         ]
       ],
       "image_path": "images/compositions/trio_33.webp",
-      "sha256": "a919274a87ad0e399b152f9bfcdda1f0f47776b169412ddf345400aa719ff14f",
-      "source_png_sha256": "1f6b6623b87b2570a6c4f02ace5f0e513a9a7b37c83d09143fc5f5af774fdd50",
-      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 3 adult people, each drawn once, in a quiet simple studio. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. Over-the-shoulder group conversation. Person 2 back of head and shoulders large in the bottom center foreground. Person 1 face visible at upper right and person 3 face visible at upper left, facing person 2. High-angle camera looking down on the entire group, floor and tops of heads visible.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. Person 1, a single individual in this scene.\",\n      \"bbox\": [\n        -389,\n        154,\n        276,\n        492\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult man aged 35, short light hair, rectangular glasses, black business suit and tie. Person 2, a single individual in this scene.\",\n      \"bbox\": [\n        -20,\n        -236,\n        512,\n        236\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 28, short wavy bob hair, round earrings, dark cardigan over a light shirt, straight light trousers. Person 3, a single individual in this scene.\",\n      \"bbox\": [\n        -389,\n        -492,\n        276,\n        -154\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
+      "sha256": "367286c8f88f86947bd5c3caff45e2d4e22a148030b8a2109104ac7795972399",
+      "source_png_sha256": "5d18aed39dbc3333f2d5df2a63bd5b28df53d0c2870b160154b756624492424d",
+      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 3 adult people, each drawn once, in a quiet simple studio. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. Over-the-shoulder group shot. Person 2 back of head and shoulders large in the bottom center foreground. Person 1 face visible at upper right and person 3 face visible at upper left, facing person 2. High-angle camera looking down on the entire group, floor and tops of heads visible.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. Person 1, a single individual in this scene.\",\n      \"bbox\": [\n        -389,\n        154,\n        276,\n        492\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult man aged 35, short light hair, rectangular glasses, black business suit and tie. Person 2, a single individual in this scene.\",\n      \"bbox\": [\n        -20,\n        -236,\n        512,\n        236\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 28, short wavy bob hair, round earrings, dark cardigan over a light shirt, straight light trousers. Person 3, a single individual in this scene.\",\n      \"bbox\": [\n        -389,\n        -492,\n        276,\n        -154\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
       "conditions": {
         "physical_gpu": 0,
         "width": 1024,
@@ -4597,7 +4597,7 @@
       "name": "3人・一人が背中・二人が正面・あおり",
       "name_en": "3 people · one seen from behind · two facing the camera · low angle",
       "category": "あおり",
-      "prompt": "Over-the-shoulder group conversation. Person 2 back of head and shoulders large in the bottom center foreground. Person 1 face visible at upper right and person 3 face visible at upper left, facing person 2. Low-angle camera looking upward at the entire group, upward perspective and ceiling visible.",
+      "prompt": "Over-the-shoulder group shot. Person 2 back of head and shoulders large in the bottom center foreground. Person 1 face visible at upper right and person 3 face visible at upper left, facing person 2. Exactly three people, no fourth person. Low-angle camera looking upward at the entire group, upward perspective and ceiling visible.",
       "boxes": [
         [
           0.65,
@@ -4619,14 +4619,14 @@
         ]
       ],
       "image_path": "images/compositions/trio_34.webp",
-      "sha256": "a182e367d3335d2b9adb326718c9361c5bd73b81b9b35a380290835299ae14bb",
-      "source_png_sha256": "89437407e6f3b69c1acd77cc1ce6e402bc4f3735e609ad04f41d804fd844afa7",
-      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 3 adult people, each drawn once, in a quiet simple studio. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. Over-the-shoulder group conversation. Person 2 back of head and shoulders large in the bottom center foreground. Person 1 face visible at upper right and person 3 face visible at upper left, facing person 2. Low-angle camera looking upward at the entire group, upward perspective and ceiling visible.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. Person 1, a single individual in this scene.\",\n      \"bbox\": [\n        -389,\n        154,\n        276,\n        492\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult man aged 35, short light hair, rectangular glasses, black business suit and tie. Person 2, a single individual in this scene.\",\n      \"bbox\": [\n        -20,\n        -236,\n        512,\n        236\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 28, short wavy bob hair, round earrings, dark cardigan over a light shirt, straight light trousers. Person 3, a single individual in this scene.\",\n      \"bbox\": [\n        -389,\n        -492,\n        276,\n        -154\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
+      "sha256": "a7d57593e09769d98337536c5afe0d24284ba5e09d615aaf929b71a8fe327d9e",
+      "source_png_sha256": "d34720873f02eedbf8ae2d692ad93b801f4dc835e08e7e08a671d4459f3a50c5",
+      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 3 adult people, each drawn once, in a quiet simple studio. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. Over-the-shoulder group shot. Person 2 back of head and shoulders large in the bottom center foreground. Person 1 face visible at upper right and person 3 face visible at upper left, facing person 2. Exactly three people, no fourth person. Low-angle camera looking upward at the entire group, upward perspective and ceiling visible.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. Person 1, a single individual in this scene.\",\n      \"bbox\": [\n        -389,\n        154,\n        276,\n        492\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult man aged 35, short light hair, rectangular glasses, black business suit and tie. Person 2, a single individual in this scene.\",\n      \"bbox\": [\n        -20,\n        -236,\n        512,\n        236\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 28, short wavy bob hair, round earrings, dark cardigan over a light shirt, straight light trousers. Person 3, a single individual in this scene.\",\n      \"bbox\": [\n        -389,\n        -492,\n        276,\n        -154\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
       "conditions": {
         "physical_gpu": 0,
         "width": 1024,
         "height": 1024,
-        "seed": 26111094,
+        "seed": 26111099,
         "steps": 25,
         "cfg": 2.5,
         "sampler": "er_sde",
@@ -4637,14 +4637,14 @@
         "dmd_lora": false,
         "image_processing": "none"
       },
-      "review": "概ね一致"
+      "review": "概ね一致：シード変更で3人に改善（試行6回目）"
     },
     {
       "id": "trio_35",
       "name": "3人・一人が背中・二人が正面・引き",
       "name_en": "3 people · one seen from behind · two facing the camera · wide shot",
       "category": "肩越し",
-      "prompt": "Over-the-shoulder group conversation. Person 2 back of head and shoulders large in the bottom center foreground. Person 1 face visible at upper right and person 3 face visible at upper left, facing person 2. Wider camera view with a large amount of empty room around the group; keep all three people distinct and separated.",
+      "prompt": "Over-the-shoulder group shot. Person 2 back of head and shoulders large in the bottom center foreground. Person 1 face visible at upper right and person 3 face visible at upper left, facing person 2. Wider camera view with a large amount of empty room around the group; keep all three people distinct and separated.",
       "boxes": [
         [
           0.65,
@@ -4666,9 +4666,9 @@
         ]
       ],
       "image_path": "images/compositions/trio_35.webp",
-      "sha256": "c72df00932f85e422eef02b08e9b28c4f6c322080452d8d54cd11872eae42064",
-      "source_png_sha256": "90bac983b1ed6f084e2d0b1b54a626be0cf64856b29b8817bd1a0f588f26df64",
-      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 3 adult people, each drawn once, in a quiet simple studio. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. Over-the-shoulder group conversation. Person 2 back of head and shoulders large in the bottom center foreground. Person 1 face visible at upper right and person 3 face visible at upper left, facing person 2. Wider camera view with a large amount of empty room around the group; keep all three people distinct and separated.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. Person 1, a single individual in this scene.\",\n      \"bbox\": [\n        -389,\n        154,\n        276,\n        492\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult man aged 35, short light hair, rectangular glasses, black business suit and tie. Person 2, a single individual in this scene.\",\n      \"bbox\": [\n        -20,\n        -236,\n        512,\n        236\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 28, short wavy bob hair, round earrings, dark cardigan over a light shirt, straight light trousers. Person 3, a single individual in this scene.\",\n      \"bbox\": [\n        -389,\n        -492,\n        276,\n        -154\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
+      "sha256": "9344b440eb7009acedd6816d06f55e430580322b34146a7b2f1c1f0b5e0f881e",
+      "source_png_sha256": "81d6f0867454a28607d15782d85320ef01dcfbc7f818d4857bb28499ffa3f5cf",
+      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 3 adult people, each drawn once, in a quiet simple studio. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. Over-the-shoulder group shot. Person 2 back of head and shoulders large in the bottom center foreground. Person 1 face visible at upper right and person 3 face visible at upper left, facing person 2. Wider camera view with a large amount of empty room around the group; keep all three people distinct and separated.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. Person 1, a single individual in this scene.\",\n      \"bbox\": [\n        -389,\n        154,\n        276,\n        492\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult man aged 35, short light hair, rectangular glasses, black business suit and tie. Person 2, a single individual in this scene.\",\n      \"bbox\": [\n        -20,\n        -236,\n        512,\n        236\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 28, short wavy bob hair, round earrings, dark cardigan over a light shirt, straight light trousers. Person 3, a single individual in this scene.\",\n      \"bbox\": [\n        -389,\n        -492,\n        276,\n        -154\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
       "conditions": {
         "physical_gpu": 0,
         "width": 1024,
@@ -4691,7 +4691,7 @@
       "name": "3人・全身で三角形に立つ・正面",
       "name_en": "3 people · standing in a triangle, full body · front",
       "category": "全身",
-      "prompt": "Wide full-body three-person conversation in a loose triangle. Person 1 stands on the right, person 2 farther back at upper center, person 3 on the left. All three complete bodies including feet visible. Eye-level camera facing the group.",
+      "prompt": "Wide full-body three-person group standing in a loose triangle. Person 1 stands on the right, person 2 farther back at upper center, person 3 on the left. All three complete bodies including feet visible. Eye-level camera facing the group.",
       "boxes": [
         [
           0.68,
@@ -4713,9 +4713,9 @@
         ]
       ],
       "image_path": "images/compositions/trio_36.webp",
-      "sha256": "44a0ca4979aeaf1c7743a731f74794336310742d707b6bab5400e84fb6eefb1f",
-      "source_png_sha256": "b872986cf685a68b9627b7925c5996389fc76e2ebe2f34d69a8b865363b8beab",
-      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 3 adult people, each drawn once, in a quiet simple studio. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. Wide full-body three-person conversation in a loose triangle. Person 1 stands on the right, person 2 farther back at upper center, person 3 on the left. All three complete bodies including feet visible. Eye-level camera facing the group.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. Person 1, a single individual in this scene.\",\n      \"bbox\": [\n        -307,\n        184,\n        461,\n        451\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult man aged 35, short light hair, rectangular glasses, black business suit and tie. Person 2, a single individual in this scene.\",\n      \"bbox\": [\n        -430,\n        -113,\n        287,\n        113\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 28, short wavy bob hair, round earrings, dark cardigan over a light shirt, straight light trousers. Person 3, a single individual in this scene.\",\n      \"bbox\": [\n        -307,\n        -451,\n        461,\n        -184\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
+      "sha256": "48d746b5585fb923190ec111c79a5f6ce5504dda22e3b4dd366ed5d7810ee826",
+      "source_png_sha256": "f899c7b0e399e97867f8eabcb33fda74ae54cfb54306443477a31b30d3d6c785",
+      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 3 adult people, each drawn once, in a quiet simple studio. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. Wide full-body three-person group standing in a loose triangle. Person 1 stands on the right, person 2 farther back at upper center, person 3 on the left. All three complete bodies including feet visible. Eye-level camera facing the group.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. Person 1, a single individual in this scene.\",\n      \"bbox\": [\n        -307,\n        184,\n        461,\n        451\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult man aged 35, short light hair, rectangular glasses, black business suit and tie. Person 2, a single individual in this scene.\",\n      \"bbox\": [\n        -430,\n        -113,\n        287,\n        113\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 28, short wavy bob hair, round earrings, dark cardigan over a light shirt, straight light trousers. Person 3, a single individual in this scene.\",\n      \"bbox\": [\n        -307,\n        -451,\n        461,\n        -184\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
       "conditions": {
         "physical_gpu": 0,
         "width": 1024,
@@ -4731,14 +4731,14 @@
         "dmd_lora": false,
         "image_processing": "none"
       },
-      "review": "一部不一致：全身指定だが手前の左右の足先が画面外"
+      "review": "一部不一致：三角形より横一列に近い"
     },
     {
       "id": "trio_37",
       "name": "3人・全身で三角形に立つ・斜め前",
       "name_en": "3 people · standing in a triangle, full body · three-quarter front",
       "category": "全身",
-      "prompt": "Wide full-body three-person conversation in a loose triangle. Person 1 stands on the right, person 2 farther back at upper center, person 3 on the left. All three complete bodies including feet visible. Oblique three-quarter view of the group from the front right, clear depth perspective.",
+      "prompt": "Wide full-body three-person group standing in a loose triangle. Person 1 stands on the right, person 2 farther back at upper center, person 3 on the left. All three complete bodies including feet visible. Oblique three-quarter view of the group from the front right, clear depth perspective.",
       "boxes": [
         [
           0.68,
@@ -4760,9 +4760,9 @@
         ]
       ],
       "image_path": "images/compositions/trio_37.webp",
-      "sha256": "0c015c70f3e505ebcaf876d075b98d89a6d09ab282857517779382741d488438",
-      "source_png_sha256": "8b34257831e5cdaca643c81d1d6657e83dfe320e8c825c720a2607494ac0404e",
-      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 3 adult people, each drawn once, in a quiet simple studio. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. Wide full-body three-person conversation in a loose triangle. Person 1 stands on the right, person 2 farther back at upper center, person 3 on the left. All three complete bodies including feet visible. Oblique three-quarter view of the group from the front right, clear depth perspective.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. Person 1, a single individual in this scene.\",\n      \"bbox\": [\n        -307,\n        184,\n        461,\n        451\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult man aged 35, short light hair, rectangular glasses, black business suit and tie. Person 2, a single individual in this scene.\",\n      \"bbox\": [\n        -430,\n        -113,\n        287,\n        113\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 28, short wavy bob hair, round earrings, dark cardigan over a light shirt, straight light trousers. Person 3, a single individual in this scene.\",\n      \"bbox\": [\n        -307,\n        -451,\n        461,\n        -184\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
+      "sha256": "7cd28cab70be878759340ee54a1182e1efb4042c56d6ce5e1697527f8d7c7749",
+      "source_png_sha256": "781d152f7569213b793625699b85bc64379dd6dce490e00459a59c286d243d4c",
+      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 3 adult people, each drawn once, in a quiet simple studio. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. Wide full-body three-person group standing in a loose triangle. Person 1 stands on the right, person 2 farther back at upper center, person 3 on the left. All three complete bodies including feet visible. Oblique three-quarter view of the group from the front right, clear depth perspective.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. Person 1, a single individual in this scene.\",\n      \"bbox\": [\n        -307,\n        184,\n        461,\n        451\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult man aged 35, short light hair, rectangular glasses, black business suit and tie. Person 2, a single individual in this scene.\",\n      \"bbox\": [\n        -430,\n        -113,\n        287,\n        113\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 28, short wavy bob hair, round earrings, dark cardigan over a light shirt, straight light trousers. Person 3, a single individual in this scene.\",\n      \"bbox\": [\n        -307,\n        -451,\n        461,\n        -184\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
       "conditions": {
         "physical_gpu": 0,
         "width": 1024,
@@ -4785,7 +4785,7 @@
       "name": "3人・全身で三角形に立つ・俯瞰",
       "name_en": "3 people · standing in a triangle, full body · high angle",
       "category": "俯瞰",
-      "prompt": "Wide full-body three-person conversation in a loose triangle. Person 1 stands on the right, person 2 farther back at upper center, person 3 on the left. All three complete bodies including feet visible. High-angle camera looking down on the entire group, floor and tops of heads visible.",
+      "prompt": "Wide full-body three-person group standing in a loose triangle. Person 1 stands on the right, person 2 farther back at upper center, person 3 on the left. All three complete bodies including feet visible. High-angle camera looking down on the entire group, floor and tops of heads visible.",
       "boxes": [
         [
           0.68,
@@ -4807,9 +4807,9 @@
         ]
       ],
       "image_path": "images/compositions/trio_38.webp",
-      "sha256": "f3dfd8b78fd17185afae058e50299572bdeb7ea7e09ba13ad55b8a89c9c268df",
-      "source_png_sha256": "dc4b4d3893f3e346b3b8ee6462cd7fa12c8604766f86077d21c03d8c0f3b7f82",
-      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 3 adult people, each drawn once, in a quiet simple studio. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. Wide full-body three-person conversation in a loose triangle. Person 1 stands on the right, person 2 farther back at upper center, person 3 on the left. All three complete bodies including feet visible. High-angle camera looking down on the entire group, floor and tops of heads visible.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. Person 1, a single individual in this scene.\",\n      \"bbox\": [\n        -307,\n        184,\n        461,\n        451\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult man aged 35, short light hair, rectangular glasses, black business suit and tie. Person 2, a single individual in this scene.\",\n      \"bbox\": [\n        -430,\n        -113,\n        287,\n        113\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 28, short wavy bob hair, round earrings, dark cardigan over a light shirt, straight light trousers. Person 3, a single individual in this scene.\",\n      \"bbox\": [\n        -307,\n        -451,\n        461,\n        -184\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
+      "sha256": "8461b77a5d873c06ba92893d3d4c182db639e95866953ceec6067f3b4059e70d",
+      "source_png_sha256": "1e3f13d61a62ec041b6387ea7321b8f9c0ef53949a5cac9ebeca2e508b779b72",
+      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 3 adult people, each drawn once, in a quiet simple studio. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. Wide full-body three-person group standing in a loose triangle. Person 1 stands on the right, person 2 farther back at upper center, person 3 on the left. All three complete bodies including feet visible. High-angle camera looking down on the entire group, floor and tops of heads visible.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. Person 1, a single individual in this scene.\",\n      \"bbox\": [\n        -307,\n        184,\n        461,\n        451\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult man aged 35, short light hair, rectangular glasses, black business suit and tie. Person 2, a single individual in this scene.\",\n      \"bbox\": [\n        -430,\n        -113,\n        287,\n        113\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 28, short wavy bob hair, round earrings, dark cardigan over a light shirt, straight light trousers. Person 3, a single individual in this scene.\",\n      \"bbox\": [\n        -307,\n        -451,\n        461,\n        -184\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
       "conditions": {
         "physical_gpu": 0,
         "width": 1024,
@@ -4832,7 +4832,7 @@
       "name": "3人・全身で三角形に立つ・あおり",
       "name_en": "3 people · standing in a triangle, full body · low angle",
       "category": "あおり",
-      "prompt": "Wide full-body three-person conversation in a loose triangle. Person 1 stands on the right, person 2 farther back at upper center, person 3 on the left. All three complete bodies including feet visible. Low-angle camera looking upward at the entire group, upward perspective and ceiling visible.",
+      "prompt": "Wide full-body three-person group standing in a loose triangle. Person 1 stands on the right, person 2 farther back at upper center, person 3 on the left. All three complete bodies including feet visible. Low-angle camera looking upward at the entire group, upward perspective and ceiling visible.",
       "boxes": [
         [
           0.68,
@@ -4854,9 +4854,9 @@
         ]
       ],
       "image_path": "images/compositions/trio_39.webp",
-      "sha256": "e687b2d4395bb7add530af303d2d8391685c6f7dd740df7f0b82c8e93961f874",
-      "source_png_sha256": "96f6f942ba02847e9c9b4a7cb4b0f1746546f9aa77d885318ece99a43bae7c68",
-      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 3 adult people, each drawn once, in a quiet simple studio. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. Wide full-body three-person conversation in a loose triangle. Person 1 stands on the right, person 2 farther back at upper center, person 3 on the left. All three complete bodies including feet visible. Low-angle camera looking upward at the entire group, upward perspective and ceiling visible.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. Person 1, a single individual in this scene.\",\n      \"bbox\": [\n        -307,\n        184,\n        461,\n        451\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult man aged 35, short light hair, rectangular glasses, black business suit and tie. Person 2, a single individual in this scene.\",\n      \"bbox\": [\n        -430,\n        -113,\n        287,\n        113\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 28, short wavy bob hair, round earrings, dark cardigan over a light shirt, straight light trousers. Person 3, a single individual in this scene.\",\n      \"bbox\": [\n        -307,\n        -451,\n        461,\n        -184\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
+      "sha256": "14072309e261096f3b73264f5bf83ee449a2b90bb540c0729090928a18f56bf8",
+      "source_png_sha256": "1de167539cd7b3d842372f70e5498147ca07ac1893a461c139100a318d30d013",
+      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 3 adult people, each drawn once, in a quiet simple studio. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. Wide full-body three-person group standing in a loose triangle. Person 1 stands on the right, person 2 farther back at upper center, person 3 on the left. All three complete bodies including feet visible. Low-angle camera looking upward at the entire group, upward perspective and ceiling visible.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. Person 1, a single individual in this scene.\",\n      \"bbox\": [\n        -307,\n        184,\n        461,\n        451\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult man aged 35, short light hair, rectangular glasses, black business suit and tie. Person 2, a single individual in this scene.\",\n      \"bbox\": [\n        -430,\n        -113,\n        287,\n        113\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 28, short wavy bob hair, round earrings, dark cardigan over a light shirt, straight light trousers. Person 3, a single individual in this scene.\",\n      \"bbox\": [\n        -307,\n        -451,\n        461,\n        -184\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
       "conditions": {
         "physical_gpu": 0,
         "width": 1024,
@@ -4872,14 +4872,14 @@
         "dmd_lora": false,
         "image_processing": "none"
       },
-      "review": "一部不一致：全身指定だが手前の足先が切れる"
+      "review": "概ね一致"
     },
     {
       "id": "trio_40",
       "name": "3人・全身で三角形に立つ・引き",
       "name_en": "3 people · standing in a triangle, full body · wide shot",
       "category": "全身",
-      "prompt": "Wide full-body three-person conversation in a loose triangle. Person 1 stands on the right, person 2 farther back at upper center, person 3 on the left. All three complete bodies including feet visible. Wider camera view with a large amount of empty room around the group; keep all three people distinct and separated.",
+      "prompt": "Wide full-body three-person group standing in a loose triangle. Person 1 stands on the right, person 2 farther back at upper center, person 3 on the left. All three complete bodies including feet visible. Wider camera view with a large amount of empty room around the group; keep all three people distinct and separated.",
       "boxes": [
         [
           0.68,
@@ -4901,9 +4901,9 @@
         ]
       ],
       "image_path": "images/compositions/trio_40.webp",
-      "sha256": "8a116520dee87db872569858a6700155e606372860f811f3e0022a09cde079e1",
-      "source_png_sha256": "087accdf7b6acb62d41652188305e49a094cc1ae222d34d7b11b25730f5079f4",
-      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 3 adult people, each drawn once, in a quiet simple studio. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. Wide full-body three-person conversation in a loose triangle. Person 1 stands on the right, person 2 farther back at upper center, person 3 on the left. All three complete bodies including feet visible. Wider camera view with a large amount of empty room around the group; keep all three people distinct and separated.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. Person 1, a single individual in this scene.\",\n      \"bbox\": [\n        -307,\n        184,\n        461,\n        451\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult man aged 35, short light hair, rectangular glasses, black business suit and tie. Person 2, a single individual in this scene.\",\n      \"bbox\": [\n        -430,\n        -113,\n        287,\n        113\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 28, short wavy bob hair, round earrings, dark cardigan over a light shirt, straight light trousers. Person 3, a single individual in this scene.\",\n      \"bbox\": [\n        -307,\n        -451,\n        461,\n        -184\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
+      "sha256": "7915b608e658a6135081ae7862dd1ef2f8592ed8cb739a16c8c91f5e3919d39d",
+      "source_png_sha256": "e76b964024398781b6c6cf73ef8d58d9166e9d3f920c2a271acf95e9673a6c50",
+      "generation_prompt": "{\n  \"summary\": {\n    \"caption\": \"A single square black and white Japanese manga illustration, professional ink and screentones, natural adult proportions. Exactly 3 adult people, each drawn once, in a quiet simple studio. A single continuous scene. No panel subdivisions, speech balloons, text, lettering, labels or numbers. Wide full-body three-person group standing in a loose triangle. Person 1 stands on the right, person 2 farther back at upper center, person 3 on the left. All three complete bodies including feet visible. Wider camera view with a large amount of empty room around the group; keep all three people distinct and separated.\"\n  },\n  \"items\": [\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 22, long straight black hair, white blouse, dark pleated skirt. Person 1, a single individual in this scene.\",\n      \"bbox\": [\n        -307,\n        184,\n        461,\n        451\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult man aged 35, short light hair, rectangular glasses, black business suit and tie. Person 2, a single individual in this scene.\",\n      \"bbox\": [\n        -430,\n        -113,\n        287,\n        113\n      ]\n    },\n    {\n      \"label\": \"character\",\n      \"caption\": \"An adult woman aged 28, short wavy bob hair, round earrings, dark cardigan over a light shirt, straight light trousers. Person 3, a single individual in this scene.\",\n      \"bbox\": [\n        -307,\n        -451,\n        461,\n        -184\n      ]\n    }\n  ],\n  \"bbox_coord_space\": \"abs_centralized\",\n  \"bbox_format\": \"yxyx\"\n}",
       "conditions": {
         "physical_gpu": 0,
         "width": 1024,

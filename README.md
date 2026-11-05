@@ -106,9 +106,9 @@ API形式以外の5ファイルは、ComfyUIへドラッグ＆ドロップして
 
 構図の英語プロンプトを場面へ追記し、見本の人物領域を各コマの内側領域へ比率に応じて割り当てます。選んだ登場人物を番号順に構図へ割り当て、話す順番を変えても人物位置は入れ替わりません。接続しなければ従来の処理になります。見本と登場人物の人数を合わせてください。
 
-構図見本は1人40種類・2人40種類・3人40種類の計120種類です。既存の2人20種類はID・名称・画像を維持して追加しました。見本画像は、MOSSが実際に出力した正方形1024×1024のPNGを、配布容量を抑えるため非可逆WebP（品質90）へ変換したものです（120枚で約178MBから約25MBへ）。変換による圧縮で細部は元のPNGと完全には一致しません。変換以外の処理（文字入れ、合成、縮小、切り抜き）は行っていません。PNGに埋め込まれていた生成時の英語プロンプト・シード・モデル・条件と、人物領域・元PNGのSHA256は `data/compositions.json` に収録します。肩越し・顔アップ・全身・俯瞰・あおりなどで分類します。構図一覧には見本画像・名前・人数・カテゴリ・お気に入りを表示し、品質判定は検証記録で確認できます。不一致や人物増加を画像修復で補うことはしません。
+構図見本は1人40種類・2人40種類・3人40種類の計120種類です。既存の2人20種類はID・名称を維持して追加しました。構図の英語プロンプトは、カメラ・寄り引き・人物の配置・体と顔の向き・姿勢・配置用の家具だけを指定します。表情・感情・会話の動作・小物・光は指定しないので、場面の文で自由に指定できます。見本画像は、MOSSが実際に出力した正方形1024×1024のPNGを、配布容量を抑えるため非可逆WebP（品質90）へ変換したものです（120枚で約178MBから約25MBへ）。変換による圧縮で細部は元のPNGと完全には一致しません。変換以外の処理（文字入れ、合成、縮小、切り抜き）は行っていません。PNGに埋め込まれていた生成時の英語プロンプト・シード・モデル・条件と、人物領域・元PNGのSHA256は `data/compositions.json` に収録します。肩越し・顔アップ・全身・俯瞰・あおりなどで分類します。構図一覧には見本画像・名前・人数・カテゴリ・お気に入りを表示し、品質判定は検証記録で確認できます。不一致や人物増加を画像修復で補うことはしません。
 
-同じ構図を縦長・横長のコマにも使用できます。画像そのものを参照入力に渡す方式ではなく、英語プロンプトと領域指定による誘導です。見本との完全一致、特殊形状への追従、文字や人物の正確性は保証しません。画像の合成・文字修復・枠線補修は行いません。詳細は [構図検証記録](COMPOSITION_VALIDATION.md) を参照してください。
+同じ構図を縦長・横長のコマにも使用できます。画像そのものを参照入力に渡す方式ではなく、英語プロンプトと領域指定による誘導です。見本との完全一致、特殊形状への追従、文字や人物の正確性は保証しません。画像の合成・文字修復・枠線補修は行いません。詳細は [構図検証記録](COMPOSITION_VALIDATION.md) と、構図以外の指定を外して再生成した46種類の [再生成記録](COMPOSITION_ONLY_VALIDATION.md) を参照してください。
 
 ## 3人までの人物指定
 
@@ -169,7 +169,11 @@ MOSSで使う `CLIPLoader` の `type=moss_image` と `qwen3.5_9b_int8_convrot.sa
 
 フォルダを更新後、ComfyUIを再起動してブラウザーを再読み込みしてください。人物・セリフを同梱JSONに保存しないため、ノードの更新と利用者のワークフロー保存は別です。お気に入りは配置IDを使い、ワークフローの選択値は配置名を使います。今後の更新では既存IDと配置名を維持します。
 
-0.1.1ではコマ割り196種類も `data/layouts.json` から読み取ります。利用時のデータベース接続は不要です。実験用SQLiteと生成履歴は配布物に含めません。ID・名称・配置・構図・見本画像は維持しています。Registry向け配布では `.comfyignore` によりテストと開発用ファイルを除外します。テストはGitHubのソースには残します。
+0.1.1ではコマ割り196種類も `data/layouts.json` から読み取ります。利用時のデータベース接続は不要です。実験用SQLiteと生成履歴は配布物に含めません。ID・名称・配置・構図・見本画像は維持しています。
+
+構図見本のうち46種類は、英語プロンプトに表情・感情・会話の動作・小物・光の指定が入っていたため、構図だけの文に直して見本画像をMOSSで再生成しました。ID・名称・人物領域は変わらないので、保存済みワークフローはそのまま開けます。接続した構図の文が変わるため、同じシードでも生成結果は以前と変わります。詳細は [再生成記録](COMPOSITION_ONLY_VALIDATION.md) を参照してください。
+
+Registry向け配布では `.comfyignore` によりテストと開発用ファイルを除外します。テストはGitHubのソースには残します。
 
 開発時は、このフォルダで次を実行できます。既存のComfyUI用Pythonなど、`aiohttp` を利用できる環境を使ってください。Node.jsは画面の増減処理の検査にだけ使用し、通常の利用には不要です。
 
@@ -302,9 +306,9 @@ The 「構図を選ぶ（見本画像）」 (Choose a composition from previews)
 
 The composition's English prompt is appended to the scene, and the character regions of the preview are mapped to the inner region of each panel in proportion. The selected characters are assigned to the composition in numerical order, so changing the speaking order does not swap their positions. Without a connection, the node works as before. Match the number of characters in the preview and in the panel.
 
-There are 120 compositions: 40 each for one, two, and three characters. The original 20 two-character compositions keep their IDs, names, and images. The previews are the square 1024×1024 PNGs actually output by MOSS, converted to lossy WebP (quality 90) to reduce the download size (about 178 MB to about 25 MB for 120 images). Because of the compression, fine details do not exactly match the original PNGs. No other processing was applied (no added text, compositing, downscaling, or cropping). The English generation prompt, seed, model, and settings that were embedded in the PNGs, the character regions, and the SHA256 of each original PNG are stored in `data/compositions.json`. Compositions are categorized as over-the-shoulder, face close-up, full body, high angle, low angle, and so on. The catalog shows the preview, name, character count, category, and favorites; quality checks are in the validation records. Mismatches or extra characters are not fixed by image editing.
+There are 120 compositions: 40 each for one, two, and three characters. The original 20 two-character compositions keep their IDs and names. The English composition prompts specify only the camera, shot size, character placement, body and face direction, pose, and furniture used for staging. They do not specify facial expressions, emotions, talking, props, or lighting, so you can describe those freely in the scene. The previews are the square 1024×1024 PNGs actually output by MOSS, converted to lossy WebP (quality 90) to reduce the download size (about 178 MB to about 25 MB for 120 images). Because of the compression, fine details do not exactly match the original PNGs. No other processing was applied (no added text, compositing, downscaling, or cropping). The English generation prompt, seed, model, and settings that were embedded in the PNGs, the character regions, and the SHA256 of each original PNG are stored in `data/compositions.json`. Compositions are categorized as over-the-shoulder, face close-up, full body, high angle, low angle, and so on. The catalog shows the preview, name, character count, category, and favorites; quality checks are in the validation records. Mismatches or extra characters are not fixed by image editing.
 
-The same composition can be used for tall or wide panels. The preview image is not passed as a reference input; the model is guided by the English prompt and regions. An exact match with the preview, following special panel shapes, and correct text or characters are not guaranteed. No compositing, text repair, or border repair is applied. See the [composition validation record](COMPOSITION_VALIDATION.md) (Japanese) for details.
+The same composition can be used for tall or wide panels. The preview image is not passed as a reference input; the model is guided by the English prompt and regions. An exact match with the preview, following special panel shapes, and correct text or characters are not guaranteed. No compositing, text repair, or border repair is applied. See the [composition validation record](COMPOSITION_VALIDATION.md) and the [regeneration record](COMPOSITION_ONLY_VALIDATION.md) for the 46 compositions rewritten without non-composition instructions (both in Japanese).
 
 ## Up to three characters
 
@@ -388,7 +392,11 @@ Planned features are listed in [ROADMAP.md](ROADMAP.md).
 
 After updating the folder, restart ComfyUI and reload the browser page. Characters and dialogue are not stored in the bundled JSON files, so updating the node is separate from your saved workflows. Favorites use layout IDs, and workflow selections use layout names; future updates will keep existing IDs and names.
 
-Since 0.1.1, the 196 layouts are also read from `data/layouts.json`, so no database connection is needed at runtime. The experimental SQLite database and generation history are not distributed. IDs, names, layouts, compositions, and preview images are unchanged. For the Registry package, `.comfyignore` excludes tests and development files; the tests remain in the GitHub source.
+Since 0.1.1, the 196 layouts are also read from `data/layouts.json`, so no database connection is needed at runtime. The experimental SQLite database and generation history are not distributed. IDs, names, layouts, compositions, and preview images are unchanged.
+
+46 of the compositions had facial expressions, emotions, talking, props, or lighting in their English prompts. Their prompts were rewritten to describe only the composition, and their previews were regenerated with MOSS. IDs, names, and character regions are unchanged, so saved workflows still open. Because the connected composition text changed, results differ from before even with the same seed. See the [regeneration record](COMPOSITION_ONLY_VALIDATION.md) (Japanese) for details.
+
+For the Registry package, `.comfyignore` excludes tests and development files; the tests remain in the GitHub source.
 
 For development, you can run the following in this folder. Use an environment that has `aiohttp`, such as your ComfyUI Python. Node.js is used only to test the panel add/remove logic and is not needed for normal use.
 
