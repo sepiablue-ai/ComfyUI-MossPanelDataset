@@ -12,7 +12,8 @@ except ModuleNotFoundError as error:
 else:
     from .picker_api import register_routes
     if getattr(PromptServer.instance, '_moss_panel_picker_registered', False):
-        raise RuntimeError('MOSSコマ割りノードが重複しています。旧版のフォルダまたはジャンクションを外し、ComfyUIを再起動してください。')
+        raise RuntimeError('MOSSコマ割りノードが重複しています。旧版のフォルダまたはジャンクションを外し、ComfyUIを再起動してください。\n'
+                           'The MOSS panel dataset node is installed twice. Remove the old folder or junction and restart ComfyUI.')
     register_routes(PromptServer.instance.routes)
     from .composition import register_routes as register_composition_routes
     register_composition_routes(PromptServer.instance.routes)

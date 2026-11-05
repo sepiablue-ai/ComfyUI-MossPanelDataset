@@ -4,6 +4,7 @@
     {
       "id": "duo_01",
       "name": "正面・胸上の掛け合い",
+      "name_en": "Face to face, chest-up exchange",
       "category": "2人の会話",
       "prompt": "Eye-level medium two-shot, both seen from the waist up, facing each other in profile. Person 1 on the right, person 2 on the left.",
       "boxes": [
@@ -44,6 +45,7 @@
     {
       "id": "duo_02",
       "name": "横並び・正面を向いて会話",
+      "name_en": "Side by side, talking to the front",
       "category": "2人の会話",
       "prompt": "Frontal medium two-shot. Two people stand side by side, torsos facing the camera, heads turned toward each other. Person 1 on the right, person 2 on the left.",
       "boxes": [
@@ -84,6 +86,7 @@
     {
       "id": "duo_03",
       "name": "机越しの対話",
+      "name_en": "Talking across a desk",
       "category": "2人の会話",
       "prompt": "Eye-level medium wide two-shot across a desk. Person 1 sits on the right, person 2 sits on the left, facing each other. The desk separates them in the lower center.",
       "boxes": [
@@ -124,6 +127,7 @@
     {
       "id": "duo_04",
       "name": "近距離で言い合う",
+      "name_en": "Close-range argument",
       "category": "顔アップ",
       "prompt": "Tight side-profile close-up two-shot, two large faces facing each other across a narrow central gap. Person 1 face on the right, person 2 face on the left. Heads dominate the frame.",
       "boxes": [
@@ -164,6 +168,7 @@
     {
       "id": "duo_05",
       "name": "女性の肩越しに男性を見る",
+      "name_en": "Man seen over the woman's shoulder",
       "category": "肩越し",
       "prompt": "Over-the-shoulder shot from behind person 1. Person 1 back of head and right shoulder large in the right foreground. Person 2 face clearly visible in the left middle distance, talking to person 1.",
       "boxes": [
@@ -204,6 +209,7 @@
     {
       "id": "duo_06",
       "name": "男性の肩越しに女性を見る",
+      "name_en": "Woman seen over the man's shoulder",
       "category": "肩越し",
       "prompt": "Reverse over-the-shoulder shot from behind person 2. Person 2 back of head and left shoulder large in the left foreground. Person 1 face clearly visible in the right middle distance, talking to person 2.",
       "boxes": [
@@ -244,6 +250,7 @@
     {
       "id": "duo_07",
       "name": "女性の反応・男性は手前の横顔",
+      "name_en": "Woman reacts, man in foreground profile",
       "category": "顔アップ",
       "prompt": "Reaction close-up with exactly two people total. The only person on the right is Person 1: a large three-quarter face reacting with surprise, filling the right half of the frame. The only person on the left is Person 2: a cropped side profile at the far left edge, facing right toward Person 1. No third person, no extra face, no person in the background.",
       "boxes": [
@@ -284,6 +291,7 @@
     {
       "id": "duo_08",
       "name": "男性の反応・女性は手前の横顔",
+      "name_en": "Man reacts, woman in foreground profile",
       "category": "顔アップ",
       "prompt": "Reaction close-up with exactly two people total. The only person on the left is Person 2: a large three-quarter face reacting with surprise, filling the left half of the frame. The only person on the right is Person 1: a cropped side profile at the far right edge, facing left toward Person 2. No third person, no extra face, no person in the background.",
       "boxes": [
@@ -324,6 +332,7 @@
     {
       "id": "duo_09",
       "name": "向き合う全身",
+      "name_en": "Facing each other, full body",
       "category": "全身",
       "prompt": "Wide eye-level full-body two-shot, both heads and feet entirely visible with space around them. Person 1 stands right and person 2 stands left facing each other, separated by one body width.",
       "boxes": [
@@ -364,6 +373,7 @@
     {
       "id": "duo_10",
       "name": "並んで歩きながら会話",
+      "name_en": "Walking and talking side by side",
       "category": "全身",
       "prompt": "Full-body walking two-shot, both heads and feet entirely visible. Person 1 walks on the right and person 2 on the left, moving toward the camera and turning their heads to each other.",
       "boxes": [
@@ -404,6 +414,7 @@
     {
       "id": "duo_11",
       "name": "一人が座り一人が立つ",
+      "name_en": "One seated, one standing",
       "category": "全身",
       "prompt": "Full-body two-shot showing a height contrast. Person 1 seated on a chair at right, person 2 standing at left leaning slightly toward person 1. Both heads and feet visible.",
       "boxes": [
@@ -444,6 +455,7 @@
     {
       "id": "duo_12",
       "name": "背中合わせに会話",
+      "name_en": "Talking back to back",
       "category": "2人の会話",
       "prompt": "Medium two-shot of two people standing back to back, person 1 on the right facing right and person 2 on the left facing left, both looking back over their shoulders toward each other.",
       "boxes": [
@@ -484,6 +496,7 @@
     {
       "id": "duo_13",
       "name": "斜め上から二人を見る",
+      "name_en": "Two people seen from diagonally above",
       "category": "俯瞰",
       "prompt": "High-angle oblique view looking down on two people facing each other. Person 1 on the right and person 2 on the left. Their heads appear larger than their feet; the floor is clearly visible.",
       "boxes": [
@@ -524,6 +537,7 @@
     {
       "id": "duo_14",
       "name": "真上から机越しの二人",
+      "name_en": "Two at a desk seen from directly above",
       "category": "俯瞰",
       "prompt": "Direct overhead bird-eye view. Person 1 sits to the right of a central desk and person 2 sits to its left, facing each other. The tops of both heads, shoulders, arms and the tabletop are visible.",
       "boxes": [
@@ -564,6 +578,7 @@
     {
       "id": "duo_15",
       "name": "低い視点で見上げる対話",
+      "name_en": "Conversation from a low viewpoint",
       "category": "あおり",
       "prompt": "Low-angle two-shot looking upward from below waist level. Person 1 stands at the right and person 2 at the left facing each other. Strong upward perspective with ceiling behind their heads.",
       "boxes": [
@@ -604,6 +619,7 @@
     {
       "id": "duo_16",
       "name": "女性が手前・男性が奥",
+      "name_en": "Woman in front, man behind",
       "category": "2人の会話",
       "prompt": "Deep staging two-shot. Person 1 is large in the right foreground seen waist-up in three-quarter view, looking back toward person 2, who is much smaller in the left background and shown full-body.",
       "boxes": [
@@ -644,6 +660,7 @@
     {
       "id": "duo_17",
       "name": "男性が手前・女性が奥",
+      "name_en": "Man in front, woman behind",
       "category": "2人の会話",
       "prompt": "Deep staging reverse two-shot. Person 2 is large in the left foreground seen waist-up in three-quarter view, looking back toward person 1, who is much smaller in the right background and shown full-body.",
       "boxes": [
@@ -684,6 +701,7 @@
     {
       "id": "duo_18",
       "name": "ベンチに座り横から会話",
+      "name_en": "Seated on a bench, side view",
       "category": "2人の会話",
       "prompt": "Side-view seated two-shot on a bench. Person 1 sits at right and person 2 at left, both seen from head to knees in profile, turning toward each other. Bench seat visible beneath them.",
       "boxes": [
@@ -724,6 +742,7 @@
     {
       "id": "duo_19",
       "name": "女性が身を乗り出す掛け合い",
+      "name_en": "Woman leans in during the exchange",
       "category": "2人の会話",
       "prompt": "Dynamic medium two-shot. Person 1 on the right leans her upper body forward and gestures with an open hand toward person 2 on the left, who leans back in surprise. Both faces clearly visible.",
       "boxes": [
@@ -764,6 +783,7 @@
     {
       "id": "duo_20",
       "name": "窓際のシルエット対話",
+      "name_en": "Silhouettes by the window",
       "category": "全身",
       "prompt": "Wide side-profile full-body two-shot silhouetted against a bright large window. Person 1 stands on the right and person 2 on the left facing each other. Both complete bodies and feet visible, strong backlighting.",
       "boxes": [
@@ -804,6 +824,7 @@
     {
       "id": "duo_21",
       "name": "女性が右・男性が左の横顔全身",
+      "name_en": "Woman right, man left, profile full body",
       "category": "全身",
       "prompt": "Wide side-profile full-body view. Person 1 stands far right and person 2 far left, both complete bodies visible, facing one another with a large empty gap.",
       "boxes": [
@@ -844,6 +865,7 @@
     {
       "id": "duo_22",
       "name": "二人が同じ机を覗く",
+      "name_en": "Both look down at the same desk",
       "category": "2人の会話",
       "prompt": "Medium frontal two-shot. Person 1 right and person 2 left lean over the same desk, both looking downward at one sheet of paper between them.",
       "boxes": [
@@ -884,6 +906,7 @@
     {
       "id": "duo_23",
       "name": "女性が説明・男性が聞く",
+      "name_en": "Woman explains, man listens",
       "category": "2人の会話",
       "prompt": "Medium two-shot. Person 1 stands right holding a sheet at chest height and explaining; person 2 stands left listening with arms folded. Both faces clear.",
       "boxes": [
@@ -924,6 +947,7 @@
     {
       "id": "duo_24",
       "name": "男性が説明・女性が聞く",
+      "name_en": "Man explains, woman listens",
       "category": "2人の会話",
       "prompt": "Medium two-shot. Person 2 stands left holding an open notebook and explaining; person 1 stands right listening with hands loosely clasped. Both faces clear.",
       "boxes": [
@@ -964,6 +988,7 @@
     {
       "id": "duo_25",
       "name": "女性だけ座り・男性は横向き",
+      "name_en": "Only the woman seated, man in profile",
       "category": "全身",
       "prompt": "Wide full-body two-shot. Person 1 sits on a chair at right in profile; person 2 stands at left in profile facing her. Both heads and feet entirely visible.",
       "boxes": [
@@ -1004,6 +1029,7 @@
     {
       "id": "duo_26",
       "name": "男性だけ座り・女性が立つ",
+      "name_en": "Only the man seated, woman standing",
       "category": "全身",
       "prompt": "Wide full-body two-shot. Person 2 sits on a chair at left; person 1 stands at right facing him, heads at different heights. Both heads and feet visible.",
       "boxes": [
@@ -1044,6 +1070,7 @@
     {
       "id": "duo_27",
       "name": "二人とも床に座る",
+      "name_en": "Both seated on the floor",
       "category": "全身",
       "prompt": "Wide two-shot of two adults seated cross-legged on the floor facing each other, person 1 on right and person 2 on left. Complete seated bodies visible.",
       "boxes": [
@@ -1084,6 +1111,7 @@
     {
       "id": "duo_28",
       "name": "廊下ですれ違い振り返る",
+      "name_en": "Passing in a corridor and looking back",
       "category": "全身",
       "prompt": "Full-body two-shot in a corridor. Person 1 at right walks toward the right edge and looks back left; person 2 at left walks toward the left edge and looks back right.",
       "boxes": [
@@ -1124,6 +1152,7 @@
     {
       "id": "duo_29",
       "name": "並んで後ろ姿・会話",
+      "name_en": "Side by side from behind, talking",
       "category": "2人の会話",
       "prompt": "Rear-view medium two-shot. Person 1 on right and person 2 on left stand side by side facing away from camera, heads angled slightly toward each other. Only backs and partial profiles.",
       "boxes": [
@@ -1164,6 +1193,7 @@
     {
       "id": "duo_30",
       "name": "二人の手元と上半身",
+      "name_en": "Hands and upper bodies of two people",
       "category": "2人の会話",
       "prompt": "Medium close two-shot cropped from shoulders to waist, the faces are outside the top of frame. Person 1 right and person 2 left exchange a paper sheet in the center; both sets of hands visible.",
       "boxes": [
@@ -1204,6 +1234,7 @@
     {
       "id": "duo_31",
       "name": "机を挟んだ横顔の胸上",
+      "name_en": "Chest-up profiles across a table",
       "category": "2人の会話",
       "prompt": "Eye-level close side-profile two-shot across a narrow table. Person 1 right and person 2 left shown chest-up; a thin strip of table lies along the bottom.",
       "boxes": [
@@ -1244,6 +1275,7 @@
     {
       "id": "duo_32",
       "name": "女性の背中越し・広い距離",
+      "name_en": "Over the woman's back, far apart",
       "category": "肩越し",
       "prompt": "Wide over-the-shoulder view behind person 1 at the right foreground. Her back and shoulder fill the right edge. Person 2 is alone at the far left, shown full-body across the room.",
       "boxes": [
@@ -1284,6 +1316,7 @@
     {
       "id": "duo_33",
       "name": "男性の背中越し・広い距離",
+      "name_en": "Over the man's back, far apart",
       "category": "肩越し",
       "prompt": "Wide over-the-shoulder view behind person 2 at the left foreground. His back and shoulder fill the left edge. Person 1 is alone at the far right, shown full-body across the room.",
       "boxes": [
@@ -1324,6 +1357,7 @@
     {
       "id": "duo_34",
       "name": "真横から並んで歩く",
+      "name_en": "Walking side by side, strict side view",
       "category": "全身",
       "prompt": "Strict lateral full-body view of two people walking in the same direction toward the right. Person 1 leads at right and person 2 follows at left with a clear gap. All four feet visible.",
       "boxes": [
@@ -1364,6 +1398,7 @@
     {
       "id": "duo_35",
       "name": "机の対角線に座る俯瞰",
+      "name_en": "Seated at opposite corners of a desk, high angle",
       "category": "俯瞰",
       "prompt": "Steep high-angle diagonal view of a rectangular desk. Person 1 sits at the lower right corner; person 2 sits at the upper left corner, looking diagonally across the tabletop toward each other.",
       "boxes": [
@@ -1404,6 +1439,7 @@
     {
       "id": "duo_36",
       "name": "階段で高さの違う会話",
+      "name_en": "Talking at different heights on stairs",
       "category": "全身",
       "prompt": "Wide full-body side-view on a staircase. Person 1 stands on a higher step at right; person 2 stands two steps lower at left looking up at her. Both heads and feet visible.",
       "boxes": [
@@ -1444,6 +1480,7 @@
     {
       "id": "duo_37",
       "name": "二人が離れて向かい合う俯瞰",
+      "name_en": "Facing each other far apart, high angle",
       "category": "俯瞰",
       "prompt": "Bird-eye high-angle wide shot of two standing people across an empty floor. Person 1 upper right and person 2 lower left, facing diagonally toward one another with a broad empty center.",
       "boxes": [
@@ -1484,6 +1521,7 @@
     {
       "id": "duo_38",
       "name": "二人が近づくあおり",
+      "name_en": "Two people drawing close, low angle",
       "category": "あおり",
       "prompt": "Very low-angle medium two-shot, camera near floor looking up between two people. Person 1 right and person 2 left lean slightly inward toward the camera, ceiling dominates upper background.",
       "boxes": [
@@ -1524,6 +1562,7 @@
     {
       "id": "duo_39",
       "name": "ソファで向き合い膝まで",
+      "name_en": "Facing each other on a sofa, knees up",
       "category": "2人の会話",
       "prompt": "Medium wide two-shot of two adults seated on opposite ends of a sofa, person 1 right and person 2 left, turning inward to face each other. Both heads and knees visible.",
       "boxes": [
@@ -1564,6 +1603,7 @@
     {
       "id": "duo_40",
       "name": "中央の紙を指す二人",
+      "name_en": "Both point at the paper in the center",
       "category": "2人の会話",
       "prompt": "Frontal medium two-shot behind a table. Person 1 right points down at a paper at center; person 2 left bends forward to look at that same paper. Faces, both torsos and pointing hand visible.",
       "boxes": [
@@ -1604,6 +1644,7 @@
     {
       "id": "solo_01",
       "name": "1人・胸上・話す・正面",
+      "name_en": "1 person · chest-up · talking · front",
       "category": "1人の会話",
       "prompt": "A single person shown from chest up, lips slightly parted, one hand raised near the chest. Straight-on eye-level frontal camera, clear symmetrical framing.",
       "boxes": [
@@ -1638,6 +1679,7 @@
     {
       "id": "solo_02",
       "name": "1人・胸上・話す・斜め前",
+      "name_en": "1 person · chest-up · talking · three-quarter front",
       "category": "1人の会話",
       "prompt": "A single person shown from chest up, lips slightly parted, one hand raised near the chest. Eye-level three-quarter view from the front, both eyes visible.",
       "boxes": [
@@ -1672,6 +1714,7 @@
     {
       "id": "solo_03",
       "name": "1人・胸上・話す・横顔",
+      "name_en": "1 person · chest-up · talking · profile",
       "category": "1人の会話",
       "prompt": "A single person shown from chest up, talking with one hand raised near the chest. Eye-level strict side-profile view, nose silhouette clearly visible.",
       "boxes": [
@@ -1706,6 +1749,7 @@
     {
       "id": "solo_04",
       "name": "1人・胸上・話す・俯瞰",
+      "name_en": "1 person · chest-up · talking · high angle",
       "category": "俯瞰",
       "prompt": "A single person shown from chest up, talking with one hand raised near the chest. High-angle camera looking down from above the head, floor visible.",
       "boxes": [
@@ -1740,6 +1784,7 @@
     {
       "id": "solo_05",
       "name": "1人・胸上・話す・あおり",
+      "name_en": "1 person · chest-up · talking · low angle",
       "category": "あおり",
       "prompt": "A single person shown from chest up, lips slightly parted, one hand raised near the chest. Low-angle camera looking upward, ceiling visible behind the head.",
       "boxes": [
@@ -1774,6 +1819,7 @@
     {
       "id": "solo_06",
       "name": "1人・顔アップ・聞く・正面",
+      "name_en": "1 person · face close-up · listening · front",
       "category": "顔アップ",
       "prompt": "A single large face fills most of the frame, an attentive neutral expression; crop below the neck. Only one head is depicted. Straight-on eye-level frontal camera, clear symmetrical framing.",
       "boxes": [
@@ -1808,6 +1854,7 @@
     {
       "id": "solo_07",
       "name": "1人・顔アップ・聞く・斜め前",
+      "name_en": "1 person · face close-up · listening · three-quarter front",
       "category": "顔アップ",
       "prompt": "A single large face fills most of the frame, an attentive neutral expression; crop below the neck. Only one head is depicted. Eye-level three-quarter view from the front, both eyes visible.",
       "boxes": [
@@ -1842,6 +1889,7 @@
     {
       "id": "solo_08",
       "name": "1人・顔アップ・聞く・横顔",
+      "name_en": "1 person · face close-up · listening · profile",
       "category": "顔アップ",
       "prompt": "A single large face fills most of the frame, an attentive neutral expression; crop below the neck. Only one head is depicted. Eye-level strict side-profile view, nose silhouette clearly visible.",
       "boxes": [
@@ -1876,6 +1924,7 @@
     {
       "id": "solo_09",
       "name": "1人・顔アップ・聞く・俯瞰",
+      "name_en": "1 person · face close-up · listening · high angle",
       "category": "俯瞰",
       "prompt": "A single large face fills most of the frame, attentive listening expression; crop below the neck. High-angle camera looking down from above the head, floor visible.",
       "boxes": [
@@ -1910,6 +1959,7 @@
     {
       "id": "solo_10",
       "name": "1人・顔アップ・聞く・あおり",
+      "name_en": "1 person · face close-up · listening · low angle",
       "category": "あおり",
       "prompt": "A single large face fills most of the frame, attentive listening expression; crop below the neck. Low-angle camera looking upward, ceiling visible behind the head.",
       "boxes": [
@@ -1944,6 +1994,7 @@
     {
       "id": "solo_11",
       "name": "1人・目元まで寄る・正面",
+      "name_en": "1 person · extreme close-up on the eyes · front",
       "category": "顔アップ",
       "prompt": "An extreme close-up of one face, eyebrows, eyes and nose dominate the image; forehead and chin may be cropped. Straight-on eye-level frontal camera, clear symmetrical framing.",
       "boxes": [
@@ -1978,6 +2029,7 @@
     {
       "id": "solo_12",
       "name": "1人・目元まで寄る・斜め前",
+      "name_en": "1 person · extreme close-up on the eyes · three-quarter front",
       "category": "顔アップ",
       "prompt": "An extreme close-up of one face, eyebrows, eyes and nose dominate the image; forehead and chin may be cropped. Eye-level three-quarter view from the front, both eyes visible.",
       "boxes": [
@@ -2012,6 +2064,7 @@
     {
       "id": "solo_13",
       "name": "1人・目元まで寄る・横顔",
+      "name_en": "1 person · extreme close-up on the eyes · profile",
       "category": "顔アップ",
       "prompt": "An extreme close-up of one face, eyebrows, eyes and nose dominate the image; forehead and chin may be cropped. Eye-level strict side-profile view, nose silhouette clearly visible.",
       "boxes": [
@@ -2046,6 +2099,7 @@
     {
       "id": "solo_14",
       "name": "1人・目元まで寄る・俯瞰",
+      "name_en": "1 person · extreme close-up on the eyes · high angle",
       "category": "俯瞰",
       "prompt": "An extreme close-up of one face, eyebrows, eyes and nose dominate the image; forehead and chin may be cropped. High-angle camera looking down from above the head, floor visible.",
       "boxes": [
@@ -2080,6 +2134,7 @@
     {
       "id": "solo_15",
       "name": "1人・目元まで寄る・あおり",
+      "name_en": "1 person · extreme close-up on the eyes · low angle",
       "category": "あおり",
       "prompt": "An extreme close-up of one face, eyebrows, eyes and nose dominate the image; forehead and chin may be cropped. Low-angle camera looking upward, ceiling visible behind the head.",
       "boxes": [
@@ -2114,6 +2169,7 @@
     {
       "id": "solo_16",
       "name": "1人・全身・立つ・正面",
+      "name_en": "1 person · full body · standing · front",
       "category": "全身",
       "prompt": "A single standing person, entire head and both feet visible, generous empty space around the full body. Straight-on eye-level frontal camera, clear symmetrical framing.",
       "boxes": [
@@ -2148,6 +2204,7 @@
     {
       "id": "solo_17",
       "name": "1人・全身・立つ・斜め前",
+      "name_en": "1 person · full body · standing · three-quarter front",
       "category": "全身",
       "prompt": "A single standing person, entire head and both feet visible, generous empty space around the full body. Eye-level three-quarter view from the front, both eyes visible.",
       "boxes": [
@@ -2182,6 +2239,7 @@
     {
       "id": "solo_18",
       "name": "1人・全身・立つ・横顔",
+      "name_en": "1 person · full body · standing · profile",
       "category": "全身",
       "prompt": "A single standing person, entire head and both feet visible, generous empty space around the full body. Eye-level strict side-profile view, nose silhouette clearly visible.",
       "boxes": [
@@ -2216,6 +2274,7 @@
     {
       "id": "solo_19",
       "name": "1人・全身・立つ・俯瞰",
+      "name_en": "1 person · full body · standing · high angle",
       "category": "俯瞰",
       "prompt": "A single standing person, entire head and both feet visible, generous empty space around the full body. High-angle camera looking down from above the head, floor visible.",
       "boxes": [
@@ -2250,6 +2309,7 @@
     {
       "id": "solo_20",
       "name": "1人・全身・立つ・あおり",
+      "name_en": "1 person · full body · standing · low angle",
       "category": "あおり",
       "prompt": "A single standing person, entire head and both feet visible, generous empty space around the full body. Low-angle camera looking upward, ceiling visible behind the head.",
       "boxes": [
@@ -2284,6 +2344,7 @@
     {
       "id": "solo_21",
       "name": "1人・机で作業する・正面",
+      "name_en": "1 person · working at a desk · front",
       "category": "1人の会話",
       "prompt": "A single person seated at a desk writing with a pen, head, torso, hands and desktop clearly visible. Straight-on eye-level frontal camera, clear symmetrical framing.",
       "boxes": [
@@ -2318,6 +2379,7 @@
     {
       "id": "solo_22",
       "name": "1人・机で作業する・斜め前",
+      "name_en": "1 person · working at a desk · three-quarter front",
       "category": "1人の会話",
       "prompt": "A single person seated at a desk writing with a pen, head, torso, hands and desktop clearly visible. Eye-level three-quarter view from the front, both eyes visible.",
       "boxes": [
@@ -2352,6 +2414,7 @@
     {
       "id": "solo_23",
       "name": "1人・机で作業する・横顔",
+      "name_en": "1 person · working at a desk · profile",
       "category": "1人の会話",
       "prompt": "A single person seated at a desk writing with a pen, head, torso, hands and desktop clearly visible. Eye-level strict side-profile view, nose silhouette clearly visible.",
       "boxes": [
@@ -2386,6 +2449,7 @@
     {
       "id": "solo_24",
       "name": "1人・机で作業する・俯瞰",
+      "name_en": "1 person · working at a desk · high angle",
       "category": "俯瞰",
       "prompt": "A single person seated at a desk writing with a pen, head, torso, hands and desktop clearly visible. High-angle camera looking down from above the head, floor visible.",
       "boxes": [
@@ -2420,6 +2484,7 @@
     {
       "id": "solo_25",
       "name": "1人・机で作業する・あおり",
+      "name_en": "1 person · working at a desk · low angle",
       "category": "あおり",
       "prompt": "A single person seated at a desk writing with a pen, head, torso, hands and desktop clearly visible. Low-angle camera looking upward, ceiling visible behind the head.",
       "boxes": [
@@ -2454,6 +2519,7 @@
     {
       "id": "solo_26",
       "name": "1人・椅子に座る全身・正面",
+      "name_en": "1 person · seated on a chair, full body · front",
       "category": "全身",
       "prompt": "A single person seated on a chair, entire head, both knees and both feet visible, chair legs visible. Straight-on eye-level frontal camera, clear symmetrical framing.",
       "boxes": [
@@ -2488,6 +2554,7 @@
     {
       "id": "solo_27",
       "name": "1人・椅子に座る全身・斜め前",
+      "name_en": "1 person · seated on a chair, full body · three-quarter front",
       "category": "全身",
       "prompt": "A single person seated on a chair, entire head, both knees and both feet visible, chair legs visible. Eye-level three-quarter view from the front, both eyes visible.",
       "boxes": [
@@ -2522,6 +2589,7 @@
     {
       "id": "solo_28",
       "name": "1人・椅子に座る全身・横顔",
+      "name_en": "1 person · seated on a chair, full body · profile",
       "category": "全身",
       "prompt": "A single person seated on a chair, entire head, both knees and both feet visible, chair legs visible. Eye-level strict side-profile view, nose silhouette clearly visible.",
       "boxes": [
@@ -2556,6 +2624,7 @@
     {
       "id": "solo_29",
       "name": "1人・椅子に座る全身・俯瞰",
+      "name_en": "1 person · seated on a chair, full body · high angle",
       "category": "俯瞰",
       "prompt": "A single person seated on a chair, entire head, both knees and both feet visible, chair legs visible. High-angle camera looking down from above the head, floor visible.",
       "boxes": [
@@ -2590,6 +2659,7 @@
     {
       "id": "solo_30",
       "name": "1人・椅子に座る全身・あおり",
+      "name_en": "1 person · seated on a chair, full body · low angle",
       "category": "あおり",
       "prompt": "A single person seated on a chair, entire head, both knees and both feet visible, chair legs visible. Low-angle camera looking upward, ceiling visible behind the head.",
       "boxes": [
@@ -2624,6 +2694,7 @@
     {
       "id": "solo_31",
       "name": "1人・床にしゃがむ・正面",
+      "name_en": "1 person · crouching on the floor · front",
       "category": "全身",
       "prompt": "A single person crouching on the floor to pick up a sheet of paper, compact full-body pose with both feet visible. Straight-on eye-level frontal camera, clear symmetrical framing.",
       "boxes": [
@@ -2658,6 +2729,7 @@
     {
       "id": "solo_32",
       "name": "1人・床にしゃがむ・斜め前",
+      "name_en": "1 person · crouching on the floor · three-quarter front",
       "category": "全身",
       "prompt": "A single person crouching on the floor to pick up a sheet of paper, compact full-body pose with both feet visible. Eye-level three-quarter view from the front, both eyes visible.",
       "boxes": [
@@ -2692,6 +2764,7 @@
     {
       "id": "solo_33",
       "name": "1人・床にしゃがむ・横顔",
+      "name_en": "1 person · crouching on the floor · profile",
       "category": "全身",
       "prompt": "A single person crouching on the floor to pick up a sheet of paper, compact full-body pose with both feet visible. Eye-level strict side-profile view, nose silhouette clearly visible.",
       "boxes": [
@@ -2726,6 +2799,7 @@
     {
       "id": "solo_34",
       "name": "1人・床にしゃがむ・俯瞰",
+      "name_en": "1 person · crouching on the floor · high angle",
       "category": "俯瞰",
       "prompt": "A single person crouching on the floor to pick up a sheet of paper, compact full-body pose with both feet visible. High-angle camera looking down from above the head, floor visible.",
       "boxes": [
@@ -2760,6 +2834,7 @@
     {
       "id": "solo_35",
       "name": "1人・床にしゃがむ・あおり",
+      "name_en": "1 person · crouching on the floor · low angle",
       "category": "あおり",
       "prompt": "A single person crouching on the floor to pick up a sheet of paper, compact full-body pose with both feet visible. Low-angle camera looking upward, ceiling visible behind the head.",
       "boxes": [
@@ -2794,6 +2869,7 @@
     {
       "id": "solo_36",
       "name": "1人・振り返る半身・正面",
+      "name_en": "1 person · looking back, waist-up · front",
       "category": "1人の会話",
       "prompt": "A single person shown from waist up, torso turned away and head turning back toward the camera over one shoulder. Straight-on eye-level frontal camera, clear symmetrical framing.",
       "boxes": [
@@ -2828,6 +2904,7 @@
     {
       "id": "solo_37",
       "name": "1人・振り返る半身・斜め前",
+      "name_en": "1 person · looking back, waist-up · three-quarter front",
       "category": "1人の会話",
       "prompt": "A single person shown from waist up, torso turned away and head turning back toward the camera over one shoulder. Eye-level three-quarter view from the front, both eyes visible.",
       "boxes": [
@@ -2862,6 +2939,7 @@
     {
       "id": "solo_38",
       "name": "1人・振り返る半身・横顔",
+      "name_en": "1 person · looking back, waist-up · profile",
       "category": "1人の会話",
       "prompt": "A single person shown from waist up, torso turned away and head turning back toward the camera over one shoulder. Eye-level strict side-profile view, nose silhouette clearly visible.",
       "boxes": [
@@ -2896,6 +2974,7 @@
     {
       "id": "solo_39",
       "name": "1人・振り返る半身・俯瞰",
+      "name_en": "1 person · looking back, waist-up · high angle",
       "category": "俯瞰",
       "prompt": "A single person shown from waist up, torso turned away and head turning back toward the camera over one shoulder. High-angle camera looking down from above the head, floor visible.",
       "boxes": [
@@ -2930,6 +3009,7 @@
     {
       "id": "solo_40",
       "name": "1人・振り返る半身・あおり",
+      "name_en": "1 person · looking back, waist-up · low angle",
       "category": "あおり",
       "prompt": "A single person shown from waist up, torso turned away and head turning back toward the camera over one shoulder. Low-angle camera looking upward, ceiling visible behind the head.",
       "boxes": [
@@ -2964,6 +3044,7 @@
     {
       "id": "trio_01",
       "name": "3人・横一列・正面",
+      "name_en": "3 people · in a row · front",
       "category": "3人の会話",
       "prompt": "Three people stand in one row, person 1 on the right, person 2 in the center, person 3 on the left. Show each from head to waist, heads turned inward in a group conversation. Eye-level camera facing the group.",
       "boxes": [
@@ -3010,6 +3091,7 @@
     {
       "id": "trio_02",
       "name": "3人・横一列・斜め前",
+      "name_en": "3 people · in a row · three-quarter front",
       "category": "3人の会話",
       "prompt": "Three people stand in one row, person 1 on the right, person 2 in the center, person 3 on the left. Show each from head to waist, heads turned inward in a group conversation. Oblique three-quarter view of the group from the front right, clear depth perspective.",
       "boxes": [
@@ -3056,6 +3138,7 @@
     {
       "id": "trio_03",
       "name": "3人・横一列・俯瞰",
+      "name_en": "3 people · in a row · high angle",
       "category": "俯瞰",
       "prompt": "Three people stand in one row, person 1 on the right, person 2 in the center, person 3 on the left. Show each from head to waist, heads turned inward in a group conversation. High-angle camera looking down on the entire group, floor and tops of heads visible.",
       "boxes": [
@@ -3102,6 +3185,7 @@
     {
       "id": "trio_04",
       "name": "3人・横一列・あおり",
+      "name_en": "3 people · in a row · low angle",
       "category": "あおり",
       "prompt": "Three people stand in one row, person 1 on the right, person 2 in the center, person 3 on the left. Show each from head to waist, heads turned inward in a group conversation. Low-angle camera looking upward at the entire group, upward perspective and ceiling visible.",
       "boxes": [
@@ -3148,6 +3232,7 @@
     {
       "id": "trio_05",
       "name": "3人・横一列・引き",
+      "name_en": "3 people · in a row · wide shot",
       "category": "3人の会話",
       "prompt": "Three people stand in one row, person 1 on the right, person 2 in the center, person 3 on the left. Show each from head to waist, heads turned inward in a group conversation. Wider camera view with a large amount of empty room around the group; keep all three people distinct and separated.",
       "boxes": [
@@ -3194,6 +3279,7 @@
     {
       "id": "trio_06",
       "name": "3人・中央が手前の三角形・正面",
+      "name_en": "3 people · triangle, center in front · front",
       "category": "3人の会話",
       "prompt": "Triangular staging. Person 2 is large in the center foreground shown waist-up. Person 1 stands smaller in the right background, person 3 smaller in the left background; all three are distinct people. Eye-level camera facing the group.",
       "boxes": [
@@ -3240,6 +3326,7 @@
     {
       "id": "trio_07",
       "name": "3人・中央が手前の三角形・斜め前",
+      "name_en": "3 people · triangle, center in front · three-quarter front",
       "category": "3人の会話",
       "prompt": "Triangular staging. Person 2 is large in the center foreground shown waist-up. Person 1 stands smaller in the right background, person 3 smaller in the left background; all three are distinct people. Oblique three-quarter view of the group from the front right, clear depth perspective.",
       "boxes": [
@@ -3286,6 +3373,7 @@
     {
       "id": "trio_08",
       "name": "3人・中央が手前の三角形・俯瞰",
+      "name_en": "3 people · triangle, center in front · high angle",
       "category": "俯瞰",
       "prompt": "Triangular staging. Person 2 is large in the center foreground shown waist-up. Person 1 stands smaller in the right background, person 3 smaller in the left background; all three are distinct people. High-angle camera looking down on the entire group, floor and tops of heads visible.",
       "boxes": [
@@ -3332,6 +3420,7 @@
     {
       "id": "trio_09",
       "name": "3人・中央が手前の三角形・あおり",
+      "name_en": "3 people · triangle, center in front · low angle",
       "category": "あおり",
       "prompt": "Triangular staging. Person 2 is large in the center foreground shown waist-up. Person 1 stands smaller in the right background, person 3 smaller in the left background; all three are distinct people. Low-angle camera looking upward at the entire group, upward perspective and ceiling visible.",
       "boxes": [
@@ -3378,6 +3467,7 @@
     {
       "id": "trio_10",
       "name": "3人・中央が手前の三角形・引き",
+      "name_en": "3 people · triangle, center in front · wide shot",
       "category": "3人の会話",
       "prompt": "Triangular staging. Person 2 is large in the center foreground shown waist-up. Person 1 stands smaller in the right background, person 3 smaller in the left background; all three are distinct people. Wider camera view with a large amount of empty room around the group; keep all three people distinct and separated.",
       "boxes": [
@@ -3424,6 +3514,7 @@
     {
       "id": "trio_11",
       "name": "3人・左右が手前の三角形・正面",
+      "name_en": "3 people · triangle, sides in front · front",
       "category": "3人の会話",
       "prompt": "Two people frame a third person. Person 1 large at right foreground and person 3 large at left foreground, both in three-quarter view facing inward. Person 2 is smaller alone at center in the background. Eye-level camera facing the group.",
       "boxes": [
@@ -3470,6 +3561,7 @@
     {
       "id": "trio_12",
       "name": "3人・左右が手前の三角形・斜め前",
+      "name_en": "3 people · triangle, sides in front · three-quarter front",
       "category": "3人の会話",
       "prompt": "Two people frame a third person. Person 1 large at right foreground and person 3 large at left foreground, both in three-quarter view facing inward. Person 2 is smaller alone at center in the background. Oblique three-quarter view of the group from the front right, clear depth perspective.",
       "boxes": [
@@ -3516,6 +3608,7 @@
     {
       "id": "trio_13",
       "name": "3人・左右が手前の三角形・俯瞰",
+      "name_en": "3 people · triangle, sides in front · high angle",
       "category": "俯瞰",
       "prompt": "Two people frame a third person. Person 1 large at right foreground and person 3 large at left foreground, both in three-quarter view facing inward. Person 2 is smaller alone at center in the background. High-angle camera looking down on the entire group, floor and tops of heads visible.",
       "boxes": [
@@ -3562,6 +3655,7 @@
     {
       "id": "trio_14",
       "name": "3人・左右が手前の三角形・あおり",
+      "name_en": "3 people · triangle, sides in front · low angle",
       "category": "あおり",
       "prompt": "Two people frame a third person. Person 1 large at right foreground and person 3 large at left foreground, both in three-quarter view facing inward. Person 2 is smaller alone at center in the background. Low-angle camera looking upward at the entire group, upward perspective and ceiling visible.",
       "boxes": [
@@ -3608,6 +3702,7 @@
     {
       "id": "trio_15",
       "name": "3人・左右が手前の三角形・引き",
+      "name_en": "3 people · triangle, sides in front · wide shot",
       "category": "3人の会話",
       "prompt": "Two people frame a third person. Person 1 large at right foreground and person 3 large at left foreground, both in three-quarter view facing inward. Person 2 is smaller alone at center in the background. Wider camera view with a large amount of empty room around the group; keep all three people distinct and separated.",
       "boxes": [
@@ -3654,6 +3749,7 @@
     {
       "id": "trio_16",
       "name": "3人・机を囲む・正面",
+      "name_en": "3 people · around a desk · front",
       "category": "3人の会話",
       "prompt": "Three people seated around one central rectangular desk. Person 1 sits on the right, person 2 sits opposite the camera at center, person 3 sits on the left; all three heads and the tabletop are visible. Eye-level camera facing the group.",
       "boxes": [
@@ -3700,6 +3796,7 @@
     {
       "id": "trio_17",
       "name": "3人・机を囲む・斜め前",
+      "name_en": "3 people · around a desk · three-quarter front",
       "category": "3人の会話",
       "prompt": "Three people seated around one central rectangular desk. Person 1 sits on the right, person 2 sits opposite the camera at center, person 3 sits on the left; all three heads and the tabletop are visible. Oblique three-quarter view of the group from the front right, clear depth perspective.",
       "boxes": [
@@ -3746,6 +3843,7 @@
     {
       "id": "trio_18",
       "name": "3人・机を囲む・俯瞰",
+      "name_en": "3 people · around a desk · high angle",
       "category": "俯瞰",
       "prompt": "Three people seated around one central rectangular desk. Person 1 sits on the right, person 2 sits opposite the camera at center, person 3 sits on the left; all three heads and the tabletop are visible. High-angle camera looking down on the entire group, floor and tops of heads visible.",
       "boxes": [
@@ -3792,6 +3890,7 @@
     {
       "id": "trio_19",
       "name": "3人・机を囲む・あおり",
+      "name_en": "3 people · around a desk · low angle",
       "category": "あおり",
       "prompt": "Three people seated around one central rectangular desk. Person 1 sits on the right, person 2 sits opposite the camera at center, person 3 sits on the left; all three heads and the tabletop are visible. Low-angle camera looking upward at the entire group, upward perspective and ceiling visible.",
       "boxes": [
@@ -3838,6 +3937,7 @@
     {
       "id": "trio_20",
       "name": "3人・机を囲む・引き",
+      "name_en": "3 people · around a desk · wide shot",
       "category": "3人の会話",
       "prompt": "Three people seated around one central rectangular desk. Person 1 sits on the right, person 2 sits opposite the camera at center, person 3 sits on the left; all three heads and the tabletop are visible. Wider camera view with a large amount of empty room around the group; keep all three people distinct and separated.",
       "boxes": [
@@ -3884,6 +3984,7 @@
     {
       "id": "trio_21",
       "name": "3人・ソファに三人・正面",
+      "name_en": "3 people · three on a sofa · front",
       "category": "3人の会話",
       "prompt": "Three people sit side by side on one sofa. Person 1 right, person 2 center, person 3 left. Show all three from head to knees with a clear gap between each body; heads turned toward the middle. Eye-level camera facing the group.",
       "boxes": [
@@ -3930,6 +4031,7 @@
     {
       "id": "trio_22",
       "name": "3人・ソファに三人・斜め前",
+      "name_en": "3 people · three on a sofa · three-quarter front",
       "category": "3人の会話",
       "prompt": "Three people sit side by side on one sofa. Person 1 right, person 2 center, person 3 left. Show all three from head to knees with a clear gap between each body; heads turned toward the middle. Oblique three-quarter view of the group from the front right, clear depth perspective.",
       "boxes": [
@@ -3976,6 +4078,7 @@
     {
       "id": "trio_23",
       "name": "3人・ソファに三人・俯瞰",
+      "name_en": "3 people · three on a sofa · high angle",
       "category": "俯瞰",
       "prompt": "Three people sit side by side on one sofa. Person 1 right, person 2 center, person 3 left. Show all three from head to knees with a clear gap between each body; heads turned toward the middle. High-angle camera looking down on the entire group, floor and tops of heads visible.",
       "boxes": [
@@ -4022,6 +4125,7 @@
     {
       "id": "trio_24",
       "name": "3人・ソファに三人・あおり",
+      "name_en": "3 people · three on a sofa · low angle",
       "category": "あおり",
       "prompt": "Three people sit side by side on one sofa. Person 1 right, person 2 center, person 3 left. Show all three from head to knees with a clear gap between each body; heads turned toward the middle. Low-angle camera looking upward at the entire group, upward perspective and ceiling visible.",
       "boxes": [
@@ -4068,6 +4172,7 @@
     {
       "id": "trio_25",
       "name": "3人・ソファに三人・引き",
+      "name_en": "3 people · three on a sofa · wide shot",
       "category": "3人の会話",
       "prompt": "Three people sit side by side on one sofa. Person 1 right, person 2 center, person 3 left. Show all three from head to knees with a clear gap between each body; heads turned toward the middle. Wider camera view with a large amount of empty room around the group; keep all three people distinct and separated.",
       "boxes": [
@@ -4114,6 +4219,7 @@
     {
       "id": "trio_26",
       "name": "3人・一人座り二人立つ・正面",
+      "name_en": "3 people · one seated, two standing · front",
       "category": "全身",
       "prompt": "Full-body group of three. Person 2 sits on a chair at center; person 1 stands on the right and person 3 stands on the left, both looking toward the seated person. Every head and foot visible. Eye-level camera facing the group.",
       "boxes": [
@@ -4160,6 +4266,7 @@
     {
       "id": "trio_27",
       "name": "3人・一人座り二人立つ・斜め前",
+      "name_en": "3 people · one seated, two standing · three-quarter front",
       "category": "全身",
       "prompt": "Full-body group of three. Person 2 sits on a chair at center; person 1 stands on the right and person 3 stands on the left, both looking toward the seated person. Every head and foot visible. Oblique three-quarter view of the group from the front right, clear depth perspective.",
       "boxes": [
@@ -4206,6 +4313,7 @@
     {
       "id": "trio_28",
       "name": "3人・一人座り二人立つ・俯瞰",
+      "name_en": "3 people · one seated, two standing · high angle",
       "category": "俯瞰",
       "prompt": "Full-body group of three. Person 2 sits on a chair at center; person 1 stands on the right and person 3 stands on the left, both looking toward the seated person. Every head and foot visible. High-angle camera looking down on the entire group, floor and tops of heads visible.",
       "boxes": [
@@ -4252,6 +4360,7 @@
     {
       "id": "trio_29",
       "name": "3人・一人座り二人立つ・あおり",
+      "name_en": "3 people · one seated, two standing · low angle",
       "category": "あおり",
       "prompt": "Full-body group of three. Person 2 sits on a chair at center; person 1 stands on the right and person 3 stands on the left, both looking toward the seated person. Every head and foot visible. Low-angle camera looking upward at the entire group, upward perspective and ceiling visible.",
       "boxes": [
@@ -4298,6 +4407,7 @@
     {
       "id": "trio_30",
       "name": "3人・一人座り二人立つ・引き",
+      "name_en": "3 people · one seated, two standing · wide shot",
       "category": "全身",
       "prompt": "Full-body group of three. Person 2 sits on a chair at center; person 1 stands on the right and person 3 stands on the left, both looking toward the seated person. Every head and foot visible. Wider camera view with a large amount of empty room around the group; keep all three people distinct and separated.",
       "boxes": [
@@ -4344,6 +4454,7 @@
     {
       "id": "trio_31",
       "name": "3人・一人が背中・二人が正面・正面",
+      "name_en": "3 people · one seen from behind · two facing the camera · front",
       "category": "肩越し",
       "prompt": "Over-the-shoulder group conversation. Person 2 back of head and shoulders large in the bottom center foreground. Person 1 face visible at upper right and person 3 face visible at upper left, facing person 2. Eye-level camera facing the group.",
       "boxes": [
@@ -4390,6 +4501,7 @@
     {
       "id": "trio_32",
       "name": "3人・一人が背中・二人が正面・斜め前",
+      "name_en": "3 people · one seen from behind · two facing the camera · three-quarter front",
       "category": "肩越し",
       "prompt": "Over-the-shoulder group conversation. Person 2 back of head and shoulders large in the bottom center foreground. Person 1 face visible at upper right and person 3 face visible at upper left, facing person 2. Oblique three-quarter view of the group from the front right, clear depth perspective.",
       "boxes": [
@@ -4436,6 +4548,7 @@
     {
       "id": "trio_33",
       "name": "3人・一人が背中・二人が正面・俯瞰",
+      "name_en": "3 people · one seen from behind · two facing the camera · high angle",
       "category": "俯瞰",
       "prompt": "Over-the-shoulder group conversation. Person 2 back of head and shoulders large in the bottom center foreground. Person 1 face visible at upper right and person 3 face visible at upper left, facing person 2. High-angle camera looking down on the entire group, floor and tops of heads visible.",
       "boxes": [
@@ -4482,6 +4595,7 @@
     {
       "id": "trio_34",
       "name": "3人・一人が背中・二人が正面・あおり",
+      "name_en": "3 people · one seen from behind · two facing the camera · low angle",
       "category": "あおり",
       "prompt": "Over-the-shoulder group conversation. Person 2 back of head and shoulders large in the bottom center foreground. Person 1 face visible at upper right and person 3 face visible at upper left, facing person 2. Low-angle camera looking upward at the entire group, upward perspective and ceiling visible.",
       "boxes": [
@@ -4528,6 +4642,7 @@
     {
       "id": "trio_35",
       "name": "3人・一人が背中・二人が正面・引き",
+      "name_en": "3 people · one seen from behind · two facing the camera · wide shot",
       "category": "肩越し",
       "prompt": "Over-the-shoulder group conversation. Person 2 back of head and shoulders large in the bottom center foreground. Person 1 face visible at upper right and person 3 face visible at upper left, facing person 2. Wider camera view with a large amount of empty room around the group; keep all three people distinct and separated.",
       "boxes": [
@@ -4574,6 +4689,7 @@
     {
       "id": "trio_36",
       "name": "3人・全身で三角形に立つ・正面",
+      "name_en": "3 people · standing in a triangle, full body · front",
       "category": "全身",
       "prompt": "Wide full-body three-person conversation in a loose triangle. Person 1 stands on the right, person 2 farther back at upper center, person 3 on the left. All three complete bodies including feet visible. Eye-level camera facing the group.",
       "boxes": [
@@ -4620,6 +4736,7 @@
     {
       "id": "trio_37",
       "name": "3人・全身で三角形に立つ・斜め前",
+      "name_en": "3 people · standing in a triangle, full body · three-quarter front",
       "category": "全身",
       "prompt": "Wide full-body three-person conversation in a loose triangle. Person 1 stands on the right, person 2 farther back at upper center, person 3 on the left. All three complete bodies including feet visible. Oblique three-quarter view of the group from the front right, clear depth perspective.",
       "boxes": [
@@ -4666,6 +4783,7 @@
     {
       "id": "trio_38",
       "name": "3人・全身で三角形に立つ・俯瞰",
+      "name_en": "3 people · standing in a triangle, full body · high angle",
       "category": "俯瞰",
       "prompt": "Wide full-body three-person conversation in a loose triangle. Person 1 stands on the right, person 2 farther back at upper center, person 3 on the left. All three complete bodies including feet visible. High-angle camera looking down on the entire group, floor and tops of heads visible.",
       "boxes": [
@@ -4712,6 +4830,7 @@
     {
       "id": "trio_39",
       "name": "3人・全身で三角形に立つ・あおり",
+      "name_en": "3 people · standing in a triangle, full body · low angle",
       "category": "あおり",
       "prompt": "Wide full-body three-person conversation in a loose triangle. Person 1 stands on the right, person 2 farther back at upper center, person 3 on the left. All three complete bodies including feet visible. Low-angle camera looking upward at the entire group, upward perspective and ceiling visible.",
       "boxes": [
@@ -4758,6 +4877,7 @@
     {
       "id": "trio_40",
       "name": "3人・全身で三角形に立つ・引き",
+      "name_en": "3 people · standing in a triangle, full body · wide shot",
       "category": "全身",
       "prompt": "Wide full-body three-person conversation in a loose triangle. Person 1 stands on the right, person 2 farther back at upper center, person 3 on the left. All three complete bodies including feet visible. Wider camera view with a large amount of empty room around the group; keep all three people distinct and separated.",
       "boxes": [

@@ -34,6 +34,6 @@ class ThreeCharacters(unittest.TestCase):
         people=[x for x in data['items'] if x['label']=='character']
         self.assertIn('Black hair',people[0]['caption']);self.assertIn('glasses',people[1]['caption']);self.assertIn('cardigan',people[2]['caption'])
     def test_every_nonempty_subset_of_three_is_available(self):
-        self.assertEqual({frozenset(v) for v in nodes.ACTORS.values()},{frozenset(s for j,s in enumerate(nodes.SLOTS) if mask&(1<<j)) for mask in range(8)})
+        self.assertEqual({frozenset(v) for v in nodes.ACTOR_SLOTS.values()},{frozenset(s for j,s in enumerate(nodes.SLOTS) if mask&(1<<j)) for mask in range(8)})
 
 if __name__=='__main__':unittest.main()

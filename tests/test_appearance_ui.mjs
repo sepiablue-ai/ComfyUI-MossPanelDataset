@@ -6,8 +6,8 @@ import assert from 'node:assert/strict';
 test('外見の結果を復元・表示し文章欄へコピーする',async()=>{
     let extension;
     const app={registerExtension:e=>extension=e,graph:{change(){}}};
-    const source=readFileSync(new URL('../web/appearance.js',import.meta.url),'utf8').replace(/^import .*;\r?\n/,'');
-    vm.runInNewContext(source,{app,document:{createElement:()=>({setAttribute(){},addEventListener(){},style:{}})},queueMicrotask});
+    const source=readFileSync(new URL('../web/appearance.js',import.meta.url),'utf8').replace(/^import .*;\r?\n/gm,'').replace(/^useApp\(app\);\r?\n/m,'');
+    vm.runInNewContext(source,{app,tr:(ja)=>ja,document:{createElement:()=>({setAttribute(){},addEventListener(){},style:{}})},queueMicrotask});
     class Node {
         constructor(){this.properties={};this.size=[200,200];this.widgets=[{name:'外見プロンプト',value:''},{name:'指定方法',value:'画像から抽出'}];}
         addDOMWidget(){} addWidget(type,name,value,callback){this.copy=callback;} setSize(){}

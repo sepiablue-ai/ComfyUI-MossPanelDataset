@@ -1,0 +1,92 @@
+{
+  "MossPanelDatasetFlexible": {
+    "display_name": "Choose a panel layout (2–6 panels)",
+    "description": "Pick a manga panel layout from preview images and build the MOSS prompt from the shared characters and each panel's content.",
+    "inputs": {
+      "コマ割り": { "name": "Layout", "tooltip": "Press \"Choose a layout from images\" to pick from previews. Panel inputs are added or removed automatically." },
+      "生成内容": { "name": "Output", "tooltip": "\"Manga\" draws characters and dialogue. \"Empty panel frames\" draws only the panel borders." },
+      "人物設定": { "name": "Shared characters", "tooltip": "Connect the \"Shared characters\" node." },
+      "コマ1": { "name": "Panel 1" },
+      "コマ2": { "name": "Panel 2" },
+      "コマ3": { "name": "Panel 3" },
+      "コマ4": { "name": "Panel 4" },
+      "コマ5": { "name": "Panel 5" },
+      "コマ6": { "name": "Panel 6" }
+    },
+    "outputs": {
+      "0": { "name": "MOSS prompt" },
+      "1": { "name": "Width" },
+      "2": { "name": "Height" }
+    }
+  },
+  "MossMangaCharacters": {
+    "display_name": "Shared characters (plain text)",
+    "description": "Names and appearance of up to three characters shared by all panels.",
+    "inputs": {
+      "人物1_名前": { "name": "Character 1 name", "tooltip": "A name for your own reference. Any language is fine." },
+      "人物1_外見": { "name": "Character 1 appearance", "tooltip": "Describe the appearance in English, or connect the output of \"Character appearance (image / text)\"." },
+      "人物2_名前": { "name": "Character 2 name", "tooltip": "A name for your own reference. Any language is fine." },
+      "人物2_外見": { "name": "Character 2 appearance", "tooltip": "Describe the appearance in English, or connect the output of \"Character appearance (image / text)\"." },
+      "人物3_名前": { "name": "Character 3 name", "tooltip": "Fill in both the name and the appearance only when you use a third character." },
+      "人物3_外見": { "name": "Character 3 appearance", "tooltip": "English appearance text, or the output of the appearance extraction node. Leave both name and appearance empty for two characters." }
+    },
+    "outputs": {
+      "0": { "name": "Shared characters" }
+    }
+  },
+  "MossMangaPanel": {
+    "display_name": "Panel content (scene, characters, dialogue)",
+    "description": "The scene, characters, and up to three lines of dialogue for one panel.",
+    "inputs": {
+      "場面": { "name": "Scene", "tooltip": "Describe the scene in English. It is passed to MOSS as is, without translation." },
+      "登場人物": { "name": "Characters", "tooltip": "Characters who appear in this panel. Every speaker must be one of them." },
+      "話者1": { "name": "Speaker 1", "tooltip": "Who says line 1. Choose a character included in \"Characters\", or \"No dialogue\"." },
+      "セリフ1": { "name": "Line 1", "tooltip": "Enter only the text, in the language you want rendered. It is passed as is, without translation." },
+      "話者2": { "name": "Speaker 2", "tooltip": "Who says line 2. Choose a character included in \"Characters\", or \"No dialogue\"." },
+      "セリフ2": { "name": "Line 2", "tooltip": "Enter only the text, in the language you want rendered. No translation is applied." },
+      "構図": { "name": "Composition", "tooltip": "Optional. Connect \"Composition for panel\" from \"Choose a composition (preview images)\". The character count must match." },
+      "話者3": { "name": "Speaker 3", "tooltip": "Who says line 3. Choose a character included in \"Characters\", or \"No dialogue\"." },
+      "セリフ3": { "name": "Line 3", "tooltip": "A third line. It is passed to MOSS as is." }
+    },
+    "outputs": {
+      "0": { "name": "Panel content" }
+    }
+  },
+  "MossPromptEditor": {
+    "display_name": "View and edit MOSS prompt",
+    "description": "Shows the prompt sent to MOSS and lets you send an edited version instead.",
+    "inputs": {
+      "プロンプト": { "name": "Prompt" },
+      "使うプロンプト": { "name": "Prompt to use", "tooltip": "\"Edited text\" sends the content of the edit box below to MOSS." },
+      "編集用プロンプト": { "name": "Edited prompt", "tooltip": "If empty, the received prompt is filled in after a run. Keep it valid JSON when editing." }
+    },
+    "outputs": {
+      "0": { "name": "MOSS prompt" }
+    }
+  },
+  "MossCompositionTemplate": {
+    "display_name": "Choose a composition (preview images)",
+    "description": "Pick a camera composition for one, two, or three characters from preview images.",
+    "inputs": {
+      "構図テンプレート": { "name": "Composition template", "tooltip": "Press \"Choose a composition from images\" to pick from previews." }
+    },
+    "outputs": {
+      "0": { "name": "Composition for panel" },
+      "1": { "name": "Composition English prompt" }
+    }
+  },
+  "MossCharacterAppearance": {
+    "display_name": "Character appearance (image / text)",
+    "description": "Pass a character's appearance as text, or extract it from a reference image with the MOSS Qwen.",
+    "inputs": {
+      "指定方法": { "name": "Method", "tooltip": "\"Text only\" passes the appearance prompt as is. The other methods extract the appearance from the reference image." },
+      "外見プロンプト": { "name": "Appearance prompt", "tooltip": "For \"Text only\", describe the appearance in English. With an image, you can add details such as hair color or clothing. Put pose and background in the panel's scene." },
+      "最大トークン数": { "name": "Max tokens", "tooltip": "Maximum length of the extracted appearance text." },
+      "Qwen": { "name": "Qwen", "tooltip": "You can share the CLIPLoader (type=moss_image) output used for MOSS generation. Not evaluated for \"Text only\"." },
+      "参考画像": { "name": "Reference image", "tooltip": "Connect one image that shows the character from a Load Image node. If needed, it is downscaled to 768 px on the long side for analysis only." }
+    },
+    "outputs": {
+      "0": { "name": "Appearance for shared characters" }
+    }
+  }
+}

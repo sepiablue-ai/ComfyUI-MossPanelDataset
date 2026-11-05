@@ -4,48 +4,6 @@
 
 ComfyUIの中で漫画のコマ割りを画像から選び、人物・場面・セリフを専用欄に入力してMOSSへ渡すカスタムノードです。配置ごとのワークフローのダウンロードや、JSON・座標の手書きは不要です。
 
-## 構図テンプレートの追加
-
-「構図を選ぶ（見本画像）」ノードを追加しました。「画像から構図を選ぶ」で一覧を開き、人数・カテゴリ・名前・英語プロンプトによる検索と、お気に入りによる絞り込みができます。お気に入りは使用中のブラウザーに保存されます。
-
-1. [構図つきサンプル](example_workflows/composition_duo.json) を開きます。
-2. 構図選択ノードで見本を選び、出力「コマに接続する構図」を各「コマの内容」ノードの任意入力「構図」へ接続します。
-3. 共通の人物設定、各コマの場面・セリフ、コマ割りを入力して生成します。場面と外見は英語、セリフは描かせたい言語で入力します。
-
-構図の英語プロンプトを場面へ追記し、見本の人物領域を各コマの内側領域へ比率に応じて割り当てます。選んだ登場人物を番号順に構図へ割り当て、話す順番を変えても人物位置は入れ替わりません。接続しなければ従来の処理になります。見本と登場人物の人数を合わせてください。
-
-構図見本は1人40種類・2人40種類・3人40種類の計120種類です。既存の2人20種類はID・名称・画像を維持して追加しました。正方形1024×1024のMOSS実出力PNGと、生成時の英語プロンプト・人物領域・シード・モデル・条件を `data/compositions.json` に収録します。肩越し・顔アップ・全身・俯瞰・あおりなどで分類します。構図一覧には見本画像・名前・人数・カテゴリ・お気に入りを表示し、品質判定は検証記録で確認できます。不一致や人物増加を画像修復で補うことはしません。
-
-## 3人までの人物指定
-
-「共通の人物設定」の「人物3_名前」「人物3_外見」を両方入力すると3人目を使えます。両方空欄なら従来の2人設定です。各コマの「登場人物」で1〜3人の任意の組み合わせを選び、「話者1〜3」「セリフ1〜3」で最大3発言を指定できます。人物3を話者に選ぶ場合も、そのコマの登場人物に含めてください。
-
-[1〜3人の混在サンプル](example_workflows/composition_1to3.json) では人物設定・構図・セリフを接続済みです。吹き出し領域は1発言なら上部中央〜右、2発言なら右上・左上、3発言なら右上・中央上・左上に指定します。構図の空き領域を自動推論する機能ではありません。追加100種類と3人指定の検証は [追加検証記録](EXPANSION_VALIDATION.md) を参照してください。
-
-## 人物画像から外見を入力する
-
-[画像から外見を抽出するサンプル](example_workflows/composition_character_images.json) を開き、2つの「画像を読み込む」で自分の人物画像を選んでください。サンプル内のファイル名は検証用のもので、参考画像は同梱していません。
-
-「人物の外見（画像／文章）」には3つの指定方法があります。
-
-- **文章のみ**：外見プロンプトをそのまま渡します。Qwen・参考画像の接続は不要です。接続されていても遅延評価でモデルや画像の処理は実行しません。
-- **画像から抽出**：人物画像から髪型・服装・装飾などを英語の外見文へ変換します。
-- **画像から抽出＋文章で補足**：抽出文へ、入力した補足文を追記します。補足文の翻訳は行いません。
-
-MOSSで使う `CLIPLoader` の `type=moss_image` と `qwen3.5_9b_int8_convrot.safetensors` を共用できます。別のVLMやP-H3のモデル、追加のPythonパッケージは不要です。動作確認環境はComfyUI 0.42.0です。
-
-外見ノードの「人物設定に渡す外見」を、共通の人物設定の各「人物N_外見」へ接続します。サンプルは接続済みです。自分で組む場合は外見欄を入力へ変換して接続してください。人物1〜3でそれぞれ画像・文章の方法を選べます。従来の文章入力だけのワークフローもそのまま使えます。
-
-結果の外見文はノード内へ表示します。「結果を文章欄へコピー（文章のみに切替）」を押すと、手直しした文章を再利用できます。参考画像を含む上流ノードを外して保存すれば、別の環境でも画像ファイルに依存せず文章だけで使えます。通常のComfyUIキャッシュも利用し、構図やシードだけを変更しても外見抽出は再実行されません。
-
-解析時だけ、必要なら長辺768pxまで比率を維持して縮小します。元画像の画素は変更しません。1ノードにつき画像は1枚で、人物が複数いる画像では主に手前の大きい人物を説明する指示です。人物が1人の参考画像を推奨します。
-
-画像を外見文へ変換してMOSSへ渡す方式で、参照画像そのものを描画モデルへ渡す方式ではありません。見えていない服の推測や、画風説明が抽出文に混ざることがあります。正確な人物同一性は保証しません。実測と生成例は [外見抽出の検証記録](APPEARANCE_VALIDATION.md) を参照してください。
-
-0.1.1ではコマ割り196種類も `data/layouts.json` から読み取ります。利用時のデータベース接続は不要です。実験用SQLiteと生成履歴は配布物に含めません。ID・名称・配置・構図・見本画像は維持しています。Registry向け配布では `.comfyignore` によりテストと開発用ファイルを除外します。テストはGitHubのソースには残します。
-
-同じ構図を縦長・横長のコマにも使用できます。画像そのものを参照入力に渡す方式ではなく、英語プロンプトと領域指定による誘導です。見本との完全一致、特殊形状への追従、文字や人物の正確性は保証しません。画像の合成・文字修復・枠線補修は行いません。詳細は [構図検証記録](COMPOSITION_VALIDATION.md) を参照してください。
-
 ![ComfyUI内の選択画面](docs/picker.jpg)
 
 https://github.com/user-attachments/assets/05a9d952-7a60-448c-94f5-e35ae3029449
@@ -60,6 +18,12 @@ https://github.com/user-attachments/assets/05a9d952-7a60-448c-94f5-e35ae3029449
 - 減らしたコマの入力を退避し、コマ数を戻すと復元します。人物・セリフ・モデル・サンプラー・シード設定を維持します。
 - 人物の外見と場面は英語で入力し、セリフは描かせたい言語のまま渡します。翻訳や追加のLLMは使いません。
 - 見本・配置情報を同梱しているため、導入後のカタログ閲覧に外部サービスへの接続は不要です。
+- ComfyUIの表示言語が日本語ならノード名・入力欄・選択肢・選択画面を日本語で、それ以外の言語なら英語で表示します。どちらの言語で保存したワークフローもそのまま開けます。
+- 入力に誤りがあると、どの欄をどう直せばよいかを日本語と英語で示して止まります（例: 登場人物にいない人物を話者に選んだとき）。
+- 1人・2人・3人向けの構図見本120種類から、コマごとにカメラ構図を選べます。
+- 共通の人物は最大3人。1コマに最大3人・3発言を指定できます。
+- 人物画像から外見を英語の文章へ抽出して入力できます。MOSSのテキストエンコーダー（Qwen）を共用し、追加のモデルは不要です。
+- 基本の漫画生成から構図指定・人物画像の利用まで、すぐ試せるサンプルワークフローを同梱しています（[選び方](#サンプルワークフローの選び方)）。
 
 ## 導入
 
@@ -115,6 +79,63 @@ Python 3.10以降と、MOSS-Imageのネイティブ対応を含むComfyUIが必�
 
 人物やセリフなどの作業内容と、退避したコマの入力は、通常のComfyUIワークフローとして保存してください。お気に入りはブラウザーの保存領域に記録します。別のブラウザーには自動で移らず、サイトデータを削除すると消えます。同梱JSONへの書き込みは行いません。
 
+## サンプルワークフローの選び方
+
+`example_workflows` に、基本の漫画生成から構図指定・人物画像の利用までのサンプルを同梱しています。初めて使う場合は **[make_manga.json](example_workflows/make_manga.json)** から始めてください。
+
+| ファイル | できること | 使う場面 |
+| --- | --- | --- |
+| [make_manga.json](example_workflows/make_manga.json) | 人物の外見・各コマの場面・セリフを文章で入力して漫画を生成します。初期設定は2人の人物による4コマで、コマごとの構図選択ノードはありません。 | まず基本操作を試すとき。コマ割りと内容を自分で設定して漫画を作るとき。 |
+| [make_manga_edit_prompt.json](example_workflows/make_manga_edit_prompt.json) | 基本ワークフローに「MOSSプロンプトを確認・編集」を追加したものです。自動で組み立てたプロンプトを確認し、編集した文へ切り替えて生成できます。 | MOSSへ渡す内容を確認したり、プロンプトを直接調整したりするとき。編集欄は有効なJSONで記述します。 |
+| [composition_duo.json](example_workflows/composition_duo.json) | 2人の会話を4コマで生成します。各コマに構図選択ノードを接続し、正面の掛け合い・横並び・机越し・近距離の言い合いを設定済みです。 | 2人の位置関係やカメラの構図を、見本から選んで指定したいとき。 |
+| [composition_1to3.json](example_workflows/composition_1to3.json) | 3人の共通人物設定を使い、1人・2人・3人が登場する3コマを生成します。人数に合わせた構図と、最大3人分のセリフを接続済みです。 | コマごとに登場人数を変えたいとき。3人目の人物や3発言の指定方法を確認するとき。 |
+| [composition_character_images.json](example_workflows/composition_character_images.json) | 人物画像から外見を英語の文章へ抽出し、構図つきの3コマを生成します。「画像から抽出」「画像から抽出＋文章で補足」「文章のみ」の3方式を設定済みです。 | 参考画像をもとに人物の外見を入力したいとき。画像の読み込み先を自分の画像に変更してください。 |
+| [composition_duo.api.json](example_workflows/composition_duo.api.json) | `composition_duo.json` のAPI形式です。2人・4コマの構図つき生成を、スクリプトなどからComfyUIのAPIへ送るためのノード定義を収録しています。 | APIから実行するとき。画面でノードを操作する場合は `composition_duo.json` を使ってください。 |
+
+API形式以外の5ファイルは、ComfyUIへドラッグ＆ドロップして開けます。必要なモデルと配置先は [必要な環境とモデル](#必要な環境とモデル) を参照してください。
+
+人物画像を使うサンプルの参考画像は同梱していません。「文章のみ」の人物3は設定方法の見本で、初期状態の各コマには登場しません。また、構図の見本や人物画像そのものをMOSSの参照画像として渡す方式ではなく、構図の文章・領域指定や、画像から抽出した外見文で誘導します。
+
+## 構図テンプレートの追加
+
+「構図を選ぶ（見本画像）」ノードを追加しました。「画像から構図を選ぶ」で一覧を開き、人数・カテゴリ・名前・英語プロンプトによる検索と、お気に入りによる絞り込みができます。お気に入りは使用中のブラウザーに保存されます。
+
+1. [構図つきサンプル](example_workflows/composition_duo.json) を開きます。
+2. 構図選択ノードで見本を選び、出力「コマに接続する構図」を各「コマの内容」ノードの任意入力「構図」へ接続します。
+3. 共通の人物設定、各コマの場面・セリフ、コマ割りを入力して生成します。場面と外見は英語、セリフは描かせたい言語で入力します。
+
+構図の英語プロンプトを場面へ追記し、見本の人物領域を各コマの内側領域へ比率に応じて割り当てます。選んだ登場人物を番号順に構図へ割り当て、話す順番を変えても人物位置は入れ替わりません。接続しなければ従来の処理になります。見本と登場人物の人数を合わせてください。
+
+構図見本は1人40種類・2人40種類・3人40種類の計120種類です。既存の2人20種類はID・名称・画像を維持して追加しました。見本画像は、MOSSが実際に出力した正方形1024×1024のPNGを、配布容量を抑えるため非可逆WebP（品質90）へ変換したものです（120枚で約178MBから約25MBへ）。変換による圧縮で細部は元のPNGと完全には一致しません。変換以外の処理（文字入れ、合成、縮小、切り抜き）は行っていません。PNGに埋め込まれていた生成時の英語プロンプト・シード・モデル・条件と、人物領域・元PNGのSHA256は `data/compositions.json` に収録します。肩越し・顔アップ・全身・俯瞰・あおりなどで分類します。構図一覧には見本画像・名前・人数・カテゴリ・お気に入りを表示し、品質判定は検証記録で確認できます。不一致や人物増加を画像修復で補うことはしません。
+
+同じ構図を縦長・横長のコマにも使用できます。画像そのものを参照入力に渡す方式ではなく、英語プロンプトと領域指定による誘導です。見本との完全一致、特殊形状への追従、文字や人物の正確性は保証しません。画像の合成・文字修復・枠線補修は行いません。詳細は [構図検証記録](COMPOSITION_VALIDATION.md) を参照してください。
+
+## 3人までの人物指定
+
+「共通の人物設定」の「人物3_名前」「人物3_外見」を両方入力すると3人目を使えます。両方空欄なら従来の2人設定です。各コマの「登場人物」で1〜3人の任意の組み合わせを選び、「話者1〜3」「セリフ1〜3」で最大3発言を指定できます。人物3を話者に選ぶ場合も、そのコマの登場人物に含めてください。
+
+[1〜3人の混在サンプル](example_workflows/composition_1to3.json) では人物設定・構図・セリフを接続済みです。吹き出し領域は1発言なら上部中央〜右、2発言なら右上・左上、3発言なら右上・中央上・左上に指定します。構図の空き領域を自動推論する機能ではありません。追加100種類と3人指定の検証は [追加検証記録](EXPANSION_VALIDATION.md) を参照してください。
+
+## 人物画像から外見を入力する
+
+[画像から外見を抽出するサンプル](example_workflows/composition_character_images.json) を開き、2つの「画像を読み込む」で自分の人物画像を選んでください。サンプル内のファイル名は検証用のもので、参考画像は同梱していません。
+
+「人物の外見（画像／文章）」には3つの指定方法があります。
+
+- **文章のみ**：外見プロンプトをそのまま渡します。Qwen・参考画像の接続は不要です。接続されていても遅延評価でモデルや画像の処理は実行しません。
+- **画像から抽出**：人物画像から髪型・服装・装飾などを英語の外見文へ変換します。
+- **画像から抽出＋文章で補足**：抽出文へ、入力した補足文を追記します。補足文の翻訳は行いません。
+
+MOSSで使う `CLIPLoader` の `type=moss_image` と `qwen3.5_9b_int8_convrot.safetensors` を共用できます。別のVLMやP-H3のモデル、追加のPythonパッケージは不要です。動作確認環境はComfyUI 0.42.0です。
+
+外見ノードの「人物設定に渡す外見」を、共通の人物設定の各「人物N_外見」へ接続します。サンプルは接続済みです。自分で組む場合は外見欄を入力へ変換して接続してください。人物1〜3でそれぞれ画像・文章の方法を選べます。従来の文章入力だけのワークフローもそのまま使えます。
+
+結果の外見文はノード内へ表示します。「結果を文章欄へコピー（文章のみに切替）」を押すと、手直しした文章を再利用できます。参考画像を含む上流ノードを外して保存すれば、別の環境でも画像ファイルに依存せず文章だけで使えます。通常のComfyUIキャッシュも利用し、構図やシードだけを変更しても外見抽出は再実行されません。
+
+解析時だけ、必要なら長辺768pxまで比率を維持して縮小します。元画像の画素は変更しません。1ノードにつき画像は1枚で、人物が複数いる画像では主に手前の大きい人物を説明する指示です。人物が1人の参考画像を推奨します。
+
+画像を外見文へ変換してMOSSへ渡す方式で、参照画像そのものを描画モデルへ渡す方式ではありません。見えていない服の推測や、画風説明が抽出文に混ざることがあります。正確な人物同一性は保証しません。実測と生成例は [外見抽出の検証記録](APPEARANCE_VALIDATION.md) を参照してください。
+
 ## 同梱するコマ割り
 
 通常の追加100種類と、先行100種類から近似重複候補4種類を除いた96種類の、計196種類です。見本画像は合計約2.8MBです。
@@ -148,6 +169,8 @@ Python 3.10以降と、MOSS-Imageのネイティブ対応を含むComfyUIが必�
 
 フォルダを更新後、ComfyUIを再起動してブラウザーを再読み込みしてください。人物・セリフを同梱JSONに保存しないため、ノードの更新と利用者のワークフロー保存は別です。お気に入りは配置IDを使い、ワークフローの選択値は配置名を使います。今後の更新では既存IDと配置名を維持します。
 
+0.1.1ではコマ割り196種類も `data/layouts.json` から読み取ります。利用時のデータベース接続は不要です。実験用SQLiteと生成履歴は配布物に含めません。ID・名称・配置・構図・見本画像は維持しています。Registry向け配布では `.comfyignore` によりテストと開発用ファイルを除外します。テストはGitHubのソースには残します。
+
 開発時は、このフォルダで次を実行できます。既存のComfyUI用Pythonなど、`aiohttp` を利用できる環境を使ってください。Node.jsは画面の増減処理の検査にだけ使用し、通常の利用には不要です。
 
 ```text
@@ -175,11 +198,13 @@ node tests/test_picker_state.mjs
 
 A ComfyUI custom node for MOSS-Image. Pick a manga panel layout from preview images inside ComfyUI, then enter characters, scenes, and dialogue in dedicated fields. The node builds the MOSS prompt for you, so you do not need to download a workflow per layout or write JSON and coordinates by hand.
 
+![Layout picker in ComfyUI](docs/picker.jpg)
+
 https://github.com/user-attachments/assets/05a9d952-7a60-448c-94f5-e35ae3029449
 
 [Demo video (mp4, 30 s)](docs/demo.mp4): a real screen recording of choosing a four-panel layout, entering characters and dialogue, and generating the page in ComfyUI. Waiting time is shortened and Japanese operation captions are shown at the top. The manga image itself is not edited.
 
-The node UI and its labels are in Japanese. The table in [Node labels](#node-labels) lists English translations of the main labels.
+The node UI is shown in English unless ComfyUI's language is set to Japanese. The steps below give the Japanese label in 「」 followed by the English label in parentheses, and the table in [Node labels](#node-labels) lists both.
 
 ## Features
 
@@ -189,6 +214,12 @@ The node UI and its labels are in Japanese. The table in [Node labels](#node-lab
 - Inputs of removed panels are stashed and restored when you increase the panel count again. Characters, dialogue, model, sampler, and seed settings are kept.
 - Write character appearance and scenes in English. Dialogue is passed through in whatever language you want rendered. No translation or extra LLM is used.
 - Previews and layout data are bundled, so browsing the catalog needs no external service.
+- Node names, input fields, choices, and picker dialogs follow ComfyUI's display language: Japanese when it is set to Japanese, English otherwise. Workflows saved in either language open as is.
+- Input mistakes stop the run with a message in Japanese and English that names the field and how to fix it (for example, a speaker who is not one of the panel's characters).
+- Choose a camera composition for each panel from 120 composition previews for one, two, or three characters.
+- Up to three shared characters, with up to three characters and three lines per panel.
+- Extract a character's appearance from a reference image as English text. It reuses the MOSS text encoder (Qwen), so no extra model is needed.
+- Sample workflows are included, from basic manga generation to compositions and character images ([which one to use](#choosing-a-sample-workflow)).
 
 ## Installation
 
@@ -197,9 +228,9 @@ The node UI and its labels are in Japanese. The table in [Node labels](#node-lab
 3. Restart ComfyUI and reload the browser page.
 4. Open [make_manga.json](example_workflows/make_manga.json) once by dragging it into ComfyUI, then save it in ComfyUI. It also appears as `make_manga` under `ComfyUI-MossPanelDataset` in ComfyUI's Templates browser. After that, open the saved workflow and pick layouts from it.
 
-If you installed an earlier prototype, do not keep a second copy or junction of the same node. The bundled database contains only the 196 layouts listed below; workflows that used excluded or prototype-only layouts need a new selection.
+If you installed an earlier prototype, do not keep a second copy or junction of the same node. The bundled layout JSON contains only the 196 layouts listed below; workflows that used excluded or prototype-only layouts need a new selection.
 
-To install with Git, run the following in `ComfyUI/custom_nodes`.
+To install with Git, run the following in `ComfyUI/custom_nodes`. On the Comfy Registry, version 0.1.0 is Flagged and 0.1.1 is not yet published. You can check the status in the [public API](https://api.comfy.org/nodes/comfyui-moss-panel-dataset/versions?include_status_reason=true).
 
 ```text
 git clone https://github.com/sepiablue-ai/ComfyUI-MossPanelDataset.git
@@ -242,7 +273,64 @@ To see the exact prompt sent to MOSS, insert the 「MOSSプロンプトを確認
 
 The edit box must stay valid JSON. Broken brackets or commas stop the run with the line and column of the error.
 
-Save your characters, dialogue, and stashed panel inputs as a normal ComfyUI workflow. Favorites are stored in the browser's local storage; they do not move to other browsers and are lost if you clear site data. The node never writes to the bundled database.
+Save your characters, dialogue, and stashed panel inputs as a normal ComfyUI workflow. Favorites are stored in the browser's local storage; they do not move to other browsers and are lost if you clear site data. The node never writes to the bundled JSON files.
+
+## Choosing a sample workflow
+
+`example_workflows` contains samples ranging from basic manga generation to compositions and character images. If you are new to the node, start with **[make_manga.json](example_workflows/make_manga.json)**.
+
+| File | What it does | When to use it |
+| --- | --- | --- |
+| [make_manga.json](example_workflows/make_manga.json) | Generates manga from text descriptions of character appearance, panel scenes, and dialogue. The default is a four-panel page with two characters, without composition nodes. | To try the basics, or to set up the layout and content yourself. |
+| [make_manga_edit_prompt.json](example_workflows/make_manga_edit_prompt.json) | The basic workflow plus 「MOSSプロンプトを確認・編集」 (View and edit MOSS prompt). You can check the generated prompt and switch to an edited version. | To check what is sent to MOSS, or to adjust the prompt directly. The edit box must be valid JSON. |
+| [composition_duo.json](example_workflows/composition_duo.json) | Generates a four-panel conversation between two characters. Each panel has a composition node, preset to face-to-face, side by side, across a desk, and a close-up argument. | To choose the positions of two characters and the camera composition from previews. |
+| [composition_1to3.json](example_workflows/composition_1to3.json) | Uses three shared characters to generate three panels with one, two, and three characters. Compositions matching each count and up to three lines are already connected. | To change the number of characters per panel, or to see how the third character and three lines are set. |
+| [composition_character_images.json](example_workflows/composition_character_images.json) | Extracts character appearance from images as English text and generates three panels with compositions. The three methods "extract from image", "extract from image + text", and "text only" are preset. | To describe characters from reference images. Change the image loaders to your own images. |
+| [composition_duo.api.json](example_workflows/composition_duo.api.json) | The API format of `composition_duo.json`, with node definitions for sending the two-character four-panel composition workflow to the ComfyUI API from a script. | To run from the API. Use `composition_duo.json` to work with the nodes in the UI. |
+
+All files except the API format can be opened by dragging them into ComfyUI. See [Requirements and models](#requirements-and-models) for the required models and folders.
+
+Reference images for the character-image sample are not included. Character 3 in "text only" is an example of the setting and does not appear in the default panels. Neither the composition previews nor the character images are passed to MOSS as reference images; generation is guided by composition text and regions, and by the appearance text extracted from the images.
+
+## Composition templates
+
+The 「構図を選ぶ（見本画像）」 (Choose a composition from previews) node opens a catalog with 「画像から構図を選ぶ」 (Choose a composition from images). You can search by character count, category, name, or English prompt, and filter by favorites. Favorites are stored in your browser.
+
+1. Open the [composition sample](example_workflows/composition_duo.json).
+2. Pick a preview in the composition node and connect its 「コマに接続する構図」 (composition for the panel) output to the optional 「構図」 (composition) input of each 「コマの内容」 (Panel content) node.
+3. Enter the shared characters, the scene and dialogue for each panel, and the layout, then generate. Write scenes and appearance in English, and dialogue in the language you want rendered.
+
+The composition's English prompt is appended to the scene, and the character regions of the preview are mapped to the inner region of each panel in proportion. The selected characters are assigned to the composition in numerical order, so changing the speaking order does not swap their positions. Without a connection, the node works as before. Match the number of characters in the preview and in the panel.
+
+There are 120 compositions: 40 each for one, two, and three characters. The original 20 two-character compositions keep their IDs, names, and images. The previews are the square 1024×1024 PNGs actually output by MOSS, converted to lossy WebP (quality 90) to reduce the download size (about 178 MB to about 25 MB for 120 images). Because of the compression, fine details do not exactly match the original PNGs. No other processing was applied (no added text, compositing, downscaling, or cropping). The English generation prompt, seed, model, and settings that were embedded in the PNGs, the character regions, and the SHA256 of each original PNG are stored in `data/compositions.json`. Compositions are categorized as over-the-shoulder, face close-up, full body, high angle, low angle, and so on. The catalog shows the preview, name, character count, category, and favorites; quality checks are in the validation records. Mismatches or extra characters are not fixed by image editing.
+
+The same composition can be used for tall or wide panels. The preview image is not passed as a reference input; the model is guided by the English prompt and regions. An exact match with the preview, following special panel shapes, and correct text or characters are not guaranteed. No compositing, text repair, or border repair is applied. See the [composition validation record](COMPOSITION_VALIDATION.md) (Japanese) for details.
+
+## Up to three characters
+
+Enter both 「人物3_名前」 (character 3 name) and 「人物3_外見」 (character 3 appearance) in 「共通の人物設定」 (Shared characters) to use a third character. If both are empty, the node uses the two-character setup as before. In each panel, choose any combination of one to three characters in 「登場人物」, and set up to three lines with 「話者1〜3」 (speakers 1–3) and 「セリフ1〜3」 (lines 1–3). To make character 3 a speaker, include them in the panel's characters too.
+
+The [one-to-three character sample](example_workflows/composition_1to3.json) has the characters, compositions, and dialogue connected. Speech balloon regions are top center to right for one line, top right and top left for two, and top right, top center, and top left for three. The node does not infer empty space in the composition. See the [expansion validation record](EXPANSION_VALIDATION.md) (Japanese) for checks of the 100 added compositions and three-character support.
+
+## Appearance from character images
+
+Open the [appearance extraction sample](example_workflows/composition_character_images.json) and choose your own character images in the two 「画像を読み込む」 (Load Image) nodes. The file names in the sample are from testing, and the reference images are not included.
+
+「人物の外見（画像／文章）」 (Character appearance (image / text)) offers three methods.
+
+- **文章のみ (text only)**: passes the appearance prompt as is. Qwen and a reference image are not needed. Even if connected, they are lazily evaluated and the model and image are not processed.
+- **画像から抽出 (extract from image)**: converts the hairstyle, clothing, accessories, and so on in the character image into English appearance text.
+- **画像から抽出＋文章で補足 (extract from image + text)**: appends your supplementary text to the extracted text. The supplementary text is not translated.
+
+It can share the `CLIPLoader` with `type=moss_image` and `qwen3.5_9b_int8_convrot.safetensors` used for MOSS. No other VLM, P-H3 model, or extra Python package is needed. Tested with ComfyUI 0.42.0.
+
+Connect the appearance node's 「人物設定に渡す外見」 (appearance for shared characters) output to each 「人物N_外見」 (character N appearance) in the shared characters node. The sample is already connected. When building your own, convert the appearance field to an input and connect it. Characters 1–3 can each use an image or text method. Existing text-only workflows still work.
+
+The resulting appearance text is shown in the node. Press 「結果を文章欄へコピー（文章のみに切替）」 (Copy result to the text field and switch to text only) to reuse and refine the text. If you remove the upstream nodes, including the reference image, and save, the workflow works with text alone in another environment, without the image files. The normal ComfyUI cache is also used, so changing only the composition or seed does not rerun the extraction.
+
+For analysis only, the image is downscaled to 768 px on the long side while keeping the aspect ratio, if needed. The original pixels are not changed. Each node takes one image; for images with several people, the instruction describes mainly the large person in front. A reference image with one person is recommended.
+
+The image is converted to appearance text for MOSS; the reference image itself is not passed to the image model. The extracted text may guess clothing that is not visible or include descriptions of the art style. Exact character identity is not guaranteed. See the [appearance extraction validation record](APPEARANCE_VALIDATION.md) (Japanese) for measurements and examples.
 
 ## Node labels
 
@@ -252,13 +340,20 @@ Save your characters, dialogue, and stashed panel inputs as a normal ComfyUI wor
 | 共通の人物設定（普通の文章で入力） | Shared characters (plain text) |
 | コマの内容（場面・登場人物・セリフ） | Panel content (scene, characters, dialogue) |
 | MOSSプロンプトを確認・編集 | View and edit MOSS prompt |
+| 構図を選ぶ（見本画像） | Choose a composition (preview images) |
+| 人物の外見（画像／文章） | Character appearance (image / text) |
 | コマ割り | Layout |
 | 生成内容: 漫画 / 空のコマ枠 | Output: manga / empty panel frames |
 | 人物1_名前 / 人物1_外見 | Character 1 name / appearance |
 | 場面 | Scene |
-| 登場人物: 人物1のみ / 人物2のみ / 人物1と人物2 / 人物なし | Characters: 1 only / 2 only / 1 and 2 / none |
-| 話者1・セリフ1 / 話者2・セリフ2 | Speaker 1, line 1 / speaker 2, line 2 |
+| 人物3_名前 / 人物3_外見 | Character 3 name / appearance (optional) |
+| 登場人物: 人物1のみ / 人物2のみ / 人物3のみ / 人物1と人物2 / 人物1と人物3 / 人物2と人物3 / 人物1と人物2と人物3 / 人物なし | Characters: 1 only / 2 only / 3 only / 1 and 2 / 1 and 3 / 2 and 3 / 1, 2, and 3 / none |
+| 話者1〜3・セリフ1〜3 | Speakers 1–3, lines 1–3 |
 | セリフなし | No dialogue |
+| 構図 / コマに接続する構図 | Composition / composition for the panel |
+| 指定方法: 文章のみ / 画像から抽出 / 画像から抽出＋文章で補足 | Method: text only / extract from image / extract from image + text |
+| 外見プロンプト / 参考画像 | Appearance prompt / reference image |
+| 人物設定に渡す外見 | Appearance for shared characters |
 
 ## Bundled layouts
 
@@ -281,7 +376,7 @@ Panel counts were checked automatically by counting closed white regions. Near-d
 
 Planned features are listed in [ROADMAP.md](ROADMAP.md).
 
-- Up to three shared characters and three lines per panel. The third character requires both a name and an appearance description.
+- Up to three shared characters, and up to three characters and three lines per panel. The third character requires both a name and an appearance description. Four or more characters are not supported.
 - Automatic panel adding and removing works with this node and `MossMangaPanel`. Panel inputs that are also connected to other nodes are not deleted.
 - The model is guided by coordinates and descriptions; previews are not copied into the image. Panel shapes, proportions, and count can change from run to run.
 - Diagonal and special shapes are also described in text. The regions passed to the model are rectangles, not masks that force a polygon outline.
@@ -291,7 +386,9 @@ Planned features are listed in [ROADMAP.md](ROADMAP.md).
 
 ## Updating and tests
 
-After updating the folder, restart ComfyUI and reload the browser page. Characters and dialogue are not stored in the bundled database, so updating the node is separate from your saved workflows. Favorites use layout IDs, and workflow selections use layout names; future updates will keep existing IDs and names.
+After updating the folder, restart ComfyUI and reload the browser page. Characters and dialogue are not stored in the bundled JSON files, so updating the node is separate from your saved workflows. Favorites use layout IDs, and workflow selections use layout names; future updates will keep existing IDs and names.
+
+Since 0.1.1, the 196 layouts are also read from `data/layouts.json`, so no database connection is needed at runtime. The experimental SQLite database and generation history are not distributed. IDs, names, layouts, compositions, and preview images are unchanged. For the Registry package, `.comfyignore` excludes tests and development files; the tests remain in the GitHub source.
 
 For development, you can run the following in this folder. Use an environment that has `aiohttp`, such as your ComfyUI Python. Node.js is used only to test the panel add/remove logic and is not needed for normal use.
 

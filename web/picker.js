@@ -1,7 +1,9 @@
 import { app } from '../../scripts/app.js';
 import { api } from '../../scripts/api.js';
 import { applyLayout } from './picker_state.mjs';
+import { useApp, tr, isJa } from './i18n.mjs';
 
+useApp(app);
 const TYPE='MossPanelDatasetFlexible';
 const FAVORITES='moss.panelDataset.favorites.v1';
 let catalogPromise;
@@ -9,14 +11,39 @@ const el=(tag,text,className)=>{const n=document.createElement(tag);if(text)n.te
 const favorites=()=>{try{return new Set(JSON.parse(localStorage.getItem(FAVORITES)||'[]'));}catch{return new Set();}};
 function saveFavorites(values){try{localStorage.setItem(FAVORITES,JSON.stringify([...values]));}catch{}}
 async function catalog(force=false){
-    if(force||!catalogPromise)catalogPromise=api.fetchApi('/moss_panel_dataset/catalog').then(r=>{if(!r.ok)throw Error('コマ割り一覧を読み込めません。');return r.json();}).then(data=>data.layouts).catch(e=>{catalogPromise=null;throw e;});
+    if(force||!catalogPromise)catalogPromise=api.fetchApi('/moss_panel_dataset/catalog').then(r=>{if(!r.ok)throw Error(tr('コマ割り一覧を読み込めません。','Could not load the layout list.'));return r.json();}).then(data=>data.layouts).catch(e=>{catalogPromise=null;throw e;});
     return catalogPromise;
 }
 const factory=type=>{
     const engine=globalThis.LiteGraph??globalThis.comfyAPI?.litegraph?.LiteGraph;
-    if(!engine?.createNode)throw Error('ComfyUIのノード作成機能が見つかりません。');
+    if(!engine?.createNode)throw Error(tr('ComfyUIのノード作成機能が見つかりません。','ComfyUI node creation is not available.'));
     return engine.createNode(type);
 };
+// 同梱データの日本語名・英語名のどちらでも同じ配置として扱う。
+const label=entry=>tr(entry.name,entry.name_en??entry.name);
+const category=entry=>tr(entry.category,entry.category_en??entry.category);
+const findEntry=(entries,value)=>entries.find(e=>e.name===value||e.name_en===value);
+function panelTitles(entry){
+    return Array.from({length:entry.count},(_,i)=>{
+        const ja=entry.positions?.[i]??`${i+1}番目`,en=entry.positions_en?.[i]??`Panel ${i+1}`;
+        return tr(`${i+1}コマ目（${ja}）`,en===`Panel ${i+1}`?en:`Panel ${i+1} (${en})`);
+    });
+}
+// 自動で付けたコマの題名だけを表示言語へ付け直す。利用者が付けた題名は変えない。
+const AUTO_TITLE=/^(\d)コマ目(（.*）|の場面・人物・セリフ)?$|^Panel (\d)( \(.*\))?$/;
+function retitlePanels(node,entry){
+    if(!entry)return;
+    const titles=panelTitles(entry);
+    for(let i=1;i<=entry.count;i++){
+        const slot=node.inputs?.findIndex(s=>s.name===`コマ${i}`);
+        const link=slot>=0?(node.getInputLink?.(slot)??node.graph?.links?.[node.inputs[slot]?.link]):null;
+        const panel=link&&node.graph?.getNodeById(link.origin_id);
+        const match=panel?.type==='MossMangaPanel'&&(panel.title??'').match(AUTO_TITLE);
+        // 今の表示言語と同じ言語の題名は、そのまま残す。
+        const sameLanguage=match&&(match[1]?isJa():!isJa());
+        if(match&&!sameLanguage&&Number(match[1]??match[3])===i)panel.title=titles[i-1];
+    }
+}
 
 function style(){
     if(document.getElementById('moss-panel-picker-style'))return;
@@ -28,16 +55,16 @@ function style(){
 async function preview(node,entry){
     const box=node._mossPreview;if(!box)return;
     box.replaceChildren();
-    if(!entry){box.append(el('p','画像からコマ割りを選んでください。'));return;}
-    if(entry.preview){const img=el('img');img.alt=entry.name;img.src=api.apiURL(entry.preview);box.append(img);}
-    box.append(el('p',`${entry.name}／${entry.count}コマ`));
+    if(!entry){box.append(el('p',tr('画像からコマ割りを選んでください。','Choose a layout from the images.')));return;}
+    if(entry.preview){const img=el('img');img.alt=label(entry);img.src=api.apiURL(entry.preview);box.append(img);}
+    box.append(el('p',tr(`${entry.name}／${entry.count}コマ`,`${label(entry)} / ${entry.count} panels`)));
     const retired=Object.keys(node.properties?.mossRetiredPanels??{}).length;
-    if(retired)box.append(el('p',`${retired}コマ分の入力を退避中。コマ数を戻すと復元します。`));
+    if(retired)box.append(el('p',tr(`${retired}コマ分の入力を退避中。コマ数を戻すと復元します。`,`Inputs of ${retired} panel(s) are stashed. They come back when you increase the panel count again.`)));
     node.setDirtyCanvas?.(true,true);
 }
 
 async function select(node,entry){
-    applyLayout(node,entry,factory);
+    applyLayout(node,{...entry,name:label(entry),titles:panelTitles(entry)},factory);
     await preview(node,entry);
     app.canvas?.setDirty(true,true);
 }
@@ -46,34 +73,38 @@ async function openPicker(node){
     style();
     let entries;
     try{entries=await catalog(true);}catch(error){alert(error.message);return;}
-    const dialog=el('dialog',null,'mpp-dialog');dialog.setAttribute('aria-label','漫画のコマ割りを選ぶ');
+    const heading=tr('漫画のコマ割りを選ぶ','Choose a manga panel layout');
+    const dialog=el('dialog',null,'mpp-dialog');dialog.setAttribute('aria-label',heading);
     const top=el('div',null,'mpp-top'),title=el('div',null,'mpp-title');
-    title.append(el('h2','漫画のコマ割りを選ぶ'));
-    const close=el('button','閉じる');close.onclick=()=>dialog.close();title.append(close);top.append(title);
+    title.append(el('h2',heading));
+    const close=el('button',tr('閉じる','Close'));close.onclick=()=>dialog.close();title.append(close);top.append(title);
     const filters=el('div',null,'mpp-filters');
-    const makeSelect=(label,values)=>{const l=el('label',label+' '),s=el('select');s.setAttribute('aria-label',label);for(const [value,text] of values){const o=el('option',text);o.value=value;s.append(o);}l.append(s);filters.append(l);return s;};
-    const count=makeSelect('コマ数',[['','すべて'],...[2,3,4,5,6].map(n=>[String(n),`${n}コマ`])]);
-    const type=makeSelect('種類',[['normal','通常'],['diagonal','斜め'],['special','特殊'],['','すべて']]);
+    const makeSelect=(name,values)=>{const l=el('label',name+' '),s=el('select');s.setAttribute('aria-label',name);for(const [value,text] of values){const o=el('option',text);o.value=value;s.append(o);}l.append(s);filters.append(l);return s;};
+    const count=makeSelect(tr('コマ数','Panels'),[['',tr('すべて','All')],...[2,3,4,5,6].map(n=>[String(n),tr(`${n}コマ`,`${n} panels`)])]);
+    const type=makeSelect(tr('種類','Type'),[['normal',tr('通常','Standard')],['diagonal',tr('斜め','Diagonal')],['special',tr('特殊','Special')],['',tr('すべて','All')]]);
     type.value='normal';
-    const selected=entries.find(e=>e.name===node.widgets.find(w=>w.name==='コマ割り')?.value);
+    const selected=findEntry(entries,node.widgets.find(w=>w.name==='コマ割り')?.value);
     count.value=selected?String(selected.count):'';
-    const favLabel=el('label'),fav=el('input');fav.type='checkbox';fav.setAttribute('aria-label','お気に入りのみ');favLabel.append(fav,document.createTextNode(' お気に入りのみ'));filters.append(favLabel);
-    const search=el('input',null,'mpp-search');search.placeholder='名前で検索';search.setAttribute('aria-label','コマ割り名で検索');filters.append(search);
+    const favLabel=el('label'),fav=el('input');fav.type='checkbox';fav.setAttribute('aria-label',tr('お気に入りのみ','Favorites only'));favLabel.append(fav,document.createTextNode(' '+tr('お気に入りのみ','Favorites only')));filters.append(favLabel);
+    const search=el('input',null,'mpp-search');search.placeholder=tr('名前で検索','Search by name');search.setAttribute('aria-label',tr('コマ割り名で検索','Search layouts by name'));filters.append(search);
     const total=el('span');total.setAttribute('aria-live','polite');filters.append(total);top.append(filters);
-    top.append(el('p','画像を選ぶと今のワークフローへ反映します。人物・セリフは保持し、減るコマは退避します。画像はMOSSの出力をWebPへ圧縮したものです。','mpp-note'));
+    top.append(el('p',tr('画像を選ぶと今のワークフローへ反映します。人物・セリフは保持し、減るコマは退避します。画像はMOSSの出力をWebPへ圧縮したものです。','Picking an image applies it to the current workflow. Characters and dialogue are kept, and removed panels are stashed. Previews are MOSS outputs compressed to WebP.'),'mpp-note'));
     const grid=el('div',null,'mpp-grid');dialog.append(top,grid);document.body.append(dialog);
     let stars=favorites();
     function render(){
         grid.replaceChildren();
-        const list=entries.filter(e=>e.preview&&(!count.value||e.count===Number(count.value))&&(!type.value||(type.value==='normal'?['通常','直線'].includes(e.category):type.value==='diagonal'?e.category==='斜め':e.category==='特殊'))&&(!fav.checked||stars.has(e.id))&&(!search.value||e.name.toLowerCase().includes(search.value.toLowerCase())));
-        total.textContent=`${list.length}件`;
-        if(!list.length){grid.append(el('p','条件に合う生成済みのコマ割りがありません。'));return;}
+        const q=search.value.toLowerCase();
+        const list=entries.filter(e=>e.preview&&(!count.value||e.count===Number(count.value))&&(!type.value||(type.value==='normal'?['通常','直線'].includes(e.category):type.value==='diagonal'?e.category==='斜め':e.category==='特殊'))&&(!fav.checked||stars.has(e.id))&&(!q||`${e.name} ${e.name_en??''}`.toLowerCase().includes(q)));
+        total.textContent=tr(`${list.length}件`,`${list.length} found`);
+        if(!list.length){grid.append(el('p',tr('条件に合う生成済みのコマ割りがありません。','No layouts match the filters.')));return;}
         for(const entry of list){
-            const card=el('article',null,'mpp-card'),pick=el('button',null,'mpp-pick');pick.type='button';pick.setAttribute('aria-label',`${entry.name}を選ぶ`);
-            const img=el('img');img.src=api.apiURL(entry.preview);img.alt=entry.name;img.loading='lazy';pick.append(img,el('span',entry.name,'mpp-name'));
+            const name=label(entry);
+            const card=el('article',null,'mpp-card'),pick=el('button',null,'mpp-pick');pick.type='button';pick.setAttribute('aria-label',tr(`${name}を選ぶ`,`Choose ${name}`));
+            const img=el('img');img.src=api.apiURL(entry.preview);img.alt=name;img.loading='lazy';pick.append(img,el('span',name,'mpp-name'));
             pick.onclick=async()=>{try{await select(node,entry);dialog.close();}catch(error){alert(error.message);}};
-            const foot=el('div',null,'mpp-foot');foot.append(el('span',`${entry.count}コマ・${entry.category}${entry.quality==='near_duplicate'?'・重複候補':entry.quality==='needs_review'||entry.status==='needs_review'?'・要確認':''}`));
-            const star=el('button',stars.has(entry.id)?'★':'☆','mpp-star');star.type='button';star.setAttribute('aria-label',`${entry.name}のお気に入りを切り替え`);star.setAttribute('aria-pressed',String(stars.has(entry.id)));
+            const flag=entry.quality==='near_duplicate'?tr('・重複候補',' · possible duplicate'):entry.quality==='needs_review'||entry.status==='needs_review'?tr('・要確認',' · needs review'):'';
+            const foot=el('div',null,'mpp-foot');foot.append(el('span',tr(`${entry.count}コマ・${category(entry)}`,`${entry.count} panels · ${category(entry)}`)+flag));
+            const star=el('button',stars.has(entry.id)?'★':'☆','mpp-star');star.type='button';star.setAttribute('aria-label',tr(`${name}のお気に入りを切り替え`,`Toggle favorite for ${name}`));star.setAttribute('aria-pressed',String(stars.has(entry.id)));
             star.onclick=()=>{stars.has(entry.id)?stars.delete(entry.id):stars.add(entry.id);saveFavorites(stars);render();};foot.append(star);card.append(pick,foot);grid.append(card);
         }
     }
@@ -83,19 +114,19 @@ async function openPicker(node){
 
 function install(node){
     if(node._mossPickerInstalled)return;node._mossPickerInstalled=true;style();
-    node.addWidget('button','画像からコマ割りを選ぶ',null,()=>openPicker(node),{serialize:false});
+    node.addWidget('button',tr('画像からコマ割りを選ぶ','Choose a layout from images'),null,()=>openPicker(node),{serialize:false});
     const box=el('div',null,'mpp-preview');node._mossPreview=box;
     for(const event of ['pointerdown','mousedown','dblclick','keydown','click'])box.addEventListener(event,e=>e.stopPropagation());
-    node.addDOMWidget('コマ割りの見本','custom',box,{serialize:false,hideOnZoom:false,getMinHeight:()=>225,getMaxHeight:()=>260});
+    node.addDOMWidget(tr('コマ割りの見本','Layout preview'),'custom',box,{serialize:false,hideOnZoom:false,getMinHeight:()=>225,getMaxHeight:()=>260});
     node.setSize([Math.max(node.size[0],390),Math.max(node.size[1],400)]);
     const widget=node.widgets.find(w=>w.name==='コマ割り');
     if(widget){
         const previous=widget.callback;
         widget.callback=function(value,...args){
             previous?.call(this,value,...args);
-            catalog().then(entries=>{const entry=entries.find(e=>e.name===value);if(entry)return select(node,entry);}).catch(error=>console.warn('コマ割りの反映に失敗しました。',error));
+            catalog().then(entries=>{const entry=findEntry(entries,value);if(entry)return select(node,entry);}).catch(error=>console.warn(tr('コマ割りの反映に失敗しました。','Could not apply the layout.'),error));
         };
-        catalog().then(entries=>preview(node,entries.find(e=>e.name===widget.value))).catch(()=>preview(node,null));
+        catalog().then(entries=>preview(node,findEntry(entries,widget.value))).catch(()=>preview(node,null));
     }
 }
 
@@ -103,4 +134,10 @@ app.registerExtension({name:'MossPanelDataset.ImagePicker',beforeRegisterNodeDef
     if(nodeData.name!==TYPE)return;
     const old=nodeType.prototype.onNodeCreated;
     nodeType.prototype.onNodeCreated=function(...args){const result=old?.apply(this,args);install(this);return result;};
-},loadedGraphNode(node){if(node.type===TYPE)install(node);}});
+},loadedGraphNode(node){
+    if(node.type!==TYPE)return;
+    install(node);
+    // 読み込んだワークフローの自動の題名を、表示言語に合わせて付け直す。
+    const widget=node.widgets?.find(w=>w.name==='コマ割り');
+    catalog().then(entries=>{const entry=findEntry(entries,widget?.value);retitlePanels(node,entry);preview(node,entry);app.canvas?.setDirty(true,true);}).catch(()=>{});
+}});
