@@ -30,6 +30,20 @@ class Appearance(unittest.TestCase):
         self.assertFalse(clip.calls[0][2]['thinking']);self.assertFalse(clip.calls[1][2]['do_sample'])
         hybrid=n.build('画像から抽出＋文章で補足','Red glasses.',Qwen=clip,参考画像=image)
         self.assertEqual(hybrid['result'][0],clip.text+'\nAdditional appearance details: Red glasses.')
+    def test_age_group_is_asked_separately_and_prefixed(self):
+        class AgeClip(FakeClip):
+            def decode(self,ids):
+                asked=[c[1] for c in self.calls if c[0]=='tokenize'][-1]
+                return 'Middle-aged.' if asked==appearance.AGE_ASK else self.text
+        clip=AgeClip();image=torch.zeros(1,40,60,3)
+        out=nodes.MossCharacterAppearance().build('画像から抽出',Qwen=clip,参考画像=image)
+        self.assertEqual(out['result'],('Apparent age group: middle-aged. '+clip.text,))
+        asked=[c for c in clip.calls if c[0]=='tokenize']
+        self.assertEqual([c[1] for c in asked],[appearance.ASK,appearance.AGE_ASK])
+        self.assertTrue(all(c[2]['image'] is image for c in asked))
+        self.assertEqual(appearance.age_group('An adult in their thirties.'),'adult in their thirties')
+        self.assertEqual(appearance.age_group('Young adult'),'young adult')
+        self.assertIsNone(appearance.age_group('Unknown.'))
     def test_resize_keeps_ratio_and_rejects_batches(self):
         image=torch.zeros(1,1200,600,3)
         self.assertEqual(tuple(appearance.prepare_image(image).shape),(1,768,384,3))

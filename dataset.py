@@ -126,7 +126,7 @@ def compile_prompt(layout, mode='漫画', cast=None, panels=None):
             raise ValueError(both('人物設定は名前と外見説明のJSONオブジェクトで指定してください。','Characters must be a JSON object of names and appearance descriptions.'))
         if len(panels) != len(layout['panels']):
             raise ValueError(both(f"場面は{len(layout['panels'])}コマ分指定してください。",f"Provide scenes for {len(layout['panels'])} panels."))
-        summary += 'Professional inked manga with screentones, natural adult proportions. Keep each recurring character identical. One frozen moment per panel. Only the explicitly supplied dialogue may appear; preserve its original language. Do not print character names, directions or panel numbers.'
+        summary += 'Professional inked manga with screentones. Draw each character with the apparent age and natural body proportions given in their own description. Keep each recurring character identical. One frozen moment per panel. Only the explicitly supplied dialogue may appear; preserve its original language. Do not print character names, directions or panel numbers.'
         for p,s in zip(layout['panels'],panels):
             if not isinstance(s.get('scene'),str) or not s['scene'].strip():
                 raise ValueError(both(f"{p['id']}コマ目の場面が空です。",f"The scene of panel {p['id']} is empty."))

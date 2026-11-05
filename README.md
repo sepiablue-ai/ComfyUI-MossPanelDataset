@@ -123,7 +123,7 @@ API形式以外の5ファイルは、ComfyUIへドラッグ＆ドロップして
 「人物の外見（画像／文章）」には3つの指定方法があります。
 
 - **文章のみ**：外見プロンプトをそのまま渡します。Qwen・参考画像の接続は不要です。接続されていても遅延評価でモデルや画像の処理は実行しません。
-- **画像から抽出**：人物画像から髪型・服装・装飾などを英語の外見文へ変換します。
+- **画像から抽出**：人物画像から、見た目の年代・顔立ち・体格・髪型・服装・装飾などを英語の外見文へ変換します。年代は別の短い質問で「子ども・10代前半・10代後半・若い大人・30代・中年・高齢」から1つ選ばせ、`Apparent age group: …` として文の先頭に付けます。
 - **画像から抽出＋文章で補足**：抽出文へ、入力した補足文を追記します。補足文の翻訳は行いません。
 
 MOSSで使う `CLIPLoader` の `type=moss_image` と `qwen3.5_9b_int8_convrot.safetensors` を共用できます。別のVLMやP-H3のモデル、追加のPythonパッケージは不要です。動作確認環境はComfyUI 0.42.0です。
@@ -134,7 +134,11 @@ MOSSで使う `CLIPLoader` の `type=moss_image` と `qwen3.5_9b_int8_convrot.sa
 
 解析時だけ、必要なら長辺768pxまで比率を維持して縮小します。元画像の画素は変更しません。1ノードにつき画像は1枚で、人物が複数いる画像では主に手前の大きい人物を説明する指示です。人物が1人の参考画像を推奨します。
 
-画像を外見文へ変換してMOSSへ渡す方式で、参照画像そのものを描画モデルへ渡す方式ではありません。見えていない服の推測や、画風説明が抽出文に混ざることがあります。正確な人物同一性は保証しません。実測と生成例は [外見抽出の検証記録](APPEARANCE_VALIDATION.md) を参照してください。
+画像を外見文へ変換してMOSSへ渡す方式で、参照画像そのものを描画モデルへ渡す方式ではありません。見えていない服の推測や、画風説明が抽出文に混ざることがあります。正確な人物同一性は保証しません。漫画の顔は年代にかかわらず若く描かれることが多く、年代の判定は外れることがあります。外れたときは「結果を文章欄へコピー」で年代を書き直してください。
+
+漫画ページの生成文は、以前は全員に大人の体型（`natural adult proportions`）を指定していました。現在は、各人物の外見文に書かれた年代と体型で描くよう指定します。外見文に年代を書かない場合、同じシードでも以前と結果が変わることがあります。
+
+実測と生成例は [外見抽出の検証記録](APPEARANCE_VALIDATION.md) を参照してください。
 
 ## 同梱するコマ割り
 
@@ -323,7 +327,7 @@ Open the [appearance extraction sample](example_workflows/composition_character_
 「人物の外見（画像／文章）」 (Character appearance (image / text)) offers three methods.
 
 - **文章のみ (text only)**: passes the appearance prompt as is. Qwen and a reference image are not needed. Even if connected, they are lazily evaluated and the model and image are not processed.
-- **画像から抽出 (extract from image)**: converts the hairstyle, clothing, accessories, and so on in the character image into English appearance text.
+- **画像から抽出 (extract from image)**: converts the apparent age group, face, build, hairstyle, clothing, accessories, and so on in the character image into English appearance text. The age group is chosen in a separate short question from child, young teenager, older teenager, young adult, adult in their thirties, middle-aged, and elderly, and is added at the start as `Apparent age group: …`.
 - **画像から抽出＋文章で補足 (extract from image + text)**: appends your supplementary text to the extracted text. The supplementary text is not translated.
 
 It can share the `CLIPLoader` with `type=moss_image` and `qwen3.5_9b_int8_convrot.safetensors` used for MOSS. No other VLM, P-H3 model, or extra Python package is needed. Tested with ComfyUI 0.42.0.
@@ -334,7 +338,11 @@ The resulting appearance text is shown in the node. Press 「結果を文章欄�
 
 For analysis only, the image is downscaled to 768 px on the long side while keeping the aspect ratio, if needed. The original pixels are not changed. Each node takes one image; for images with several people, the instruction describes mainly the large person in front. A reference image with one person is recommended.
 
-The image is converted to appearance text for MOSS; the reference image itself is not passed to the image model. The extracted text may guess clothing that is not visible or include descriptions of the art style. Exact character identity is not guaranteed. See the [appearance extraction validation record](APPEARANCE_VALIDATION.md) (Japanese) for measurements and examples.
+The image is converted to appearance text for MOSS; the reference image itself is not passed to the image model. The extracted text may guess clothing that is not visible or include descriptions of the art style. Exact character identity is not guaranteed. Manga often draws faces young at any age, so the age group can be wrong; if so, use the copy button and correct it in the text.
+
+The manga page prompt used to specify adult proportions (`natural adult proportions`) for everyone. It now asks for the age and body proportions written in each character's appearance text. If the appearance text gives no age, results can differ from before even with the same seed.
+
+See the [appearance extraction validation record](APPEARANCE_VALIDATION.md) (Japanese) for measurements and examples.
 
 ## Node labels
 

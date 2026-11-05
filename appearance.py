@@ -4,15 +4,30 @@ from .i18n import APPEARANCE_MODES, CATEGORY, LABELS, both, canonical, labeled, 
 MODES=[ja for ja,_ in APPEARANCE_MODES]
 ASK=(
     'Describe only the visible fixed visual appearance of the main character in this image so the '
-    'same character can be redrawn in other manga panels. Describe hair length, color or grayscale '
-    'shade, hairstyle, bangs, braids, visible eye features, animal ears if present, headwear, '
-    'accessories, and clothing including collar, sleeves and decorations. '
+    'same character can be redrawn in other manga panels. Start with the apparent sex. '
+    'Then describe face shape, build, distinctive facial '
+    'features such as moles or freckles, eye shape and size, hair length, color or grayscale shade, '
+    'hairstyle, bangs, braids, animal ears if present, headwear, accessories, and clothing including '
+    'collar, sleeves and decorations. '
     'Do not describe pose, expression, gaze, camera angle, framing, lighting, background or art style. '
-    'Do not invent hidden details, names, exact ages, personality or backstory. '
+    'Do not state an age or age group. Do not invent hidden details, names, personality or backstory. '
     'If multiple characters are visible, describe only the largest foreground character. '
     'Return only one concise English paragraph of visual appearance, without an introduction, '
     'analysis, headings, bullet points or JSON.'
 )
+
+AGE_GROUPS=('child','young teenager','older teenager','young adult','adult in their thirties','middle-aged','elderly')
+AGE_ASK=(
+    'How old does the main character in this image look? Manga often draws every age with smooth skin and '
+    'large eyes, so judge from face fullness, cheek and smile lines, lines at the eye corners, head-to-body '
+    'proportion, build, hairstyle, clothing and occupation cues. Answer with exactly one of: '+', '.join(AGE_GROUPS)+'.'
+)
+
+def age_group(raw):
+    text=answer_only(raw).lower()
+    found=[g for g in AGE_GROUPS if g in text]
+    # 「young adult」と「adult in their thirties」のように重なる語は、長い方を優先する。
+    return max(found,key=len) if found else None
 
 def prepare_image(image):
     if getattr(image,'ndim',None)!=4 or image.shape[0]!=1 or image.shape[-1]!=3:
@@ -75,7 +90,9 @@ class MossCharacterAppearance:
             tokens=Qwen.tokenize(ASK,image=image,thinking=False,min_length=1)
             ids=Qwen.generate(tokens,do_sample=False,max_length=最大トークン数,mtp=False)
             extracted=answer_only(Qwen.decode(ids))
-            result=extracted
+            tokens=Qwen.tokenize(AGE_ASK,image=image,thinking=False,min_length=1)
+            group=age_group(Qwen.decode(Qwen.generate(tokens,do_sample=False,max_length=24,mtp=False)))
+            result=(f'Apparent age group: {group}. ' if group else '')+extracted
             if 指定方法=='画像から抽出＋文章で補足' and 外見プロンプト.strip():
                 result+='\nAdditional appearance details: '+外見プロンプト.strip()
         return {'ui':{'text':[result]},'result':(result,)}
