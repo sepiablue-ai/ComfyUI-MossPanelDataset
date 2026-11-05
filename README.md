@@ -108,13 +108,13 @@ API形式以外の5ファイルは、ComfyUIへドラッグ＆ドロップして
 
 構図見本は1人40種類・2人40種類・3人40種類の計120種類です。既存の2人20種類はID・名称を維持して追加しました。構図の英語プロンプトは、カメラ・寄り引き・人物の配置・体と顔の向き・姿勢・配置用の家具だけを指定します。表情・感情・会話の動作・小物・光は指定しないので、場面の文で自由に指定できます。見本画像は、MOSSが実際に出力した正方形1024×1024のPNGを、配布容量を抑えるため非可逆WebP（品質90）へ変換したものです（120枚で約178MBから約25MBへ）。変換による圧縮で細部は元のPNGと完全には一致しません。変換以外の処理（文字入れ、合成、縮小、切り抜き）は行っていません。PNGに埋め込まれていた生成時の英語プロンプト・シード・モデル・条件と、人物領域・元PNGのSHA256は `data/compositions.json` に収録します。肩越し・顔アップ・全身・俯瞰・あおりなどで分類します。構図一覧には見本画像・名前・人数・カテゴリ・お気に入りを表示し、品質判定は検証記録で確認できます。不一致や人物増加を画像修復で補うことはしません。
 
-同じ構図を縦長・横長のコマにも使用できます。画像そのものを参照入力に渡す方式ではなく、英語プロンプトと領域指定による誘導です。見本との完全一致、特殊形状への追従、文字や人物の正確性は保証しません。画像の合成・文字修復・枠線補修は行いません。詳細は [構図検証記録](COMPOSITION_VALIDATION.md) と、構図以外の指定を外して再生成した46種類の [再生成記録](COMPOSITION_ONLY_VALIDATION.md) を参照してください。
+同じ構図を縦長・横長のコマにも使用できます。画像そのものを参照入力に渡す方式ではなく、英語プロンプトと領域指定による誘導です。見本との完全一致、特殊形状への追従、文字や人物の正確性は保証しません。画像の合成・文字修復・枠線補修は行いません。
 
 ## 3人までの人物指定
 
 「共通の人物設定」の「人物3_名前」「人物3_外見」を両方入力すると3人目を使えます。両方空欄なら従来の2人設定です。各コマの「登場人物」で1〜3人の任意の組み合わせを選び、「話者1〜3」「セリフ1〜3」で最大3発言を指定できます。人物3を話者に選ぶ場合も、そのコマの登場人物に含めてください。
 
-[1〜3人の混在サンプル](example_workflows/composition_1to3.json) では人物設定・構図・セリフを接続済みです。吹き出し領域は1発言なら上部中央〜右、2発言なら右上・左上、3発言なら右上・中央上・左上に指定します。構図の空き領域を自動推論する機能ではありません。追加100種類と3人指定の検証は [追加検証記録](EXPANSION_VALIDATION.md) を参照してください。
+[1〜3人の混在サンプル](example_workflows/composition_1to3.json) では人物設定・構図・セリフを接続済みです。吹き出し領域は1発言なら上部中央〜右、2発言なら右上・左上、3発言なら右上・中央上・左上に指定します。構図の空き領域を自動推論する機能ではありません。
 
 ## 人物画像から外見を入力する
 
@@ -137,8 +137,6 @@ MOSSで使う `CLIPLoader` の `type=moss_image` と `qwen3.5_9b_int8_convrot.sa
 画像を外見文へ変換してMOSSへ渡す方式で、参照画像そのものを描画モデルへ渡す方式ではありません。見えていない服の推測や、画風説明が抽出文に混ざることがあります。正確な人物同一性は保証しません。漫画の顔は年代にかかわらず若く描かれることが多く、年代の判定は外れることがあります。外れたときは「結果を文章欄へコピー」で年代を書き直してください。
 
 漫画ページの生成文は、以前は全員に大人の体型（`natural adult proportions`）を指定していました。現在は、各人物の外見文に書かれた年代と体型で描くよう指定します。外見文に年代を書かない場合、同じシードでも以前と結果が変わることがあります。
-
-実測と生成例は [外見抽出の検証記録](APPEARANCE_VALIDATION.md) を参照してください。
 
 ## 同梱するコマ割り
 
@@ -175,7 +173,7 @@ MOSSで使う `CLIPLoader` の `type=moss_image` と `qwen3.5_9b_int8_convrot.sa
 
 0.1.1ではコマ割り196種類も `data/layouts.json` から読み取ります。利用時のデータベース接続は不要です。実験用SQLiteと生成履歴は配布物に含めません。ID・名称・配置・構図・見本画像は維持しています。
 
-構図見本のうち46種類は、英語プロンプトに表情・感情・会話の動作・小物・光の指定が入っていたため、構図だけの文に直して見本画像をMOSSで再生成しました。ID・名称・人物領域は変わらないので、保存済みワークフローはそのまま開けます。接続した構図の文が変わるため、同じシードでも生成結果は以前と変わります。詳細は [再生成記録](COMPOSITION_ONLY_VALIDATION.md) を参照してください。
+構図見本のうち46種類は、英語プロンプトに表情・感情・会話の動作・小物・光の指定が入っていたため、構図だけの文に直して見本画像をMOSSで再生成しました。ID・名称・人物領域は変わらないので、保存済みワークフローはそのまま開けます。接続した構図の文が変わるため、同じシードでも生成結果は以前と変わります。
 
 Registry向け配布では `.comfyignore` によりテストと開発用ファイルを除外します。テストはGitHubのソースには残します。
 
@@ -312,13 +310,13 @@ The composition's English prompt is appended to the scene, and the character reg
 
 There are 120 compositions: 40 each for one, two, and three characters. The original 20 two-character compositions keep their IDs and names. The English composition prompts specify only the camera, shot size, character placement, body and face direction, pose, and furniture used for staging. They do not specify facial expressions, emotions, talking, props, or lighting, so you can describe those freely in the scene. The previews are the square 1024×1024 PNGs actually output by MOSS, converted to lossy WebP (quality 90) to reduce the download size (about 178 MB to about 25 MB for 120 images). Because of the compression, fine details do not exactly match the original PNGs. No other processing was applied (no added text, compositing, downscaling, or cropping). The English generation prompt, seed, model, and settings that were embedded in the PNGs, the character regions, and the SHA256 of each original PNG are stored in `data/compositions.json`. Compositions are categorized as over-the-shoulder, face close-up, full body, high angle, low angle, and so on. The catalog shows the preview, name, character count, category, and favorites; quality checks are in the validation records. Mismatches or extra characters are not fixed by image editing.
 
-The same composition can be used for tall or wide panels. The preview image is not passed as a reference input; the model is guided by the English prompt and regions. An exact match with the preview, following special panel shapes, and correct text or characters are not guaranteed. No compositing, text repair, or border repair is applied. See the [composition validation record](COMPOSITION_VALIDATION.md) and the [regeneration record](COMPOSITION_ONLY_VALIDATION.md) for the 46 compositions rewritten without non-composition instructions (both in Japanese).
+The same composition can be used for tall or wide panels. The preview image is not passed as a reference input; the model is guided by the English prompt and regions. An exact match with the preview, following special panel shapes, and correct text or characters are not guaranteed. No compositing, text repair, or border repair is applied.
 
 ## Up to three characters
 
 Enter both 「人物3_名前」 (character 3 name) and 「人物3_外見」 (character 3 appearance) in 「共通の人物設定」 (Shared characters) to use a third character. If both are empty, the node uses the two-character setup as before. In each panel, choose any combination of one to three characters in 「登場人物」, and set up to three lines with 「話者1〜3」 (speakers 1–3) and 「セリフ1〜3」 (lines 1–3). To make character 3 a speaker, include them in the panel's characters too.
 
-The [one-to-three character sample](example_workflows/composition_1to3.json) has the characters, compositions, and dialogue connected. Speech balloon regions are top center to right for one line, top right and top left for two, and top right, top center, and top left for three. The node does not infer empty space in the composition. See the [expansion validation record](EXPANSION_VALIDATION.md) (Japanese) for checks of the 100 added compositions and three-character support.
+The [one-to-three character sample](example_workflows/composition_1to3.json) has the characters, compositions, and dialogue connected. Speech balloon regions are top center to right for one line, top right and top left for two, and top right, top center, and top left for three. The node does not infer empty space in the composition.
 
 ## Appearance from character images
 
@@ -341,8 +339,6 @@ For analysis only, the image is downscaled to 768 px on the long side while keep
 The image is converted to appearance text for MOSS; the reference image itself is not passed to the image model. The extracted text may guess clothing that is not visible or include descriptions of the art style. Exact character identity is not guaranteed. Manga often draws faces young at any age, so the age group can be wrong; if so, use the copy button and correct it in the text.
 
 The manga page prompt used to specify adult proportions (`natural adult proportions`) for everyone. It now asks for the age and body proportions written in each character's appearance text. If the appearance text gives no age, results can differ from before even with the same seed.
-
-See the [appearance extraction validation record](APPEARANCE_VALIDATION.md) (Japanese) for measurements and examples.
 
 ## Node labels
 
@@ -402,7 +398,7 @@ After updating the folder, restart ComfyUI and reload the browser page. Characte
 
 Since 0.1.1, the 196 layouts are also read from `data/layouts.json`, so no database connection is needed at runtime. The experimental SQLite database and generation history are not distributed. IDs, names, layouts, compositions, and preview images are unchanged.
 
-46 of the compositions had facial expressions, emotions, talking, props, or lighting in their English prompts. Their prompts were rewritten to describe only the composition, and their previews were regenerated with MOSS. IDs, names, and character regions are unchanged, so saved workflows still open. Because the connected composition text changed, results differ from before even with the same seed. See the [regeneration record](COMPOSITION_ONLY_VALIDATION.md) (Japanese) for details.
+46 of the compositions had facial expressions, emotions, talking, props, or lighting in their English prompts. Their prompts were rewritten to describe only the composition, and their previews were regenerated with MOSS. IDs, names, and character regions are unchanged, so saved workflows still open. Because the connected composition text changed, results differ from before even with the same seed.
 
 For the Registry package, `.comfyignore` excludes tests and development files; the tests remain in the GitHub source.
 
